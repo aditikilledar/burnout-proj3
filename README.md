@@ -251,15 +251,9 @@ Step 2:
   
   Please refer the [CONTRIBUTING.md](https://github.com/adi-kiran/burnout-healthgoalsapp/blob/main/CONTRIBUTING.md) file for instructions on how to contribute to our repository.
 
-  <p align="center">
-    <a href="https://github.com/adi-kiran/burnout-healthgoalsapp/issues/new/choose">Report Bug</a>
-    /
-    <a href="https://github.com/adi-kiran/burnout-healthgoalsapp/issues/new/choose">Request Feature</a>
-  </p>
-
   # License
   
-  This project is licensed under the MIT License.
+  This project is licensed under the MIT License. Please refer to [LICENSE](https://github.com/adi-kiran/burnout-healthgoalsapp/blob/main/LICENSE) for more details.
   
   
 
