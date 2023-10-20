@@ -168,23 +168,25 @@ Before you begin, make sure you have the following installed:
   Git Clone the Repository 
   
     git clone https://github.com/adi-kiran/burnout-healthgoalsapp.git
+
+Step 2:
+   Ensure mongodb is running and execute the below to populate the tables:
     
-  
- Step 2:
-   Install the required packages by running the following command in the terminal 
-   
-    pip install -r requirements.txt
-    
+    python insert_event_data.py
+    python insert_food_data.py
+
  Step 3:
    Navigate to the backend folder and run the following command to start the server:
     
     cd backend
+    pip install -r requirements.txt
     flask run
 
  Step 4:
    Navigate to the frontend folder and run the below to start the React app:
     
     cd frontend
+    npm install 
     npm start
     
  Step 5:
