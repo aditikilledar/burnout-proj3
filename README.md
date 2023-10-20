@@ -218,14 +218,21 @@ Step 2:
   
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+- [x] ~Make the pages modular using React~
+    - [x] ~Login/SignUp~ 
+    - [x] ~Homepage~
+    - [x] ~Events~
+    - [x] ~Contact Us~
+    - [x] ~Profile~    
+- [x] ~Allow users to enroll in events~
+- [x] ~Generate graphs for user's calories~
+- [x] ~Show consumed food history~
+- [ ] Include UI testing Framework
+- [ ] Allow sharing/exporting user data
+- [ ] Dockerise entire application for easy deployment
+- [ ] TDE Calculator
 
+:bulb: **Tip:** More enhancements/fixes can be found here : https://github.com/adi-kiran/burnout-healthgoalsapp/issues
    
    # Team Members
    
