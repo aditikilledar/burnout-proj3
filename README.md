@@ -102,7 +102,7 @@ So, are you ready to take the leap towards a healthier, happier you? Dive into *
  
 - **Comprehensive Tracking:** From what you eat to how much you burn, monitor everything in one place.
   
-- **Diverse Fitness Events:** Never fall into the monotony of routine. Stay excited about fitness with new events to join regularly.
+- **Diverse Fitness Events:** Never fall into the monotony of routine. Stay excited about fitness with new events to join regularly. 
   
 - **Personalized Insights:** Understand your body and habits better with data-driven feedback.
   
@@ -112,12 +112,13 @@ So, are you ready to take the leap towards a healthier, happier you? Dive into *
  
 In today's fast-paced world, maintaining health is a challenge. But with the right tools and community, this challenge becomes an enjoyable journey. And Burnout is here to make sure of that.
 
+![ezgif com-video-to-gif (1)](https://github.com/adi-kiran/burnout-healthgoalsapp/assets/19224584/c6802e8e-5ff7-4ac5-ba11-560b2e84cb50) 
+
 # Implementation
 
 Link to the implementation video of the BurnOut application: 
 
 
- 
 # Application Screenshots
  
  ## Homepage
