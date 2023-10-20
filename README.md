@@ -93,7 +93,7 @@ So, are you ready to take the leap towards a healthier, happier you? Dive into *
 - [Technical Overview:](#technical-overview)
 - [Third-Party Dependencies](#third-party-dependencies)
 - [Enhancements](#enhancements)
-- [Team Members](#team-members)
+- [Contributors](#contributors)
 - [Contribution](#contribution)
 - [License](#license)
 
@@ -234,7 +234,7 @@ Step 2:
 
 :bulb: **Tip:** More enhancements/fixes can be found here : https://github.com/adi-kiran/burnout-healthgoalsapp/issues
    
-   # Team Members
+   # Contributors
    
 <center>
   <table>
