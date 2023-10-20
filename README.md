@@ -241,7 +241,7 @@ Step 2:
     <tr>
         <td align="center"><a href="https://github.com/sharonjoji99"><img src="https://avatars.githubusercontent.com/u/40449660?v=4" width="100px;" alt=""/><br /><sub><b>Nimal Sharon Joji</b></sub></a><br /></td>
       <td align="center"><a href="https://github.com/adi-kiran"><img src="https://avatars.githubusercontent.com/u/36990588?v=4" width="100px;" alt=""/><br /><sub><b>Aditya Kiran</b></sub></a></td>
-    <td align="center"><a href="https://github.com/amritav"><img src="https://avatars.githubusercontent.com/u/89432698?s=400&v=4" width="100px;" alt=""/><br /><sub><b>Amrita Visalam</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/amritav"><img src="https://avatars.githubusercontent.com/u/19224584?v=4" width="100px;" alt=""/><br /><sub><b>Amrita Visalam</b></sub></a><br /></td>
       <td align="center"><a href="https://github.com/Diksha-Maurya"><img src="https://avatars.githubusercontent.com/u/27075012?v=4" width="100px;" alt=""/><br /><sub><b>Diksha Maurya</b></sub></a><br /></td>
     </tr>
   </table>
