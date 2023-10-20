@@ -85,11 +85,11 @@ So, are you ready to take the leap towards a healthier, happier you? Dive into *
 
 - [Why Choose Burnout?](#-why-choose-burnout)
 - [Implementation](#implementation)
-- [Project Techstack:](#project-techstack)
 - [Application Screenshots:](#application-screenshots)
   - [Homepage](#homepage)
   - [Profile](#profile)
   - [Events](#events)
+- [Project Techstack:](#project-techstack)
 - [Technical Overview:](#technical-overview)
 - [Third-Party Dependencies](#third-party-dependencies)
 - [Enhancements](#enhancements)
@@ -117,13 +117,6 @@ In today's fast-paced world, maintaining health is a challenge. But with the rig
 Link to the implementation video of the BurnOut application: 
 
 
-
-# Project TechStack
-
-* [![React][React.js]][React-url]
- <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="html" width="20" height="20"> React </br>
- <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" alt="mongo" width="20" height="20"/> MongoDB </br>
- <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="python" width="20" height="20"/> Python </br>
  
 # Application Screenshots
  
@@ -139,7 +132,13 @@ Link to the implementation video of the BurnOut application:
 
 <img width='600' src="https://github.com/adi-kiran/burnout-healthgoalsapp/assets/27075012/a6d56638-9138-4448-a17a-cf28be3441ae">
 
-### :memo: **Note:** Further screenshots and Mini turorial can be found here:[Tutorials.md](https://github.com/adi-kiran/burnout-healthgoalsapp/blob/main/Tutorials.md)
+### :memo: **Note:** Additional screenshots and a mini tutorials can be found here:[Tutorials.md](https://github.com/adi-kiran/burnout-healthgoalsapp/blob/main/Tutorials.md)
+
+# Project TechStack
+
+ <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="html" width="20" height="20"> React </br>
+ <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" alt="mongo" width="20" height="20"/> MongoDB </br>
+ <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="python" width="20" height="20"/> Python </br>
 
 # Technical Overview
 
