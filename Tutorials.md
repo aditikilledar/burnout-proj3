@@ -9,7 +9,6 @@ Hey there, fitness enthusiast! 🌟 Dive deep into the intricacies of Burnout wi
 ![ezgif com-video-to-gif (1)](https://github.com/adi-kiran/burnout-healthgoalsapp/assets/19224584/f3db6202-c8f3-4743-ac82-95a950d8d963)
 
 ### Homepage: User Calorie Page
-![ezgif com-video-to-gif (6)](https://github.com/adi-kiran/burnout-healthgoalsapp/assets/19224584/055b5b10-dfe9-44be-8fd2-4bdfee171b64)
 
 ### Events Page
 ![ezgif com-video-to-gif (5)](https://github.com/adi-kiran/burnout-healthgoalsapp/assets/19224584/d9684070-1921-402d-8735-4f9facefa0ff)
