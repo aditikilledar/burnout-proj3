@@ -84,7 +84,7 @@ So, are you ready to take the leap towards a healthier, happier you? Dive into *
 # Table of Contents  
 
 - [Why Choose Burnout?](#-why-choose-burnout)
-- [Implementation](#implementation)
+- [Walkthrough](#walkthrough)
 - [Application Screenshots:](#application-screenshots)
   - [Homepage](#homepage)
   - [Profile](#profile)
@@ -92,7 +92,7 @@ So, are you ready to take the leap towards a healthier, happier you? Dive into *
 - [Project Techstack:](#project-techstack)
 - [Technical Overview:](#technical-overview)
 - [Third-Party Dependencies](#third-party-dependencies)
-- [Enhancements](#enhancements)
+- [Roadmap](#roadmap)
 - [Contributors](#contributors)
 - [Contribution](#contribution)
 - [License](#license)
@@ -114,9 +114,9 @@ In today's fast-paced world, maintaining health is a challenge. But with the rig
 
 ![ezgif com-video-to-gif (1)](https://github.com/adi-kiran/burnout-healthgoalsapp/assets/19224584/c6802e8e-5ff7-4ac5-ba11-560b2e84cb50) 
 
-# Implementation
+# Walkthrough
 
-Link to the implementation video of the BurnOut application: 
+Link to the implementation video of the BurnOut application: [Video](https://www.youtube.com/watch?v=Ozbn9nNFr1Y)
 
 
 # Application Screenshots
