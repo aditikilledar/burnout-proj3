@@ -230,7 +230,7 @@ Step 2:
 - [ ] Include UI testing Framework
 - [ ] Allow sharing/exporting user data
 - [ ] Dockerise entire application for easy deployment
-- [ ] TDE Calculator
+- [ ] TDEE Calculator
 
 :bulb: **Tip:** More enhancements/fixes can be found here : https://github.com/adi-kiran/burnout-healthgoalsapp/issues
    
