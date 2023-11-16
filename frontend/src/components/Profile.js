@@ -68,18 +68,19 @@ function Profile(props) {
       });
   }
 
-
   const initialFirstName = "";
   const initialLastName = "";
   const initialAge = "";
   const initialWeight = "";
   const initialHeight = "";
+  const initialBMI = 0;
 
   const [firstName, setFirstName] = useState(initialFirstName);
   const [lastName, setLastName] = useState(initialLastName);
   const [age, setAge] = useState(initialAge);
   const [weight, setWeight] = useState(initialWeight);
   const [height, setHeight] = useState(initialHeight);
+  const [BMI, setBMI] = useState(initialBMI);
 
   useEffect(() => {
     // Make API call to backend to get food items and their calories from DB.
@@ -104,6 +105,7 @@ function Profile(props) {
         setEditableGoal(res.target_goal)
         setEditableTargetCalories(res.target_calories)
         setEditableTargetWeight(res.target_weight)
+        setBMI(res.bmi)
       })
       .catch((error) => {
         if (error.response) {
@@ -112,9 +114,7 @@ function Profile(props) {
           console.log(error.response.headers);
         }
       });
-
     }, [props.state.token]);
-
 
     const handleProfileSubmit = (e) => {
       console.log('height=' + height + 'weight:'+ weight)
@@ -144,6 +144,7 @@ function Profile(props) {
           }
         });
     };
+
   return (
     <>
       <Container maxWidth>
@@ -339,6 +340,22 @@ function Profile(props) {
             </CardContent>
           </Card>
         </Box>
+        <Card sx={{ gridArea: "input" }} elevation={5}>
+            <CardHeader
+              title={"Your Body Mass Index (BMI)"}
+              subheader={"A measure of body fat based on height and weight"}
+            />
+            <CardContent
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                flexDirection: "column",
+              }}
+            />
+            <Typography variant="h5" mt={2}>
+              {BMI}
+            </Typography>
+          </Card>
       </Container>
       <Footer/>
     </>
