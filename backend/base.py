@@ -436,6 +436,7 @@ def profileUpdate(): # pragma: no cover
     weight = request.json.get('weight', None)
     height = request.json.get('height', None)
     bmi = (0.453*float(weight))/((0.3048*float(height))**2)
+    bmi = round(bmi,2)
     new_document = {
     "first_name": first_name,
     "last_name": last_name,
