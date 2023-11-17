@@ -17,6 +17,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import useToken from "./useToken";
 import { useHistory } from "react-router-dom";
 import { updateState } from "../../burnoutReducer";
+import Icon from "@material-ui/core/Icon";
 import { GoogleLogin } from '@react-oauth/google';
 import { googleLogout, useGoogleLogin } from '@react-oauth/google';
 
@@ -195,10 +196,16 @@ function SignIn(props) {
               </Grid>
             </Grid>
           </Box>
+		  <Button
+              onClick={login}
+              fullWidth
+              variant="outlined"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Sign In With Google
+            </Button>
         </Box>
-        <div>
-		<button onClick={() => login()}>Sign in with Google 🚀 </button>
-        </div>
+        
       </Container>
     </ThemeProvider>
   );
