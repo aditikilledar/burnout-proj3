@@ -75,6 +75,16 @@ def create_token():
         print("Invalid email or password")
         return jsonify({"message": "Invalid email or password"}),401
     
+@api.route("/google-login", methods=["POST"])
+def google_login():
+    email = request.json.get("email", None)
+    user = mongo.user.find_one({"email": email})
+    if (user is None):
+        mongo.user.insert_one({"email": email})
+    access_token = create_access_token(identity=email)
+    return jsonify({"message": "Login successful", "access_token":access_token})
+        
+    
 
 @api.route("/register", methods=["POST"])
 def register():
