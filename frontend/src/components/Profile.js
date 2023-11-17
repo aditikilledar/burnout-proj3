@@ -32,17 +32,21 @@ const weightCardStyles = {
 function Profile(props) {
   const [targetWeight, settargetWeight] = useState("");
   const [currentTargetCalories, setTargetCalories] = useState("");
-  const [currentGoal, setCurrentGoal] = useState("");
+  const [activityLevel, setActivityLevel] = useState("");
+  const [fitnessGoal, setFitnessGoal] = useState("");
   const [editableWeight, setEditableTargetWeight] = useState(targetWeight);
   const [editableTargetCalories, setEditableTargetCalories] = useState(currentTargetCalories);
-  // const [editableGoal, setEditableGoal] = useState(currentGoal);
+  const [editableActivityLevel, setEditableActivityLevel] = useState(activityLevel);
+  const [editableFitnessGoal, setEditableFitnessGoal] = useState(fitnessGoal);
+
 
   const handleSaveInput = (e) => {
     console.log(editableWeight, editableTargetCalories)
     settargetWeight(editableWeight);
     setTargetCalories(editableTargetCalories);
-    // setCurrentGoal(editableGoal);
-    console.log(targetWeight,currentTargetCalories, currentGoal)
+    setActivityLevel(editableActivityLevel);
+    setFitnessGoal(editableFitnessGoal)
+    console.log(targetWeight,currentTargetCalories, activityLevel, fitnessGoal)
     axios({
       method: "POST",
       url: "/goalsUpdate",
@@ -52,7 +56,8 @@ function Profile(props) {
       data: {
         targetWeight: editableWeight,
         targetCalories: editableTargetCalories,
-        // targetGoal: editableGoal,
+        activityLevel: editableActivityLevel,
+        fitnessGoal: editableFitnessGoal
       },
     })
       .then((response) => {
@@ -99,12 +104,14 @@ function Profile(props) {
         setAge(res.age)
         setWeight(res.weight)
         setHeight(res.height)
-        setCurrentGoal(res.target_goal)
+        setActivityLevel(res.activity_level)
         setTargetCalories(res.target_calories)
         settargetWeight(res.target_weight)
-        // setEditableGoal(res.target_goal)
+        setFitnessGoal(res.fitness_goal)
+        setEditableActivityLevel(res.activity_level)
         setEditableTargetCalories(res.target_calories)
         setEditableTargetWeight(res.target_weight)
+        setEditableFitnessGoal(res.fitness_goal)
         setBMI(res.bmi)
       })
       .catch((error) => {
@@ -151,7 +158,7 @@ function Profile(props) {
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
+            gridTemplateColumns: "repeat(5, 1fr)",
             gap: 2,
             gridTemplateRows: "auto",
             gridTemplateAreas: `"profile  goals goals goals bmi"
@@ -237,10 +244,10 @@ function Profile(props) {
             <CardContent
               sx={{
                 display: "grid",
-                gridTemplateColumns: "repeat(2, 1fr)",
+                gridTemplateColumns: "repeat(4, 1fr)",
                 gap: 2,
                 gridTemplateRows: "auto",
-                gridTemplateAreas: `"targetWeight targetCalories"`,
+                gridTemplateAreas: `"targetWeight targetCalories activityLevel fitnessGoal"`,
                 paddingTop: "2rem",
               }}
             >
@@ -292,6 +299,56 @@ function Profile(props) {
                     fullWidth
                     value={editableTargetCalories}
                     onChange={(e) => setEditableTargetCalories(e.target.value)}
+                  />
+                </Card>
+                <Card
+                  sx={{ gridArea: "activityLevel" }}
+                  elevation={2}
+                >
+                  <CardContent>
+                    <div style={weightCardStyles.weightContainer}>
+                      <IconButton
+                        color="primary"
+                        aria-label="weighing scale icon"
+                      >
+                        <FitnessCenterIcon fontSize="large" />
+                      </IconButton>
+                      <Typography style={weightCardStyles.weightText}>
+                        {activityLevel}
+                      </Typography>
+                    </div>
+                  </CardContent>
+                  <TextField
+                    label="Activity Level"
+                    variant="outlined"
+                    fullWidth
+                    value={editableActivityLevel}
+                    onChange={(e) => setEditableActivityLevel(e.target.value)}
+                  />
+                </Card>
+                <Card
+                  sx={{ gridArea: "fitnessGoal" }}
+                  elevation={2}
+                >
+                  <CardContent>
+                    <div style={weightCardStyles.weightContainer}>
+                      <IconButton
+                        color="primary"
+                        aria-label="weighing scale icon"
+                      >
+                        <FitnessCenterIcon fontSize="large" />
+                      </IconButton>
+                      <Typography style={weightCardStyles.weightText}>
+                        {fitnessGoal}
+                      </Typography>
+                    </div>
+                  </CardContent>
+                  <TextField
+                    label="Fitness Goal"
+                    variant="outlined"
+                    fullWidth
+                    value={editableFitnessGoal}
+                    onChange={(e) => setEditableFitnessGoal(e.target.value)}
                   />
                 </Card>
                 </CardContent>
