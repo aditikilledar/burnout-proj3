@@ -154,8 +154,8 @@ function Profile(props) {
             gridTemplateColumns: "repeat(4, 1fr)",
             gap: 2,
             gridTemplateRows: "auto",
-            gridTemplateAreas: `"profile  input input input"
-                                "profile  . . ."`,
+            gridTemplateAreas: `"profile  input input input bmi"
+                                "profile  . . . ."`,
             paddingTop: "2rem",
           }}
         >
@@ -234,13 +234,6 @@ function Profile(props) {
             title={"Your Goals"}
             subheader={"Update your goals here"}
             />
-            {/* <CardContent
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                flexDirection: "column",
-              }}
-            > */}
             <CardContent
               sx={{
                 display: "grid",
@@ -331,7 +324,6 @@ function Profile(props) {
                 sx={{ gridArea: "saveButton" }}
                 variant="contained"
                 color="primary"
-                // startIcon={<SaveIcon />}
                 onClick={handleSaveInput}
                 maxWidth
               >
@@ -339,23 +331,24 @@ function Profile(props) {
               </Button>
             </CardContent>
           </Card>
-        </Box>
-        <Card sx={{ gridArea: "input" }} elevation={5}>
+          <Card sx={{ gridArea: "bmi" }} elevation={5} alignItems = "center">
             <CardHeader
               title={"Your Body Mass Index (BMI)"}
-              subheader={"A measure of body fat based on height and weight"}
+              subheader={"Measured based on height and weight"}
             />
             <CardContent
               sx={{
-                display: "flex",
-                justifyContent: "center",
-                flexDirection: "column",
+                gap: 2,
+                paddingTop: "2rem",
+                alignItems: "center",
               }}
-            />
-            <Typography variant="h5" mt={2}>
+            >
+            <Typography variant="h2" mt={2}>
               {BMI}
             </Typography>
+            </CardContent>
           </Card>
+        </Box>
       </Container>
       <Footer/>
     </>
