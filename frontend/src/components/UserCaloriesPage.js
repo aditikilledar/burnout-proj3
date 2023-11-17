@@ -61,6 +61,9 @@ function UserCaloriesPage(props) {
   const toggleTodayUpdate = () => {
     setReloadTodayData(!reloadTodayData);
   }
+  const randomExercise = getRandomInt(0,7)
+  const exerciseList = ["Bent tricep extension", "Front Raises", "Sumo bicep raises", 
+  "Kick backs", "Weighted punches", "Leg kicks", "Jump claps"]
   useEffect(() => {
     // Make API call to backend to get food items and their calories from DB.
     axios({
@@ -277,7 +280,7 @@ function UserCaloriesPage(props) {
           <Card sx={{ gridArea: "exercise" }} elevation={5}>
             <CardHeader
               title={"Featured Exercise"}
-              subheader={"Our pick to get you fit!"}
+              subheader={exerciseList[randomExercise-1]}
               avatar={<FitnessCenterIcon />}
             />
 
@@ -287,7 +290,7 @@ function UserCaloriesPage(props) {
                 width={375}
                 height={160}
                 component="img"
-                image={"/assets/img/featured/" + getRandomInt(0,8) + ".gif"}
+                image={"/assets/img/featured/" + randomExercise + ".gif"}
               />
             </CardContent>
 
