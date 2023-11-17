@@ -35,13 +35,13 @@ function Profile(props) {
   const [currentGoal, setCurrentGoal] = useState("");
   const [editableWeight, setEditableTargetWeight] = useState(targetWeight);
   const [editableTargetCalories, setEditableTargetCalories] = useState(currentTargetCalories);
-  const [editableGoal, setEditableGoal] = useState(currentGoal);
+  // const [editableGoal, setEditableGoal] = useState(currentGoal);
 
   const handleSaveInput = (e) => {
-    console.log(editableWeight, editableTargetCalories, editableGoal)
+    console.log(editableWeight, editableTargetCalories)
     settargetWeight(editableWeight);
     setTargetCalories(editableTargetCalories);
-    setCurrentGoal(editableGoal);
+    // setCurrentGoal(editableGoal);
     console.log(targetWeight,currentTargetCalories, currentGoal)
     axios({
       method: "POST",
@@ -52,7 +52,7 @@ function Profile(props) {
       data: {
         targetWeight: editableWeight,
         targetCalories: editableTargetCalories,
-        targetGoal: editableGoal,
+        // targetGoal: editableGoal,
       },
     })
       .then((response) => {
@@ -102,7 +102,7 @@ function Profile(props) {
         setCurrentGoal(res.target_goal)
         setTargetCalories(res.target_calories)
         settargetWeight(res.target_weight)
-        setEditableGoal(res.target_goal)
+        // setEditableGoal(res.target_goal)
         setEditableTargetCalories(res.target_calories)
         setEditableTargetWeight(res.target_weight)
         setBMI(res.bmi)
@@ -154,7 +154,7 @@ function Profile(props) {
             gridTemplateColumns: "repeat(4, 1fr)",
             gap: 2,
             gridTemplateRows: "auto",
-            gridTemplateAreas: `"profile  input input input bmi"
+            gridTemplateAreas: `"profile  goals goals goals bmi"
                                 "profile  . . . ."`,
             paddingTop: "2rem",
           }}
@@ -229,7 +229,7 @@ function Profile(props) {
               </Button>
             </CardContent>
           </Card>
-          <Card sx={{ gridArea: "input" }} elevation={5}>
+          <Card sx={{ gridArea: "goals" }} elevation={5}>
             <CardHeader
             title={"Your Goals"}
             subheader={"Update your goals here"}
@@ -237,11 +237,11 @@ function Profile(props) {
             <CardContent
               sx={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3, 1fr)",
+                gridTemplateColumns: "repeat(2, 1fr)",
                 gap: 2,
                 gridTemplateRows: "auto",
-                gridTemplateAreas: `"targetWeight targetCalories targetGoal"
-                                    ". saveButton ."`,
+                gridTemplateAreas: `"targetWeight targetCalories"
+                                    ".saveButton"`,
                 paddingTop: "2rem",
               }}
             >
@@ -293,31 +293,6 @@ function Profile(props) {
                     fullWidth
                     value={editableTargetCalories}
                     onChange={(e) => setEditableTargetCalories(e.target.value)}
-                  />
-                </Card>
-                <Card
-                  sx={{ gridArea: "targetGoal" }}
-                  elevation={2}
-                >
-                  <CardContent>
-                    <div style={weightCardStyles.weightContainer}>
-                      <IconButton
-                        color="primary"
-                        aria-label="weighing scale icon"
-                      >
-                        <FitnessCenterIcon fontSize="large" />
-                      </IconButton>
-                      <Typography style={weightCardStyles.weightText}>
-                        {currentGoal}
-                      </Typography>
-                    </div>
-                  </CardContent>
-                  <TextField
-                    label="Goal"
-                    variant="outlined"
-                    fullWidth
-                    value={editableGoal}
-                    onChange={(e) => setEditableGoal(e.target.value)}
                   />
                 </Card>
               <Button
