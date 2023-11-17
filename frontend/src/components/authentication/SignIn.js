@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -17,6 +17,8 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import useToken from "./useToken";
 import { useHistory } from "react-router-dom";
 import { updateState } from "../../burnoutReducer";
+import { GoogleLogin } from '@react-oauth/google';
+import { googleLogout, useGoogleLogin } from '@react-oauth/google';
 
 function SignIn(props) {
   const history = useHistory();
@@ -74,6 +76,57 @@ function SignIn(props) {
     }));
   }
 
+  const [ user, setUser ] = useState([]);
+  const [ profile, setProfile ] = useState([]);
+
+  const login = useGoogleLogin({
+        onSuccess: (codeResponse) => setUser(codeResponse),
+        onError: (error) => console.log('Login Failed:', error)
+    });
+
+	useEffect(
+        () => {
+            if (user) {
+                axios
+                    .get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`, {
+                        headers: {
+                            Authorization: `Bearer ${user.access_token}`,
+                            Accept: 'application/json'
+                        }
+                    })
+                    .then((res) => {
+                        setProfile(res.data);
+						axios({
+							method: "POST",
+							url: "/google-login",
+							data: {
+							  email: profile.email,
+							},
+						  })
+							.then((response) => {
+							  console.log(response.data.message);
+							  let logInState = {
+								loggedIn: true,
+								token: response.data.access_token,
+							  };
+							  props.dispatch(updateState(logInState));
+							  saveToken(response.data.access_token);
+							  history.push("/");
+							})
+							.catch((error) => {
+							  if (error.response) {
+								console.log(error.response);
+								console.log(error.response.status);
+								console.log(error.response.headers);
+							  }
+							});
+                    })
+                    .catch((err) => console.log(err));
+            }
+        },
+        [ user ]
+    );
+	
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
@@ -143,6 +196,9 @@ function SignIn(props) {
             </Grid>
           </Box>
         </Box>
+        <div>
+		<button onClick={() => login()}>Sign in with Google 🚀 </button>
+        </div>
       </Container>
     </ThemeProvider>
   );
