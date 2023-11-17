@@ -240,8 +240,7 @@ function Profile(props) {
                 gridTemplateColumns: "repeat(2, 1fr)",
                 gap: 2,
                 gridTemplateRows: "auto",
-                gridTemplateAreas: `"targetWeight targetCalories"
-                                    ".saveButton"`,
+                gridTemplateAreas: `"targetWeight targetCalories"`,
                 paddingTop: "2rem",
               }}
             >
@@ -295,6 +294,15 @@ function Profile(props) {
                     onChange={(e) => setEditableTargetCalories(e.target.value)}
                   />
                 </Card>
+                </CardContent>
+                <CardContent
+                sx={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(1, 1fr)",
+                  gap: 2,
+                  gridTemplateRows: "auto",
+                  gridTemplateAreas: `"saveButton"`,
+                }}>
               <Button
                 sx={{ gridArea: "saveButton" }}
                 variant="contained"
@@ -304,7 +312,7 @@ function Profile(props) {
               >
                 Update
               </Button>
-            </CardContent>
+              </CardContent>
           </Card>
           <Card sx={{ gridArea: "bmi" }} elevation={5} alignItems = "center">
             <CardHeader
