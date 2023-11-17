@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo} from "react";
 import {
   Button,
   Card,
@@ -7,8 +7,11 @@ import {
   Container,
   ListItem,
   List,
-  CardMedia
+  CardMedia,
+  InputAdornment,
+  ListSubheader
 } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import InputLabel from "@mui/material/InputLabel";
@@ -42,6 +45,8 @@ import {
 import axios from "axios";
 import Footer from "./Footer";
 
+const containsText = (text, searchText) =>
+  text.toLowerCase().indexOf(searchText.toLowerCase()) > -1;
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -140,12 +145,17 @@ function UserCaloriesPage(props) {
         }
       });
   }, [reloadTodayData, props.state.token]);
+  const [searchText, setSearchText] = useState("");
   const [intakeItem, setIntakeItem] = useState("");
   const [intakeCalories, setIntakeCalories] = useState("");
   const handleIntakeItemChange = (event) => {
     setIntakeItem(event.target.value);
     setIntakeCalories(foodItems[event.target.value]);
   };
+  const displayedOptions = useMemo(
+    () => Object.keys(foodItems).filter((option) => containsText(option, searchText)),
+    [searchText]
+  );
   const [intakeDate, setIntakeDate] = useState(dayjs());
   const handleAddCalorieIntake = (e) => {
     e.preventDefault()
@@ -315,20 +325,43 @@ function UserCaloriesPage(props) {
                         Food Item Name
                       </InputLabel>
                       <Select
+                        MenuProps={{ autoFocus: false }}
                         labelId="intakeFoodName"
-                        id="demo-simple-select"
+                        id="search-select"
                         value={intakeItem}
                         label="Food Item Name"
                         onChange={handleIntakeItemChange}
                         required
                       >
-                        {Object.keys(foodItems).map((item) => {
-                          return (
-                            <MenuItem key={item} value={item}>
-                              {item}
-                            </MenuItem>
-                          );
-                        })}
+                        <ListSubheader>
+                        <TextField
+                          size="small"
+                          // Autofocus on textfield
+                          autoFocus
+                          placeholder="Type to search..."
+                          fullWidth
+                          InputProps={{
+                            startAdornment: (
+                              <InputAdornment position="start">
+                                <SearchIcon />
+                              </InputAdornment>
+                            )
+                          }}
+                          onChange={(e) => setSearchText(e.target.value)}
+                          onKeyDown={(e) => {
+                            if (e.key !== "Escape") {
+                              // Prevents autoselecting item while typing (default Select behaviour)
+                              e.stopPropagation();
+                            }
+                          }}
+                        />
+                      </ListSubheader>
+                        {displayedOptions.map((option, i) => (
+                          <MenuItem key={i} value={option}>
+                            {option}
+                          </MenuItem>
+                          )
+                        )}
                       </Select>
                     </FormControl>
                   </Box>
