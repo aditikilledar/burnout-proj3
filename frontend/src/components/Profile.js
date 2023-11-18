@@ -44,7 +44,7 @@ function Profile(props) {
 
 
   const handleSaveInput = (e) => {
-    console.log(editableWeight, editableTargetCalories)
+    console.log(editableWeight, editableTargetCalories, editableActivityLevel)
     settargetWeight(editableWeight);
     setTargetCalories(editableTargetCalories);
     setActivityLevel(editableActivityLevel);
@@ -80,6 +80,7 @@ function Profile(props) {
   const initialWeight = "";
   const initialHeight = "";
   const initialBMI = 0;
+  const initialGender = "";
 
   const [firstName, setFirstName] = useState(initialFirstName);
   const [lastName, setLastName] = useState(initialLastName);
@@ -87,7 +88,9 @@ function Profile(props) {
   const [weight, setWeight] = useState(initialWeight);
   const [height, setHeight] = useState(initialHeight);
   const [BMI, setBMI] = useState(initialBMI);
+  const [gender, setGender] = useState(initialGender)
   const activityOptions = {Minimal:"Sedentary(Office Job)",Light: "Light exercise (1-2 days/week)",Moderate: "Moderate exercise (3-5 days/week)",Heavy: "Heavy exercise (6-7 days/week)",Athlete: "Athlete (2x per day)"}
+  const genders = ["Male", "Female"]
   useEffect(() => {
     // Make API call to backend to get food items and their calories from DB.
     axios({
@@ -105,6 +108,7 @@ function Profile(props) {
         setAge(res.age)
         setWeight(res.weight)
         setHeight(res.height)
+        setGender(res.gender)
         setActivityLevel(res.activity_level)
         setTargetCalories(res.target_calories)
         settargetWeight(res.target_weight)
@@ -135,7 +139,8 @@ function Profile(props) {
           lastName: lastName,
           age: age,
           height: height,
-          weight: weight
+          weight: weight,
+          gender: gender
         },
       })
         .then((response) => {
@@ -229,6 +234,24 @@ function Profile(props) {
                   onChange={(e) => setHeight(e.target.value)}
                   fullWidth
                 />
+              </Box>
+              <Box mb={2}>
+              <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">Gender</InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={gender}
+                      label="Gender"
+                      onChange={(e) => setGender(e.target.value)}
+                    >
+                      {genders.map((item) => (
+						<MenuItem key={item} value={item}>
+						{item}
+						</MenuItem>
+						))}
+                    </Select>
+                  </FormControl>
               </Box>
               <Button variant="contained" color="primary" onClick={handleProfileSubmit}>
                 Update  
