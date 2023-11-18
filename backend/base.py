@@ -492,9 +492,9 @@ def goalsUpdate(): # pragma: no cover
             targetCalories:
               type: number
               description: The user's target daily calorie intake goal.
-            targetGoal:
+            activityLevel:
               type: string
-              description: The user's fitness goal.
+              description: The user's activity level.
     responses:
       200:
         description: User goals updated successfully.
@@ -513,12 +513,12 @@ def goalsUpdate(): # pragma: no cover
     current_user = get_jwt_identity()
     targetWeight = request.json.get('targetWeight', None)
     targetCalories = request.json.get('targetCalories', None)
-    targetGoal = request.json.get('targetGoal', None)
+    activityLevel = request.json.get('activityLevel', None)
 
     new_document = {
         "target_weight": targetWeight,
         "target_calories": targetCalories,
-        "target_goal": targetGoal
+        "activity_level": activityLevel
     }
     query = {
         "email": current_user,
