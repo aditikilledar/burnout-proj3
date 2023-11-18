@@ -64,6 +64,7 @@ function Profile(props) {
       .then((response) => {
         const res = response.data;
         console.log(res)
+        window.location.reload(false)
       })
       .catch((error) => {
         if (error.response) {
@@ -147,6 +148,7 @@ function Profile(props) {
         .then((response) => {
           const res = response.data;
           console.log(res)
+          window.location.reload(false)
         })
         .catch((error) => {
           if (error.response) {
