@@ -247,9 +247,6 @@ export default function Events(props) {
                                         </Typography>
                                     </CardContent>
                                     </CardActionArea>
-                                    {/* <CardActions>
-                                        <Button size="small" onClick={() => handleEnrollUnenroll(event.title)} disabled={enrollmentStatus[event.title]}>{enrollmentStatus[event.title] ? "Unenroll" : "Enroll"}</Button>
-                                    </CardActions> */}
                                 </Card>
                                 <Modal open={eventModals[event.title]} onClose={() => handleCloseModal(event.title)}>
                                     <Box
