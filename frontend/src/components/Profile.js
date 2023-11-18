@@ -80,7 +80,7 @@ function Profile(props) {
   const initialWeight = "";
   const initialHeight = "";
   const initialBMI = 0;
-  const initialGender = "";
+  const initialsex = "";
 
   const [firstName, setFirstName] = useState(initialFirstName);
   const [lastName, setLastName] = useState(initialLastName);
@@ -88,9 +88,9 @@ function Profile(props) {
   const [weight, setWeight] = useState(initialWeight);
   const [height, setHeight] = useState(initialHeight);
   const [BMI, setBMI] = useState(initialBMI);
-  const [gender, setGender] = useState(initialGender)
+  const [sex, setSex] = useState(initialsex)
   const activityOptions = {Minimal:"Sedentary(Office Job)",Light: "Light exercise (1-2 days/week)",Moderate: "Moderate exercise (3-5 days/week)",Heavy: "Heavy exercise (6-7 days/week)",Athlete: "Athlete (2x per day)"}
-  const genders = ["Male", "Female"]
+  const sexes = ["Male", "Female"]
   useEffect(() => {
     // Make API call to backend to get food items and their calories from DB.
     axios({
@@ -108,7 +108,7 @@ function Profile(props) {
         setAge(res.age)
         setWeight(res.weight)
         setHeight(res.height)
-        setGender(res.gender)
+        setSex(res.sex)
         setActivityLevel(res.activity_level)
         setTargetCalories(res.target_calories)
         settargetWeight(res.target_weight)
@@ -140,7 +140,7 @@ function Profile(props) {
           age: age,
           height: height,
           weight: weight,
-          gender: gender,
+          sex: sex,
           activityLevel: activityLevel
         },
       })
@@ -238,15 +238,15 @@ function Profile(props) {
               </Box>
               <Box mb={2}>
               <FormControl fullWidth>
-                    <InputLabel id="demo-simple-select-label">Gender</InputLabel>
+                    <InputLabel id="demo-simple-select-label">Sex</InputLabel>
                     <Select
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
-                      value={gender}
-                      label="Gender"
-                      onChange={(e) => setGender(e.target.value)}
+                      value={sex}
+                      label="Sex"
+                      onChange={(e) => setSex(e.target.value)}
                     >
-                      {genders.map((item) => (
+                      {sexes.map((item) => (
 						<MenuItem key={item} value={item}>
 						{item}
 						</MenuItem>

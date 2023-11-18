@@ -425,9 +425,9 @@ def profileUpdate(): # pragma: no cover
             height:
               type: number
               description: The user's height.
-            gender:
+            sex:
               type: string
-              description: The user's gender.
+              description: The user's sex.
     responses:
       200:
         description: User profile updated successfully.
@@ -448,18 +448,18 @@ def profileUpdate(): # pragma: no cover
     age = request.json.get('age', None)
     weight = request.json.get('weight', None)
     height = request.json.get('height', None)
-    gender = request.json.get('gender', None)
+    sex = request.json.get('sex', None)
     activityLevel = request.json.get('activityLevel', None)
     bmi = (0.453*float(weight))/((0.3048*float(height))**2)
     bmi = round(bmi,2)
-    tdee = calculate_tdee(height, weight, age, gender, activityLevel)
+    tdee = calculate_tdee(height, weight, age, sex, activityLevel)
     new_document = {
     "first_name": first_name,
     "last_name": last_name,
     "age": age,
     "weight": weight,
     "height": height,
-    "gender": gender,
+    "sex": sex,
     "bmi": bmi,
     "target_calories": tdee,
     }
@@ -864,14 +864,14 @@ def getUserRegisteredEvents():
         statusCode = 500
     return jsonify(response),statusCode
 
-def calculate_tdee(height,weight,age,gender,activityLevel):
+def calculate_tdee(height,weight,age,sex,activityLevel):
     kg_weight = float(weight)*0.45359237
     cm_height = float(height)*30.48
-    common_bmr = (10*kg_weight) + (6.25*cm_height) - (5*int(age))
-    if gender == "Male":
-        bmr = common_bmr + 5
+    common_calc_for_male_female = (10*kg_weight) + (6.25*cm_height) - (5*int(age))
+    if sex == "Male":
+        bmr = common_calc_for_male_female + 5
     else:
-        bmr = common_bmr - 161
-    pal = {'Minimal': 1.2,'Light': 1.375, 'Moderate': 1.55, 'Heavy':1.725, 'Athlete': 1.9}
-    tdee = int((bmr * pal[activityLevel]))
+        bmr = common_calc_for_male_female - 161
+    personal_activity_levels = {'Minimal': 1.2,'Light': 1.375, 'Moderate': 1.55, 'Heavy':1.725, 'Athlete': 1.9}
+    tdee = int((bmr * personal_activity_levels[activityLevel]))
     return tdee
