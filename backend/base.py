@@ -518,7 +518,6 @@ def goalsUpdate(): # pragma: no cover
         description: An error occurred while updating the user's goals.
     """
     current_user = get_jwt_identity()
-    current_user = get_jwt_identity()
     targetWeight = request.json.get('targetWeight', None)
     activityLevel = request.json.get('activityLevel', None)
 
@@ -530,8 +529,7 @@ def goalsUpdate(): # pragma: no cover
         "email": current_user,
     }
     try:
-        current_user = get_jwt_identity()
-        profile = mongo.user.find_one({"email": current_user})
+        profile = mongo.user.find_one(query)
         tdee = calculate_tdee(profile["height"], profile["weight"], profile["age"], profile["sex"], activityLevel)
         if tdee:  
           new_document["target_calories"] = tdee
