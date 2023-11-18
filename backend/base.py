@@ -449,8 +449,10 @@ def profileUpdate(): # pragma: no cover
     weight = request.json.get('weight', None)
     height = request.json.get('height', None)
     gender = request.json.get('gender', None)
+    activityLevel = request.json.get('activityLevel', None)
     bmi = (0.453*float(weight))/((0.3048*float(height))**2)
     bmi = round(bmi,2)
+    tdee = calculate_tdee(height, weight, age, gender, activityLevel)
     new_document = {
     "first_name": first_name,
     "last_name": last_name,
@@ -459,6 +461,7 @@ def profileUpdate(): # pragma: no cover
     "height": height,
     "gender": gender,
     "bmi": bmi,
+    "target_calories": tdee,
     }
     query = {
         "email": current_user,
@@ -517,12 +520,10 @@ def goalsUpdate(): # pragma: no cover
     current_user = get_jwt_identity()
     current_user = get_jwt_identity()
     targetWeight = request.json.get('targetWeight', None)
-    targetCalories = request.json.get('targetCalories', None)
     activityLevel = request.json.get('activityLevel', None)
 
     new_document = {
         "target_weight": targetWeight,
-        "target_calories": targetCalories,
         "activity_level": activityLevel
     }
     query = {
@@ -862,3 +863,15 @@ def getUserRegisteredEvents():
         response = {"status": "Error", "message": str(e)}
         statusCode = 500
     return jsonify(response),statusCode
+
+def calculate_tdee(height,weight,age,gender,activityLevel):
+    kg_weight = float(weight)*0.45359237
+    cm_height = float(height)*30.48
+    common_bmr = (10*kg_weight) + (6.25*cm_height) - (5*int(age))
+    if gender == "Male":
+        bmr = common_bmr + 5
+    else:
+        bmr = common_bmr - 161
+    pal = {'Minimal': 1.2,'Light': 1.375, 'Moderate': 1.55, 'Heavy':1.725, 'Athlete': 1.9}
+    tdee = int((bmr * pal[activityLevel]))
+    return tdee
