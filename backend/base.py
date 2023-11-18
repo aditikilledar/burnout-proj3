@@ -518,7 +518,6 @@ def goalsUpdate(): # pragma: no cover
         description: An error occurred while updating the user's goals.
     """
     current_user = get_jwt_identity()
-    current_user = get_jwt_identity()
     targetWeight = request.json.get('targetWeight', None)
     activityLevel = request.json.get('activityLevel', None)
 
@@ -530,6 +529,10 @@ def goalsUpdate(): # pragma: no cover
         "email": current_user,
     }
     try:
+        profile = mongo.user.find_one(query)
+        tdee = calculate_tdee(profile["height"], profile["weight"], profile["age"], profile["sex"], activityLevel)
+        if tdee:  
+          new_document["target_calories"] = tdee
         mongo.user.update_one(query, {"$set": new_document}, upsert=True)
         response = jsonify({"msg": "update successful"})
     except Exception as e:
@@ -865,6 +868,10 @@ def getUserRegisteredEvents():
     return jsonify(response),statusCode
 
 def calculate_tdee(height,weight,age,sex,activityLevel):
+    if height and weight and age and sex and activityLevel:
+        pass
+    else:
+        return None
     kg_weight = float(weight)*0.45359237
     cm_height = float(height)*30.48
     common_calc_for_male_female = (10*kg_weight) + (6.25*cm_height) - (5*int(age))
