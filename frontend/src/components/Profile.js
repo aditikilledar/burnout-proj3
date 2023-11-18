@@ -353,7 +353,10 @@ function Profile(props) {
                   </CardContent>
                   <div>
                     <Typography align="center">
-                      This value is calculated based on your personal information.
+                      TDEE 
+                    </Typography>
+                    <Typography align="center">
+                    calculated based on your personal information
                     </Typography>
                   </div>
                 </Card>
