@@ -425,6 +425,9 @@ def profileUpdate(): # pragma: no cover
             height:
               type: number
               description: The user's height.
+            gender:
+              type: string
+              description: The user's gender.
     responses:
       200:
         description: User profile updated successfully.
@@ -445,6 +448,7 @@ def profileUpdate(): # pragma: no cover
     age = request.json.get('age', None)
     weight = request.json.get('weight', None)
     height = request.json.get('height', None)
+    gender = request.json.get('gender', None)
     bmi = (0.453*float(weight))/((0.3048*float(height))**2)
     bmi = round(bmi,2)
     new_document = {
@@ -453,6 +457,7 @@ def profileUpdate(): # pragma: no cover
     "age": age,
     "weight": weight,
     "height": height,
+    "gender": gender,
     "bmi": bmi,
     }
     query = {
