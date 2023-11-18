@@ -16,6 +16,7 @@ import TextField from "@mui/material/TextField";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import axios from "axios";
 import Footer from "./Footer";
+import { CardActionArea } from "@mui/material";
 
 const SearchBar = ({ setSearchQuery }) => (
   <form>
@@ -105,10 +106,54 @@ export default function Events(props) {
       .catch((error) => console.error("Error fetching events:", error));
   }, []);
 
-  const handleEnroll = (eventTitle) => {
+  const handleEnrollUnenroll = (eventTitle) => {
     const userEmail = "user@example.com"; // Get user email here
 
     axios
+      .post(
+        "/is-enrolled",
+        {
+          eventTitle: eventTitle,
+        },
+        {
+          headers: {
+            Authorization: "Bearer " + props.state.token,
+          },
+        }
+      )
+      .then((response) => {
+        if (response.data.isEnrolled) {
+          axios
+      .post(
+        "/unenroll",
+        {
+          email: userEmail,
+          eventTitle: eventTitle,
+        },
+        {
+          headers: {
+            Authorization: "Bearer " + props.state.token,
+          },
+        }
+      )
+      .then((response) => {
+        console.log(response.data);
+        if (response.data.status === "Data saved successfully") {
+          setEnrollmentStatus((prevStatus) => ({
+            ...prevStatus,
+            [eventTitle]: false,
+          }));
+        }
+      })
+      .catch((error) => {
+        console.error("An error occurred while sending the data: ", error);
+        setEnrollmentStatus((prevStatus) => ({
+          ...prevStatus,
+          [eventTitle]: true,
+        }));
+      });
+        } else {
+          axios
       .post(
         "/enroll",
         {
@@ -137,6 +182,7 @@ export default function Events(props) {
           [eventTitle]: false,
         }));
       });
+        }})
   };
 
     return (
@@ -182,6 +228,7 @@ export default function Events(props) {
                                 <Card
                                     sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
                                 >
+                                  <CardActionArea onClick={() => handleOpenModal(event.title)}>
                                     <CardMedia
                                         component="div"
                                         sx={{
@@ -199,9 +246,10 @@ export default function Events(props) {
                                             {event.description}
                                         </Typography>
                                     </CardContent>
-                                    <CardActions>
-                                        <Button size="small" onClick={() => handleOpenModal(event.title)}>More Information</Button>
-                                    </CardActions>
+                                    </CardActionArea>
+                                    {/* <CardActions>
+                                        <Button size="small" onClick={() => handleEnrollUnenroll(event.title)} disabled={enrollmentStatus[event.title]}>{enrollmentStatus[event.title] ? "Unenroll" : "Enroll"}</Button>
+                                    </CardActions> */}
                                 </Card>
                                 <Modal open={eventModals[event.title]} onClose={() => handleCloseModal(event.title)}>
                                     <Box
@@ -224,7 +272,7 @@ export default function Events(props) {
                                         <Typography sx={{ mt: 2 }}><strong>Location:</strong> {event.eventLocation}</Typography>
                                         <Typography sx={{ mt: 2 }}><strong>Date:</strong> {event.eventDate}</Typography>
                                         <Typography sx={{ mt: 2 }}><strong>Time:</strong> {event.eventTime}</Typography>
-                                        <Button onClick={() => handleEnroll(event.title)} disabled={enrollmentStatus[event.title]}>{enrollmentStatus[event.title] ? "Enrolled" : "Enroll"}</Button>
+                                        <Button onClick={() => handleEnrollUnenroll(event.title)}>{enrollmentStatus[event.title] ? "Unenroll" : "Enroll"}</Button>
                                         <Button onClick={() => handleCloseModal(event.title)}>Close</Button>
                                         {enrollmentStatus[event.title] && (
                                             <Typography variant="body2" color="green" component="p">

@@ -295,6 +295,57 @@ def enroll_event(): # pragma: no cover
     
     return jsonify(response)
 
+@api.route('/unenroll', methods=['POST']) # pragma: no cover
+@jwt_required()
+def unenroll_event(): # pragma: no cover
+    """
+    Unenroll the user from an event
+
+    This endpoint allows an authenticated user to unenroll from an event.
+
+    ---
+    tags:
+      - Events
+    parameters:
+      - in: body
+        name: data
+        description: Data containing the eventTitle
+        required: true
+        schema:
+          type: object
+          properties:
+            eventTitle:
+              type: string
+        example:
+          eventTitle: "Event Name"
+    security:
+      - JWT: []
+    responses:
+      200:
+        description: User successfully unenrolled from the event
+        schema:
+          type: object
+          properties:
+            status:
+              type: string
+              example: "Data saved successfully"
+      500:
+        description: An error occurred while unenrolling the user
+    """
+    data = request.get_json()  # get data from POST request
+    current_user = get_jwt_identity()
+    try:
+        # Insert data into MongoDB
+        mongo.user.delete_one({
+            "email": current_user,
+            "eventTitle": data['eventTitle']
+        })
+        response = {"status": "Data saved successfully"}
+    except Exception as e:
+        response = {"status": "Error", "message": str(e)}
+    
+    return jsonify(response)
+
 @api.route('/profile')
 @jwt_required()
 def my_profile(): # pragma: no cover
