@@ -140,7 +140,8 @@ function Profile(props) {
           age: age,
           height: height,
           weight: weight,
-          gender: gender
+          gender: gender,
+          activityLevel: activityLevel
         },
       })
         .then((response) => {
@@ -269,7 +270,7 @@ function Profile(props) {
                 gridTemplateColumns: "repeat(3, 1fr)",
                 gap: 2,
                 gridTemplateRows: "auto",
-                gridTemplateAreas: `"targetWeight targetCalories activityLevel"
+                gridTemplateAreas: `"targetWeight activityLevel targetCalories"
                                     ". saveButton ."`,
                 paddingTop: "2rem",
               }}
@@ -300,31 +301,6 @@ function Profile(props) {
                   />
                 </Card>
                 <Card
-                  sx={{ gridArea: "targetCalories" }}
-                  elevation={2}
-                >
-                  <CardContent>
-                    <div style={weightCardStyles.weightContainer}>
-                      <IconButton
-                        color="primary"
-                        aria-label="weighing scale icon"
-                      >
-                        <WhatshotIcon fontSize="large" />
-                      </IconButton>
-                      <Typography style={weightCardStyles.weightText}>
-                        {currentTargetCalories}
-                      </Typography>
-                    </div>
-                  </CardContent>
-                  <TextField
-                    label="Daily Calories Burn Goal"
-                    variant="outlined"
-                    fullWidth
-                    value={editableTargetCalories}
-                    onChange={(e) => setEditableTargetCalories(e.target.value)}
-                  />
-                </Card>
-                <Card
                   sx={{ gridArea: "activityLevel" }}
                   elevation={2}
                 >
@@ -332,7 +308,7 @@ function Profile(props) {
                     <div style={weightCardStyles.weightContainer}>
                       <IconButton
                         color="primary"
-                        aria-label="weighing scale icon"
+                        aria-label="running icon"
                       >
                         <DirectionsRunIcon fontSize="large" />
                       </IconButton>
@@ -357,6 +333,29 @@ function Profile(props) {
 						))}
                     </Select>
                   </FormControl>
+                </Card>
+                <Card
+                  sx={{ gridArea: "targetCalories" }}
+                  elevation={2}
+                >
+                  <CardContent>
+                    <div style={weightCardStyles.weightContainer}>
+                      <IconButton
+                        color="primary"
+                        aria-label="calories icon"
+                      >
+                        <WhatshotIcon fontSize="large" />
+                      </IconButton>
+                      <Typography style={weightCardStyles.weightText}>
+                        {currentTargetCalories}
+                      </Typography>
+                    </div>
+                  </CardContent>
+                  <div>
+                    <Typography align="center">
+                      This value is calculated based on your personal information.
+                    </Typography>
+                  </div>
                 </Card>
               <Button
                 sx={{ gridArea: "saveButton" }}
