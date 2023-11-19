@@ -191,7 +191,6 @@ def get_events():
     """
     events_collection = mongo.events
     events = list(events_collection.find({}))
-    print(events)
     for event in events:
         event["_id"] = str(event["_id"]) # Convert ObjectId to string
     return jsonify(events)
@@ -697,24 +696,8 @@ def createFood():
         statusCode = 500
     return jsonify(response),statusCode
 
-@api.route('/addMealToUser', methods=["POST"])
-@jwt_required()
-def addMealToUser():
-    current_user = get_jwt_identity()
-    data = request.get_json() # get data from POST request
-    mealName = data['mealName']
-    ingredients = data['ingredients']
-    try:
-        mongo.user.insert_one({
-            "email": current_user,
-            "meal_name": mealName,
-            "ingredients": ingredients
-        })
-    except Exception as e:
-        response = {"status": "Error", "message": str(e)}
-        statusCode = 500
-
 @api.route('/createMeal', methods=["POST"])
+@jwt_required()
 def createMeal():
     """
     Create a custom meal
@@ -756,6 +739,7 @@ def createMeal():
 
     """
     data = request.get_json() # get data from POST request
+    current_user = get_jwt_identity()
     mealName = data['mealName']
     ingredients = data['ingredients']
     calories = 0
@@ -765,6 +749,12 @@ def createMeal():
     try:
         # Insert data into MongoDB
         mongo.food.insert_one({'food': mealName, "calories": calories})
+        mongo.user.insert_one({
+            "email": current_user,
+            "meal_name": mealName,
+            "ingredients": ingredients,
+            "total_calories": calories
+        })
         response = {"status": "Data saved successfully"}
         statusCode = 200
     except Exception as e:
@@ -934,6 +924,64 @@ def getWeekHistory(): # pragma: no cover
         response = {"status": "Error", "message": str(e)}
         statusCode = 500
     return jsonify(response),statusCode
+
+@api.route("/myMeals",methods=["GET"])
+@jwt_required()
+def getMyMeals():
+    """
+    Get My Meals
+
+    This endpoint allows an authenticated user to retrieve the custom meals that they have created.
+
+    ---
+    tags:
+      - User
+      - Meals
+    security:
+      - JWT: []
+    responses:
+      200:
+        description: Successfully retrieved the custom meals created by user
+        schema:
+          type: object
+          properties:
+            mealName:
+              type: string
+              description: Name of the custom meal
+            ingredients:
+              type: array
+              description: List of ingredients in the meal
+          example:
+            {
+            "mealName":"My meal",
+            "ingredients":["Eggs","Toast"],
+            }
+      401:
+        description: Unauthorized. User must be logged in to retrieve the food calorie mapping.
+      500:
+        description: An error occurred while retrieving the food calorie mapping.
+    """
+    current_user = get_jwt_identity()
+    result = []
+    try:
+        data = mongo.user.find({"email": current_user,"meal_name":{"$exists": True}})
+        for meal in data:
+            cal_info = []
+            for item in meal['ingredients']:
+                food_item = mongo.food.find_one({'food':item})
+                cal_info.append({str(item):food_item['calories']})
+            res={}
+            res['meal_name']=meal['meal_name']
+            res['ingredients']=meal['ingredients']
+            res['total_calories']=meal['total_calories']
+            result.append(res)
+        response = result
+        statusCode = 200
+    except Exception as e:
+        response = {"status": "Error", "message": str(e)}
+        statusCode = 500
+    return jsonify(response),statusCode
+        
 
 @api.route('/foodCalorieMapping',methods=["GET"])
 @jwt_required()
