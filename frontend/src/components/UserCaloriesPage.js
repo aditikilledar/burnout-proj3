@@ -104,17 +104,22 @@ function UserCaloriesPage(props) {
       .then((response) => {
         const res = response.data;
         setDietHistory(res.sort((a, b) => b.dayIndex - a.dayIndex));
-        let weekHistoryData = res.map((dayObj) => {
-          return {
-            date: dayObj.date,
-            consumedCalories: dayObj.caloriesConsumed,
-            burntCalories: dayObj.burntCalories,
-          };
+        let weekData = [];
+        for (let i = -3; i <= 3; i++) {
+        const date = dayjs().add(i, 'day').format('YYYY-MM-DD');
+        const dataForDay = res.find(d => dayjs(d.date).format('YYYY-MM-DD') === date);
+   
+        weekData.push({
+          date: date,
+          consumedCalories: dataForDay ? dataForDay.caloriesConsumed : 0,
+          burntCalories: dataForDay ? dataForDay.burntCalories : 0,
         });
-        setWeekHistory(weekHistoryData);
+      }
         setTodayCaloriesConsumed(res[6]["caloriesConsumed"]);
         setTodayCaloriesBurned(res[6]["burntCalories"]);
         setTodayGoal(1000);
+           
+        setWeekHistory(weekData);
       })
       .catch((error) => {
         if (error.response) {
@@ -282,7 +287,7 @@ function UserCaloriesPage(props) {
                   fill="#19229e"
                 />
                 <Tooltip />
-                <Legend layout="vertical" verticalAlign="top" align="right" />
+  
               </PieChart>
               </ResponsiveContainer>
             </CardContent>
@@ -448,7 +453,7 @@ function UserCaloriesPage(props) {
                 <XAxis dataKey="date" />
                 <YAxis />
                 <Tooltip />
-                <Legend />
+              
                 <Line
                   type="monotone"
                   dataKey="consumedCalories"
