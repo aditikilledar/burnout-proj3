@@ -357,6 +357,12 @@ export default function Meals(props) {
                             );
                           })}
                         </List>
+                        <div style={{ textAlign: "center"}}>
+                        Total Calories 
+                      </div>
+                      <div style={{ textAlign: "center",fontWeight: "bold",}}>
+                      {meal.total_calories} 
+                      </div>
                       </div>
                     </CardContent>
                   </Card>
