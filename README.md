@@ -60,6 +60,23 @@
 
 <img src ="https://github.com/adi-kiran/burnout-healthgoalsapp/assets/27075012/39e731f7-2f06-4f8a-b9a3-5f86836e1ad9" width='800'>
 
+# Table of Contents  
+
+- [Why Choose Burnout?](#-why-choose-burnout)
+- [Walkthrough](#walkthrough)
+- [Application Screenshots:](#application-screenshots)
+  - [Homepage](#homepage)
+  - [Profile](#profile)
+  - [Events](#events)
+- [Project Techstack:](#project-techstack)
+- <a href="https://github.com/aditikilledar/burnout-proj3/blob/main/README.md#getting-started"> Get Started: Installation </a>
+- [Technical Overview:](#technical-overview)
+- [Third-Party Dependencies](#third-party-dependencies)
+- [Roadmap](#roadmap)
+- [Contributors](#contributors)
+- [Contribution](#contribution)
+- [License](#license)
+
 
 ## **🔥 Burnout: Elevate Your Health & Fitness Game! 🔥**
  
@@ -80,23 +97,6 @@ Everyone's health journey is unique. Input your age, current weight, height, tar
 So, are you ready to take the leap towards a healthier, happier you? Dive into **Burnout** now and elevate your fitness game!
  
 🔥 *Because it's not just about burning calories; it's about burning doubts, burning procrastination, and lighting up confidence!* 🔥
-
-# Table of Contents  
-
-- [Why Choose Burnout?](#-why-choose-burnout)
-- [Walkthrough](#walkthrough)
-- [Application Screenshots:](#application-screenshots)
-  - [Homepage](#homepage)
-  - [Profile](#profile)
-  - [Events](#events)
-- [Project Techstack:](#project-techstack)
-- <a href="https://github.com/aditikilledar/burnout-proj3/blob/main/README.md#getting-started"> Installation </a>
-- [Technical Overview:](#technical-overview)
-- [Third-Party Dependencies](#third-party-dependencies)
-- [Roadmap](#roadmap)
-- [Contributors](#contributors)
-- [Contribution](#contribution)
-- [License](#license)
 
 
 # **💡 Why Choose Burnout?**
@@ -168,7 +168,7 @@ Before you begin, make sure you have the following installed:
  Step 1: 
   Git Clone the Repository 
   
-    git clone https://github.com/adi-kiran/burnout-healthgoalsapp.git
+    git clone https://github.com/aditikilledar/burnout-proj3
 
 Step 2:
    Ensure mongodb is running and execute the below to populate the tables:
@@ -197,7 +197,7 @@ Step 2:
       http://127.0.0.1:3000
       
 
-  # Third-Party Dependencies
+## Third-Party Dependencies
   
   Frontend:
 
@@ -220,21 +220,28 @@ Step 2:
 | coverage      | 7.2.7      |   Apache Software License (Apache-2.0) |
 
   
-## Roadmap
+# What's new this version?
+#TODO
 
-- [x] ~Make the pages modular using React~
-    - [x] ~Login/SignUp~ 
-    - [x] ~Homepage~
-    - [x] ~Events~
-    - [x] ~Contact Us~
-    - [x] ~Profile~    
-- [x] ~Allow users to enroll in events~
-- [x] ~Generate graphs for user's calories~
-- [x] ~Show consumed food history~
-- [ ] Include UI testing Framework
-- [ ] Allow sharing/exporting user data
-- [ ] Dockerise entire application for easy deployment
-- [ ] TDEE Calculator
+1. Ability to add custom foods and track their calories.
+2. Fully customizable meal creation.
+3. An intuitive and searchable dropdown.
+4. BMI Calculation for your personal profile.
+5. Intelligent automatic calorie burn calculation.
+6. Enhanced UI.
+7. Randomized Exercise of the Day.
+8. Google Sign-in is now an option!
+9. Better progress tracking on the landing page.
+
+## Bug Fixes
+We fixed many bugs, but here are the most notable ones...
+
+1. Sign up / Sign in issues, especially when an existing user tries to sign up again.
+2. The proxy in the config files were wrong, making it difficult to run the website. Proxy issues were fixed.
+3. Testcases were updated and fixed.
+4. Event were not un-enrollable. Now events can be enrolled and unenrolled.
+5. Exercise of the day was static, which defeats the purpose. Fixed, it is now random.
+6. Linechart on the landing page was incorrect. Fixed.
 
 :bulb: **Tip:** More enhancements/fixes can be found here : https://github.com/adi-kiran/burnout-healthgoalsapp/issues
    
