@@ -646,6 +646,81 @@ def createFood():
         statusCode = 500
     return jsonify(response),statusCode
 
+@api.route('/addMealToUser', methods=["POST"])
+@jwt_required()
+def addMealToUser():
+    current_user = get_jwt_identity()
+    data = request.get_json() # get data from POST request
+    mealName = data['mealName']
+    ingredients = data['ingredients']
+    try:
+        mongo.user.insert_one({
+            "email": current_user,
+            "meal_name": mealName,
+            "ingredients": ingredients
+        })
+    except Exception as e:
+        response = {"status": "Error", "message": str(e)}
+        statusCode = 500
+
+@api.route('/createMeal', methods=["POST"])
+def createMeal():
+    """
+    Create a custom meal
+
+    This endpoint allows an authenticated user to create their own meals with different food items as the ingredients.
+
+    ---
+    tags:
+      - User
+    security:
+      - JWT: []
+    parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          type: object
+          properties:
+            mealName:
+              type: string
+              format: Meal name
+              description: The name of the meal item being created.
+            ingredients:
+              type: list
+              description: Is a list of the ingredients in the meal.
+    responses:
+      200:
+        description: Meal created successfully
+        schema:
+          type: object
+        example:
+          {
+            "status": "Data saved successfully"
+          }
+      401:
+        description: Unauthorized. User must be logged in to create custom meal.
+      500:
+        description: An error occurred while creating the custom meal.
+
+    """
+    data = request.get_json() # get data from POST request
+    mealName = data['mealName']
+    ingredients = data['ingredients']
+    calories = 0
+    for item in ingredients:
+        food_item = mongo.food.find_one({"food": item})
+        calories += int(food_item["calories"])
+    try:
+        # Insert data into MongoDB
+        mongo.food.insert_one({'food': mealName, "calories": calories})
+        response = {"status": "Data saved successfully"}
+        statusCode = 200
+    except Exception as e:
+        response = {"status": "Error", "message": str(e)}
+        statusCode = 500
+    return jsonify(response),statusCode
+
 @api.route('/weekHistory',methods=["POST"])
 @jwt_required()
 def getWeekHistory(): # pragma: no cover
