@@ -172,7 +172,9 @@ Before you begin, make sure you have the following installed:
 
 Step 2:
    Ensure mongodb is running and execute the below to populate the tables:
-   Navigate to the backend folder using "cd backend".
+   Navigate to the backend folder.
+
+    cd backend
 
   Once in the backend, run:
   
