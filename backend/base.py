@@ -594,6 +594,58 @@ def addUserBurnedCalories(): # pragma: no cover
         statusCode = 500
     return jsonify(response),statusCode
 
+@api.route('/createFood', methods=["POST"])
+def createFood():
+    """
+    Create a custom food
+
+    This endpoint allows an authenticated user to create their custom food item with the amount of calories it has.
+
+    ---
+    tags:
+      - User
+    parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          type: object
+          properties:
+            foodName:
+              type: string
+              format: food item name
+              description: The name of the food item being created.
+            calories:
+              type: number
+              description: The number of calories in the created food item.
+    responses:
+      200:
+        description: Food item created successfully
+        schema:
+          type: object
+        example:
+          {
+            "status": "Data saved successfully"
+          }
+      401:
+        description: Unauthorized. User must be logged in to create custom food.
+      500:
+        description: An error occurred while creating the custom food.
+
+    """
+    data = request.get_json() # get data from POST request
+    foodName = data['foodName']
+    calories = data['calories']
+    try:
+        # Insert data into MongoDB
+        mongo.food.insert_one({'food': foodName, "calories": calories})
+        response = {"status": "Data saved successfully"}
+        statusCode = 200
+    except Exception as e:
+        response = {"status": "Error", "message": str(e)}
+        statusCode = 500
+    return jsonify(response),statusCode
+
 @api.route('/weekHistory',methods=["POST"])
 @jwt_required()
 def getWeekHistory(): # pragma: no cover
