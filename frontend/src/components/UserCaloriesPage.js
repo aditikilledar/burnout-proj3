@@ -40,7 +40,7 @@ import {
   XAxis,
   YAxis,
   CartesianGrid,
-  Legend,
+  Legend, ResponsiveContainer
 } from "recharts";
 import axios from "axios";
 import Footer from "./Footer";
@@ -244,7 +244,7 @@ function UserCaloriesPage(props) {
               avatar={<StarIcon />}
             />
             <CardContent>
-              {/* <ResponsiveContainer width="100%" height="100%"> */}
+              <ResponsiveContainer width="100%" height={200}>
               <PieChart width={375} height={160}>
                 <Pie
                   data={[
@@ -284,21 +284,24 @@ function UserCaloriesPage(props) {
                 <Tooltip />
                 <Legend layout="vertical" verticalAlign="top" align="right" />
               </PieChart>
-              {/* </ResponsiveContainer> */}
+              </ResponsiveContainer>
             </CardContent>
           </Card>
+
+          
           <Card sx={{ gridArea: "exercise" }} elevation={5}>
             <CardHeader
               title={"Featured Exercise"}
               subheader={exerciseList[randomExercise-1]}
               avatar={<FitnessCenterIcon />}
+              sx={{ marginBottom: 3 }}
             />
 
             <CardContent align="center">
               <CardMedia
                 style={{ transform: "scale(1.4)" }}  
                 width={375}
-                height={160}
+                height={300}
                 component="img"
                 image={"/assets/img/featured/" + randomExercise + ".gif"}
               />
