@@ -38,9 +38,8 @@ export default function Meals(props) {
     const [mealName, setMealName] = useState("")
     const [ingredients, setIngredients] = useState([])
     const [searchText, setSearchText] = useState("")
-    const [ingredient, setIngredient] = useState("")
     const [foodItems, setFoodItems] = useState({});
-
+    const [meals, setMeals] = useState([]);
 
     const displayedOptions = useMemo(
         () => Object.keys(foodItems).filter((option) => containsText(option, searchText)),
@@ -78,7 +77,7 @@ export default function Meals(props) {
             method: 'post',
             url: "/createFood",
             headers: {
-                Authorization: "Bearer" + props.state.token
+                Authorization: "Bearer " + props.state.token
             },
             data:{
                 foodName : foodName,
@@ -127,34 +126,25 @@ export default function Meals(props) {
                 console.log(error.response.headers);
               }
             });
-    //     axios({
-    //         method: "POST",
-    //         url: "/weekHistory",
-    //         headers: {
-    //           Authorization: "Bearer " + props.state.token,
-    //         },
-    //         data: {
-    //           todayDate: dayjs().format('MM/DD/YYYY')
-    //         }
-    //       })
-    //         .then((response) => {
-    //           const res = response.data;
-    //           setDietHistory(res.sort((a, b) => b.dayIndex - a.dayIndex));
-    //           let weekHistoryData = res.map((dayObj) => {
-    //             return {
-    //               date: dayObj.date,
-    //               consumedCalories: dayObj.caloriesConsumed,
-    //               burntCalories: dayObj.burntCalories,
-    //             };
-    //           });
-    //         })
-    //         .catch((error) => {
-    //           if (error.response) {
-    //             console.log(error.response);
-    //             console.log(error.response.status);
-    //             console.log(error.response.headers);
-    //           }
-    //         });
+            
+            axios({
+              method: "GET",
+              url: "/myMeals",
+              headers: {
+                Authorization: "Bearer " + props.state.token,
+              },
+            })
+              .then((response) => {
+                const res = response.data;
+                setMeals(res);
+              })
+              .catch((error) => {
+                if (error.response) {
+                  console.log(error.response);
+                  console.log(error.response.status);
+                  console.log(error.response.headers);
+                }
+              });
     }, []);
   return (
     <div>
@@ -325,44 +315,44 @@ export default function Meals(props) {
                 </>
               }
             />
-            {/* <CardContent
+            <CardContent
               sx={{
                 display: "grid",
-                gridTemplateColumns: "repeat(7, 1fr)",
+                gridTemplateColumns: "repeat(6, 1fr)",
                 gap: 2,
                 gridTemplateRows: "auto",
-                gridTemplateAreas: `"day-0 day-1 day-2 day-3 day-4 day-5 day-6"`,
+                gridTemplateAreas: `"meal-0 meal-1 meal-2 meal-3 meal-4 meal-5"`,
               }}
             >
-              {dietHistory.map((day, index) => {
+              {meals.map((meal,index) => {
+                console.log(meal.ingredients)
                 return (
-                  <Card sx={{ gridArea: `day-${day.dayIndex}` }} elevation={5}>
-                    <CardHeader title={day.date} avatar={<TodayIcon />} />
+                  <Card sx={{ gridArea: `meal-${index}` }} elevation={5}>
+                    <CardHeader title={'Custom Meal'} avatar={<LunchDiningIcon />} />
                     <CardContent>
                       <div
                         style={{
-                          color: day.exceededDailyLimit ? "red" : "green",
                           textAlign: "center",
                           fontWeight: "bold",
-                          paddingBottom: "10px",
+                          paddingBottom: "5px",
                         }}
-                      >{`Total Calories : ${day.caloriesConsumed}`}</div>
-                      <div style={{ textAlign: "center", fontWeight: "bold" }}>
-                        Food Consumed
+                      >{meal.meal_name}</div>
+                      <div style={{ textAlign: "center"}}>
+                        Ingredients
                       </div>
                       <div>
                         <List>
-                          {day.foodConsumed.map((itemObj, ind) => {
+                          {meal.ingredients.map((item, index) => {
                             return (
                               <ListItem
-                                key={`item-${ind}`}
+                                key={item}
                                 sx={{
                                   display: "flex",
                                   justifyContent: "space-between",
                                 }}
                               >
-                                <div>{itemObj.item}</div>
-                                <div>{itemObj.calories}</div>
+                                <div>{index+1}</div>
+                                <div>{item}</div>
                               </ListItem>
                             );
                           })}
@@ -370,9 +360,9 @@ export default function Meals(props) {
                       </div>
                     </CardContent>
                   </Card>
-                ); */}
-              {/* })}
-            </CardContent> */}
+                );
+              })}
+            </CardContent>
           </Card>
         </Box>
 
