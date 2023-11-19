@@ -11,7 +11,7 @@ function Copyright() {
         <Typography variant="body2" color="text.secondary">
             {'Copyright © '}
             {new Date().getFullYear()}{' '}
-                Adithya Kiran, Nirmal Sharon Joji, Amrita Visalam, Diksha Maurya
+                Shashank U M, Aditya Iyer, Aditi Killedar, Srinath Srinivasan
             {'.'}
         </Typography>
     );
