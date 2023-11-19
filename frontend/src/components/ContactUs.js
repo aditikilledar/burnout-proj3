@@ -1,31 +1,79 @@
 import React from 'react';
-import { Container, Typography, Link } from '@mui/material';
+import { Container, Typography, Link, TextField, Button } from '@mui/material';
 import Footer from './Footer';
 
 const ContactUs = (props) => {
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const name = formData.get('yname');
+    const message = formData.get('message');
+
+    // Compose the email body
+    const emailBody = `Message: ${message.value}, From: ${name}`;
+
+    // Construct the mailto link
+    const mailtoLink = `mailto:contactus_burnout@​yahoo.com?subject=New Contact Form Submission&body=${encodeURIComponent(emailBody)}`;
+
+    // Open the default email client
+    window.location.href = mailtoLink;
+  };
+
+
   return (
     <div>
       <Container maxWidth="sm" style={{ textAlign: 'center', marginTop: '60px' }}>
         <Typography
-                            component="h1"
-                            variant="h2"
-                            align="center"
-                            color="text.primary"
-                            gutterBottom
-                        >
-                            Contact Us
-                        </Typography>
-        <Typography variant="h5" align="center" color="text.secondary" paragraph>
+          component="h1"
+          variant="h2"
+          align="center"
+          color="text.primary"
+          gutterBottom
+        >
+          Contact Us
+        </Typography>
+        <Typography variant="h5" align="justify" color="text.primary" paragraph>
           Use the email below to contact the BurnOut development team. It's a group mailbox that is accessed by the core team. Feel free to reach out to us for any questions, feedback, or inquiries related to our application.
+          <br></br><br></br>
+          Fill out the form below to send us an email.
         </Typography>
         <Typography variant="h6" style={{ marginTop: '20px' }}>
-          Email: <Link href="mailto:calorie.app.server@gmail.com">contactus_burnout@​yahoo.com</Link>
+          Email: <Link href="contactus_burnout@​yahoo.com">contactus_burnout@​yahoo.com</Link>
         </Typography>
         <Typography variant="h6" color="text.secondary" style={{ marginTop: '20px' }}>
           We will respond to you as soon as we can!
         </Typography>
+        <form style={{ marginTop: '20px' }} onSubmit={handleFormSubmit}>
+          <TextField
+            label="Name"
+            variant="outlined"
+            fullWidth
+            margin="normal"
+            name="yname"
+            required
+          />
+          <TextField
+            label="Message"
+            variant="outlined"
+            multiline
+            rows={4}
+            fullWidth
+            margin="normal"
+            name="message"
+
+          />
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            style={{ marginTop: '20px' }}
+          >
+            Submit
+          </Button>
+        </form>
       </Container>
-      <Footer/>
+      <Footer />
     </div>
   );
 };
