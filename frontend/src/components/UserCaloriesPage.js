@@ -101,25 +101,26 @@ function UserCaloriesPage(props) {
         todayDate: dayjs().format('MM/DD/YYYY')
       }
     })
-    .then((response) => {
-      const res = response.data;
-    
-      console.log("Response Data:", res); // Debugging line
-    
-      let weekData = [];
-      for (let i = -3; i <= 3; i++) {
+      .then((response) => {
+        const res = response.data;
+        setDietHistory(res.sort((a, b) => b.dayIndex - a.dayIndex));
+        let weekData = [];
+        for (let i = -3; i <= 3; i++) {
         const date = dayjs().add(i, 'day').format('YYYY-MM-DD');
         const dataForDay = res.find(d => dayjs(d.date).format('YYYY-MM-DD') === date);
-    
+   
         weekData.push({
           date: date,
           consumedCalories: dataForDay ? dataForDay.caloriesConsumed : 0,
           burntCalories: dataForDay ? dataForDay.burntCalories : 0,
         });
       }
-    
-      setWeekHistory(weekData);
-    })
+        setTodayCaloriesConsumed(res[6]["caloriesConsumed"]);
+        setTodayCaloriesBurned(res[6]["burntCalories"]);
+        setTodayGoal(1000);
+           
+        setWeekHistory(weekData);
+      })
       .catch((error) => {
         if (error.response) {
           console.log(error.response);
@@ -286,7 +287,7 @@ function UserCaloriesPage(props) {
                   fill="#19229e"
                 />
                 <Tooltip />
-                <Legend layout="vertical" verticalAlign="top" align="right" />
+  
               </PieChart>
               </ResponsiveContainer>
             </CardContent>
@@ -437,20 +438,34 @@ function UserCaloriesPage(props) {
               avatar={<TimelineIcon />}
             />
             <CardContent>
-            <LineChart
-      width={800}
-      height={300}
-      data={weekHistory}
-      margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-    >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="date" />
-      <YAxis />
-      <Tooltip />
-      <Legend />
-      <Line type="monotone" dataKey="consumedCalories" stroke="#19229e" />
-      <Line type="monotone" dataKey="burntCalories" stroke="#8b0e0e" activeDot={{ r: 4 }} />
-    </LineChart>
+              <LineChart
+                width={800}
+                height={300}
+                data={weekHistory}
+                margin={{
+                  top: 5,
+                  right: 30,
+                  left: 20,
+                  bottom: 5,
+                }}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="date" />
+                <YAxis />
+                <Tooltip />
+              
+                <Line
+                  type="monotone"
+                  dataKey="consumedCalories"
+                  stroke="#19229e"
+                />
+                <Line
+                  type="monotone"
+                  dataKey="burntCalories"
+                  stroke="#8b0e0e"
+                  activeDot={{ r: 4 }}
+                />
+              </LineChart>
             </CardContent>
           </Card>
           <Card sx={{ gridArea: "burntout" }} elevation={5}>
