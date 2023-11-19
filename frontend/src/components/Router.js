@@ -51,11 +51,11 @@ function Router() {
       <PrivateRoute state={state} dispatch={dispatch} path="/profile">
         <Profile state={state} dispatch={dispatch} />
       </PrivateRoute>
-      <PrivateRoute state={state} dispatch={dispatch} path="/meals">
-        <Meals state={state} dispatch={dispatch} />
-      </PrivateRoute>
       <PrivateRoute state={state} dispatch={dispatch} path="/contactus">
         <ContactUs state={state} dispatch={dispatch} />
+      </PrivateRoute>
+      <PrivateRoute state={state} dispatch={dispatch} path="/meals">
+        <Meals state={state} dispatch={dispatch} />
       </PrivateRoute>
       <PrivateRoute state={state} dispatch={dispatch} path="/events">
         <Events state={state} dispatch={dispatch} />
