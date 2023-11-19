@@ -287,7 +287,7 @@ function UserCaloriesPage(props) {
                   fill="#19229e"
                 />
                 <Tooltip />
-                <Legend layout="vertical" verticalAlign="top" align="right" />
+  
               </PieChart>
               </ResponsiveContainer>
             </CardContent>
@@ -453,7 +453,7 @@ function UserCaloriesPage(props) {
                 <XAxis dataKey="date" />
                 <YAxis />
                 <Tooltip />
-                <Legend />
+              
                 <Line
                   type="monotone"
                   dataKey="consumedCalories"
