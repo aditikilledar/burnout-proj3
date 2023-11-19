@@ -11,7 +11,7 @@ function Copyright() {
         <Typography variant="body2" color="text.secondary">
             {'Copyright © '}
             {new Date().getFullYear()}{' '}
-                Aditya Iyer, Aditi Killedar, Shashank Madan, Srinath Srinivasan
+                Shashank U M, Aditya Iyer, Aditi Killedar, Srinath Srinivasan
             {'.'}
         </Typography>
     );
