@@ -646,24 +646,8 @@ def createFood():
         statusCode = 500
     return jsonify(response),statusCode
 
-@api.route('/addMealToUser', methods=["POST"])
-@jwt_required()
-def addMealToUser():
-    current_user = get_jwt_identity()
-    data = request.get_json() # get data from POST request
-    mealName = data['mealName']
-    ingredients = data['ingredients']
-    try:
-        mongo.user.insert_one({
-            "email": current_user,
-            "meal_name": mealName,
-            "ingredients": ingredients
-        })
-    except Exception as e:
-        response = {"status": "Error", "message": str(e)}
-        statusCode = 500
-
 @api.route('/createMeal', methods=["POST"])
+@jwt_required()
 def createMeal():
     """
     Create a custom meal
@@ -705,6 +689,7 @@ def createMeal():
 
     """
     data = request.get_json() # get data from POST request
+    current_user = get_jwt_identity()
     mealName = data['mealName']
     ingredients = data['ingredients']
     calories = 0
@@ -714,6 +699,11 @@ def createMeal():
     try:
         # Insert data into MongoDB
         mongo.food.insert_one({'food': mealName, "calories": calories})
+        mongo.user.insert_one({
+            "email": current_user,
+            "meal_name": mealName,
+            "ingredients": ingredients
+        })
         response = {"status": "Data saved successfully"}
         statusCode = 200
     except Exception as e:

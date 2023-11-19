@@ -53,7 +53,7 @@ export default function Meals(props) {
             method: 'post',
             url: "/createMeal",
             headers: {
-                Authorization: "Bearer" + props.state.token
+                Authorization: "Bearer " + props.state.token
             },
             data:{
                 mealName : mealName,
@@ -71,28 +71,6 @@ export default function Meals(props) {
               console.log(error.response.headers);
             }
           });
-        //   axios({
-        //     method: 'post',
-        //     url: "/addMealToUser",
-        //     headers: {
-        //         Authorization: "Bearer" + props.state.token
-        //     },
-        //     data:{
-        //         mealName : mealName,
-        //         ingredients : ingredients
-        //     }
-        // })
-        // .then((response) => {
-        //     const res = response.data;
-        //     console.log(res)
-        //   })
-        //   .catch((error) => {
-        //     if (error.response) {
-        //       console.log(error.response);
-        //       console.log(error.response.status);
-        //       console.log(error.response.headers);
-        //     }
-        //   });
     }
 
     const handleCreateCustomFood = (event) => {
