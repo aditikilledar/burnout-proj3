@@ -11,11 +11,16 @@ import {
   TextField,
   Avatar,
   IconButton,
+  MenuItem,
+  FormControl,
+  InputLabel,
+  Select,
 } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Box from "@mui/material/Box";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
+import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 
 const weightCardStyles = {
   weightContainer: {
@@ -32,17 +37,18 @@ const weightCardStyles = {
 function Profile(props) {
   const [targetWeight, settargetWeight] = useState("");
   const [currentTargetCalories, setTargetCalories] = useState("");
-  const [currentGoal, setCurrentGoal] = useState("");
+  const [activityLevel, setActivityLevel] = useState("");
   const [editableWeight, setEditableTargetWeight] = useState(targetWeight);
   const [editableTargetCalories, setEditableTargetCalories] = useState(currentTargetCalories);
-  const [editableGoal, setEditableGoal] = useState(currentGoal);
+  const [editableActivityLevel, setEditableActivityLevel] = useState(activityLevel);
+
 
   const handleSaveInput = (e) => {
-    console.log(editableWeight, editableTargetCalories, editableGoal)
+    console.log(editableWeight, editableTargetCalories, editableActivityLevel)
     settargetWeight(editableWeight);
     setTargetCalories(editableTargetCalories);
-    setCurrentGoal(editableGoal);
-    console.log(targetWeight,currentTargetCalories, currentGoal)
+    setActivityLevel(editableActivityLevel);
+    console.log(targetWeight,currentTargetCalories, activityLevel)
     axios({
       method: "POST",
       url: "/goalsUpdate",
@@ -52,12 +58,13 @@ function Profile(props) {
       data: {
         targetWeight: editableWeight,
         targetCalories: editableTargetCalories,
-        targetGoal: editableGoal,
+        activityLevel: editableActivityLevel,
       },
     })
       .then((response) => {
         const res = response.data;
         console.log(res)
+        window.location.reload(false)
       })
       .catch((error) => {
         if (error.response) {
@@ -74,6 +81,7 @@ function Profile(props) {
   const initialWeight = "";
   const initialHeight = "";
   const initialBMI = 0;
+  const initialsex = "";
 
   const [firstName, setFirstName] = useState(initialFirstName);
   const [lastName, setLastName] = useState(initialLastName);
@@ -81,7 +89,9 @@ function Profile(props) {
   const [weight, setWeight] = useState(initialWeight);
   const [height, setHeight] = useState(initialHeight);
   const [BMI, setBMI] = useState(initialBMI);
-
+  const [sex, setSex] = useState(initialsex)
+  const activityOptions = {Minimal:"Sedentary(Office Job)",Light: "Light exercise (1-2 days/week)",Moderate: "Moderate exercise (3-5 days/week)",Heavy: "Heavy exercise (6-7 days/week)",Athlete: "Athlete (2x per day)"}
+  const sexes = ["Male", "Female"]
   useEffect(() => {
     // Make API call to backend to get food items and their calories from DB.
     axios({
@@ -99,10 +109,11 @@ function Profile(props) {
         setAge(res.age)
         setWeight(res.weight)
         setHeight(res.height)
-        setCurrentGoal(res.target_goal)
+        setSex(res.sex)
+        setActivityLevel(res.activity_level)
         setTargetCalories(res.target_calories)
         settargetWeight(res.target_weight)
-        setEditableGoal(res.target_goal)
+        setEditableActivityLevel(res.activity_level)
         setEditableTargetCalories(res.target_calories)
         setEditableTargetWeight(res.target_weight)
         setBMI(res.bmi)
@@ -129,12 +140,15 @@ function Profile(props) {
           lastName: lastName,
           age: age,
           height: height,
-          weight: weight
+          weight: weight,
+          sex: sex,
+          activityLevel: activityLevel
         },
       })
         .then((response) => {
           const res = response.data;
           console.log(res)
+          window.location.reload(false)
         })
         .catch((error) => {
           if (error.response) {
@@ -151,10 +165,10 @@ function Profile(props) {
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
+            gridTemplateColumns: "repeat(5, 1fr)",
             gap: 2,
             gridTemplateRows: "auto",
-            gridTemplateAreas: `"profile  input input input bmi"
+            gridTemplateAreas: `"profile  goals goals goals bmi"
                                 "profile  . . . ."`,
             paddingTop: "2rem",
           }}
@@ -224,12 +238,30 @@ function Profile(props) {
                   fullWidth
                 />
               </Box>
+              <Box mb={2}>
+              <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">Sex</InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={sex}
+                      label="Sex"
+                      onChange={(e) => setSex(e.target.value)}
+                    >
+                      {sexes.map((item) => (
+						<MenuItem key={item} value={item}>
+						{item}
+						</MenuItem>
+						))}
+                    </Select>
+                  </FormControl>
+              </Box>
               <Button variant="contained" color="primary" onClick={handleProfileSubmit}>
                 Update  
               </Button>
             </CardContent>
           </Card>
-          <Card sx={{ gridArea: "input" }} elevation={5}>
+          <Card sx={{ gridArea: "goals" }} elevation={5}>
             <CardHeader
             title={"Your Goals"}
             subheader={"Update your goals here"}
@@ -240,7 +272,7 @@ function Profile(props) {
                 gridTemplateColumns: "repeat(3, 1fr)",
                 gap: 2,
                 gridTemplateRows: "auto",
-                gridTemplateAreas: `"targetWeight targetCalories targetGoal"
+                gridTemplateAreas: `"targetWeight activityLevel targetCalories"
                                     ". saveButton ."`,
                 paddingTop: "2rem",
               }}
@@ -271,6 +303,40 @@ function Profile(props) {
                   />
                 </Card>
                 <Card
+                  sx={{ gridArea: "activityLevel" }}
+                  elevation={2}
+                >
+                  <CardContent>
+                    <div style={weightCardStyles.weightContainer}>
+                      <IconButton
+                        color="primary"
+                        aria-label="running icon"
+                      >
+                        <DirectionsRunIcon fontSize="large" />
+                      </IconButton>
+                      <Typography style={weightCardStyles.weightText}>
+                        {activityLevel}
+                      </Typography>
+                    </div>
+                  </CardContent>
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">Activity Level</InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={editableActivityLevel}
+                      label="Activity Level"
+                      onChange={(e) => setEditableActivityLevel(e.target.value)}
+                    >
+                      {Object.keys(activityOptions).map((item) => (
+						<MenuItem key={activityOptions[item]} value={item}>
+						{activityOptions[item]}
+						</MenuItem>
+						))}
+                    </Select>
+                  </FormControl>
+                </Card>
+                <Card
                   sx={{ gridArea: "targetCalories" }}
                   elevation={2}
                 >
@@ -278,7 +344,7 @@ function Profile(props) {
                     <div style={weightCardStyles.weightContainer}>
                       <IconButton
                         color="primary"
-                        aria-label="weighing scale icon"
+                        aria-label="calories icon"
                       >
                         <WhatshotIcon fontSize="large" />
                       </IconButton>
@@ -287,38 +353,14 @@ function Profile(props) {
                       </Typography>
                     </div>
                   </CardContent>
-                  <TextField
-                    label="Daily Calories Burn Goal"
-                    variant="outlined"
-                    fullWidth
-                    value={editableTargetCalories}
-                    onChange={(e) => setEditableTargetCalories(e.target.value)}
-                  />
-                </Card>
-                <Card
-                  sx={{ gridArea: "targetGoal" }}
-                  elevation={2}
-                >
-                  <CardContent>
-                    <div style={weightCardStyles.weightContainer}>
-                      <IconButton
-                        color="primary"
-                        aria-label="weighing scale icon"
-                      >
-                        <FitnessCenterIcon fontSize="large" />
-                      </IconButton>
-                      <Typography style={weightCardStyles.weightText}>
-                        {currentGoal}
-                      </Typography>
-                    </div>
-                  </CardContent>
-                  <TextField
-                    label="Goal"
-                    variant="outlined"
-                    fullWidth
-                    value={editableGoal}
-                    onChange={(e) => setEditableGoal(e.target.value)}
-                  />
+                  <div>
+                    <Typography align="center">
+                      TDEE 
+                    </Typography>
+                    <Typography align="center">
+                    calculated based on your personal information
+                    </Typography>
+                  </div>
                 </Card>
               <Button
                 sx={{ gridArea: "saveButton" }}
@@ -329,7 +371,7 @@ function Profile(props) {
               >
                 Update
               </Button>
-            </CardContent>
+              </CardContent>
           </Card>
           <Card sx={{ gridArea: "bmi" }} elevation={5} alignItems = "center">
             <CardHeader

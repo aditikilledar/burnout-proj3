@@ -45,7 +45,6 @@ import {
 import axios from "axios";
 import Footer from "./Footer";
 
-
 const containsText = (text, searchText) =>
   text.toLowerCase().indexOf(searchText.toLowerCase()) > -1;
 function getRandomInt(min, max) {

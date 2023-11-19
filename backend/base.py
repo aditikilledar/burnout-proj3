@@ -425,6 +425,9 @@ def profileUpdate(): # pragma: no cover
             height:
               type: number
               description: The user's height.
+            sex:
+              type: string
+              description: The user's sex.
     responses:
       200:
         description: User profile updated successfully.
@@ -445,15 +448,20 @@ def profileUpdate(): # pragma: no cover
     age = request.json.get('age', None)
     weight = request.json.get('weight', None)
     height = request.json.get('height', None)
+    sex = request.json.get('sex', None)
+    activityLevel = request.json.get('activityLevel', None)
     bmi = (0.453*float(weight))/((0.3048*float(height))**2)
     bmi = round(bmi,2)
+    tdee = calculate_tdee(height, weight, age, sex, activityLevel)
     new_document = {
     "first_name": first_name,
     "last_name": last_name,
     "age": age,
     "weight": weight,
     "height": height,
+    "sex": sex,
     "bmi": bmi,
+    "target_calories": tdee,
     }
     query = {
         "email": current_user,
@@ -492,9 +500,9 @@ def goalsUpdate(): # pragma: no cover
             targetCalories:
               type: number
               description: The user's target daily calorie intake goal.
-            targetGoal:
+            activityLevel:
               type: string
-              description: The user's fitness goal.
+              description: The user's activity level.
     responses:
       200:
         description: User goals updated successfully.
@@ -510,20 +518,21 @@ def goalsUpdate(): # pragma: no cover
         description: An error occurred while updating the user's goals.
     """
     current_user = get_jwt_identity()
-    current_user = get_jwt_identity()
     targetWeight = request.json.get('targetWeight', None)
-    targetCalories = request.json.get('targetCalories', None)
-    targetGoal = request.json.get('targetGoal', None)
+    activityLevel = request.json.get('activityLevel', None)
 
     new_document = {
         "target_weight": targetWeight,
-        "target_calories": targetCalories,
-        "target_goal": targetGoal
+        "activity_level": activityLevel
     }
     query = {
         "email": current_user,
     }
     try:
+        profile = mongo.user.find_one(query)
+        tdee = calculate_tdee(profile["height"], profile["weight"], profile["age"], profile["sex"], activityLevel)
+        if tdee:  
+          new_document["target_calories"] = tdee
         mongo.user.update_one(query, {"$set": new_document}, upsert=True)
         response = jsonify({"msg": "update successful"})
     except Exception as e:
@@ -857,3 +866,19 @@ def getUserRegisteredEvents():
         response = {"status": "Error", "message": str(e)}
         statusCode = 500
     return jsonify(response),statusCode
+
+def calculate_tdee(height,weight,age,sex,activityLevel):
+    if height and weight and age and sex and activityLevel:
+        pass
+    else:
+        return None
+    kg_weight = float(weight)*0.45359237
+    cm_height = float(height)*30.48
+    common_calc_for_male_female = (10*kg_weight) + (6.25*cm_height) - (5*int(age))
+    if sex == "Male":
+        bmr = common_calc_for_male_female + 5
+    else:
+        bmr = common_calc_for_male_female - 161
+    personal_activity_levels = {'Minimal': 1.2,'Light': 1.375, 'Moderate': 1.55, 'Heavy':1.725, 'Athlete': 1.9}
+    tdee = int((bmr * personal_activity_levels[activityLevel]))
+    return tdee
