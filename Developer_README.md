@@ -60,14 +60,10 @@
 
 <img src ="https://github.com/adi-kiran/burnout-healthgoalsapp/assets/27075012/39e731f7-2f06-4f8a-b9a3-5f86836e1ad9" width='800'>
 
-# Table of Contents  
+# Developer Documentation
 
-- [Why Choose Burnout?](#-why-choose-burnout)
-- [Walkthrough](#walkthrough)
-- [Application Screenshots:](#application-screenshots)
-  - [Homepage](#homepage)
-  - [Profile](#profile)
-  - [Events](#events)
+## Table of Contents  
+
 - [Project Techstack:](#project-techstack)
 - <a href="https://github.com/aditikilledar/burnout-proj3/blob/main/README.md#getting-started"> Get Started: Installation </a>
 - [Technical Overview:](#technical-overview)
@@ -77,68 +73,10 @@
 - [Contribution](#contribution)
 - [License](#license)
 
-
-## **🔥 Burnout: Elevate Your Health & Fitness Game! 🔥**
- 
-Are you determined to achieve your dream physique? Desiring to take charge of your health? Looking for a platform that offers everything from calorie counting to enrolling in exciting fitness events? Welcome to **Burnout** – the only health and fitness companion you'll ever need.
- 
-- **🍎 Nutrition Made Simple:**
-Navigating the complex world of nutrition can be daunting. With Burnout, you can effortlessly track what you eat and gain insights into your calorie consumption. Whether you're having a quick salad or indulging in a cheat meal, every bite counts. And we're here to count it for you!
- 
-- **🔥 Ignite Your Calorie Burn:**
-Exercise isn't just about looking good; it's about feeling good too. Track every step taken, every calorie burned, and every drop of sweat shed. Watch yourself progress as Burnout pushes you to achieve your health goals.
- 
-- **🏊 Dive into Exciting Fitness Events:**
-Bored of your routine workout? Dive into an array of fitness events – from calming yoga sessions to adrenaline-pumping gym workouts. Whether you're into swimming, walking, or exploring new activities, there's something for everyone. Get social, challenge yourself, and discover activities you love.
- 
-- **📊 Tailored To You:**
-Everyone's health journey is unique. Input your age, current weight, height, target weight, and goals, and let Burnout craft a personalized plan for you. Watch in real-time as you inch closer to your goals and celebrate each milestone with us.
-  
-So, are you ready to take the leap towards a healthier, happier you? Dive into **Burnout** now and elevate your fitness game!
- 
-🔥 *Because it's not just about burning calories; it's about burning doubts, burning procrastination, and lighting up confidence!* 🔥
-
-
-# **💡 Why Choose Burnout?**
- 
-- **Comprehensive Tracking:** From what you eat to how much you burn, monitor everything in one place.
-  
-- **Diverse Fitness Events:** Never fall into the monotony of routine. Stay excited about fitness with new events to join regularly. 
-  
-- **Personalized Insights:** Understand your body and habits better with data-driven feedback.
-  
-- **Community Support:** Engage with a like-minded community, exchange tips, and stay motivated.
-  
-- **Security:** Your data is precious, and we guard it like our own. Rest assured, your information stays private and secure.
- 
-In today's fast-paced world, maintaining health is a challenge. But with the right tools and community, this challenge becomes an enjoyable journey. And Burnout is here to make sure of that.
-
-![ezgif com-video-to-gif (1)](https://github.com/adi-kiran/burnout-healthgoalsapp/assets/19224584/c6802e8e-5ff7-4ac5-ba11-560b2e84cb50) 
-
-# Walkthrough
-
-Link to the implementation video of the BurnOut application: [Video](https://www.youtube.com/watch?v=Ozbn9nNFr1Y)
-
-
-# Application Screenshots
- 
- ## Homepage
- 
-<img width='600' src="https://github.com/adi-kiran/burnout-healthgoalsapp/assets/27075012/17d18cd7-ec23-40f2-b2ab-9f924c5fb6bf">
-
- ## Profile
- 
-<img width='600' src="https://github.com/adi-kiran/burnout-healthgoalsapp/assets/27075012/b782dda4-cdd9-4cc5-9896-40e85416b3eb">
-
- ## Events
-
-<img width='600' src="https://github.com/adi-kiran/burnout-healthgoalsapp/assets/27075012/a6d56638-9138-4448-a17a-cf28be3441ae">
-
-### :memo: **Note:** Additional screenshots and a mini tutorials can be found here:[Tutorials.md](https://github.com/adi-kiran/burnout-healthgoalsapp/blob/main/Tutorials.md)
-
 # Project TechStack
 
  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="html" width="20" height="20"> React </br>
+  -> <a href="https://mui.com/material-ui/">Material UI</a>
  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" alt="mongo" width="20" height="20"/> MongoDB </br>
  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="python" width="20" height="20"/> Python </br>
 
@@ -172,9 +110,7 @@ Before you begin, make sure you have the following installed:
 
 Step 2:
    Ensure mongodb is running and execute the below to populate the tables:
-   Navigate to the backend folder.
-
-    cd backend
+   Navigate to the backend folder using "cd backend".
 
   Once in the backend, run:
   
@@ -254,10 +190,10 @@ We fixed many bugs, but here are the most notable ones...
 <center>
   <table>
     <tr>
-        <td align="center"><a href="https://github.com/aiyer786"><img src="https://avatars.githubusercontent.com/u/60314222?s=400&u=0984f88aeb3a9c30f4ec8145176134e626843fd5&v=4" width="100px;" alt=""/><br /><sub><b>Aditya Iyer</b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/aditikilledar"><img src="https://avatars.githubusercontent.com/u/73051765?v=4" width="100px;" alt=""/><br /><sub><b>Aditi Killedar</b></sub></a></td>
-    <td align="center"><a href="https://github.com/shashank-madan"><img src="https://avatars.githubusercontent.com/u/52149707?s=80&v=4" width="100px;" alt=""/><br /><sub><b>Shashank Madan</b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/srina1h"><img src="https://avatars.githubusercontent.com/u/47570142?v=4" width="100px;" alt=""/><br /><sub><b>Srinath Srinivasan</b></sub></a><br /></td>
+        <td align="center"><a href="https://github.com/sharonjoji99"><img src="https://avatars.githubusercontent.com/u/40449660?v=4" width="100px;" alt=""/><br /><sub><b>Nimal Sharon Joji</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/adi-kiran"><img src="https://avatars.githubusercontent.com/u/36990588?v=4" width="100px;" alt=""/><br /><sub><b>Aditya Kiran</b></sub></a></td>
+    <td align="center"><a href="https://github.com/amritav"><img src="https://avatars.githubusercontent.com/u/19224584?v=4" width="100px;" alt=""/><br /><sub><b>Amrita Visalam</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/Diksha-Maurya"><img src="https://avatars.githubusercontent.com/u/27075012?v=4" width="100px;" alt=""/><br /><sub><b>Diksha Maurya</b></sub></a><br /></td>
     </tr>
   </table>
 </center>
