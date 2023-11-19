@@ -72,7 +72,7 @@
 - <a href="https://github.com/aditikilledar/burnout-proj3/blob/main/README.md#getting-started"> Get Started: Installation </a>
 - [Technical Overview:](#technical-overview)
 - [Third-Party Dependencies](#third-party-dependencies)
-- [Roadmap](#roadmap)
+- [What's new?](#whats-new)
 - [Contributors](#contributors)
 - [Contribution](#contribution)
 - [License](#license)
@@ -220,8 +220,10 @@ Step 2:
 | coverage      | 7.2.7      |   Apache Software License (Apache-2.0) |
 
   
-# What's new this version?
-#TODO
+# What's new?
+
+This version enhanced and built on the previous version, making it 10x more interesting and easier to use!
+Here's what we added in this release.
 
 1. Ability to add custom foods and track their calories.
 2. Fully customizable meal creation.
