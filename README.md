@@ -90,6 +90,7 @@ So, are you ready to take the leap towards a healthier, happier you? Dive into *
   - [Profile](#profile)
   - [Events](#events)
 - [Project Techstack:](#project-techstack)
+- <a href="https://github.com/aditikilledar/burnout-proj3/blob/main/README.md#getting-started"> Installation </a>
 - [Technical Overview:](#technical-overview)
 - [Third-Party Dependencies](#third-party-dependencies)
 - [Roadmap](#roadmap)
@@ -171,14 +172,16 @@ Before you begin, make sure you have the following installed:
 
 Step 2:
    Ensure mongodb is running and execute the below to populate the tables:
-    
+   Navigate to the backend folder using "cd backend".
+
+  Once in the backend, run:
+  
     python insert_event_data.py
     python insert_food_data.py
 
  Step 3:
-   Navigate to the backend folder and run the following command to start the server:
+   Remain in the backend folder and run the following command to start the server:
     
-    cd backend
     pip install -r requirements.txt
     flask run
 
