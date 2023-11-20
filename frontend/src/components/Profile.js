@@ -45,6 +45,8 @@ function Profile(props) {
   const [editableTargetCalories, setEditableTargetCalories] = useState(currentTargetCalories);
   const [editableActivityLevel, setEditableActivityLevel] = useState(activityLevel);
   const [units, setUnit] = useState("imperial");
+  const [weightUnit, setWUnit] = useState("lbs");
+  const [heightUnit, setHUnit] = useState("ft");
 
 
   const handleSaveInput = (e) => {
@@ -85,10 +87,14 @@ function Profile(props) {
       setEditableTargetWeight((parseFloat(targetWeight) * 2.20462).toFixed(2));
       setWeight((parseFloat(weight) * 2.20462).toFixed(2));
       setHeight((parseFloat(height) / 30.4).toFixed(2));
+      setWUnit("lbs");
+      setHUnit("ft");
     } else {
       setEditableTargetWeight((parseFloat(targetWeight) / 2.20462).toFixed(2));
       setWeight((parseFloat(weight) / 2.20462).toFixed(2));
       setHeight((parseFloat(height) * 30.4).toFixed(2));
+      setWUnit("kg");
+      setHUnit("cm");
     }
   }
 
@@ -253,7 +259,7 @@ function Profile(props) {
               </Box>
               <Box mb={2}>
                 <TextField
-                  label="Weight (lbs)"
+                  label={"Weight ("+weightUnit+")"}
                   value={weight}
                   onChange={(e) => setWeight(e.target.value)}
                   fullWidth
@@ -261,7 +267,7 @@ function Profile(props) {
               </Box>
               <Box mb={2}>
                 <TextField
-                  label="Height (ft)"
+                  label={"Height ("+heightUnit+")"}
                   value={height}
                   onChange={(e) => setHeight(e.target.value)}
                   fullWidth
