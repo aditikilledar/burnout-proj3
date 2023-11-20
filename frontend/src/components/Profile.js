@@ -21,6 +21,9 @@ import Box from "@mui/material/Box";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+
 
 const weightCardStyles = {
   weightContainer: {
@@ -41,6 +44,9 @@ function Profile(props) {
   const [editableWeight, setEditableTargetWeight] = useState(targetWeight);
   const [editableTargetCalories, setEditableTargetCalories] = useState(currentTargetCalories);
   const [editableActivityLevel, setEditableActivityLevel] = useState(activityLevel);
+  const [units, setUnit] = useState("imperial");
+  const [weightUnit, setWUnit] = useState("lbs");
+  const [heightUnit, setHUnit] = useState("ft");
 
 
   const handleSaveInput = (e) => {
@@ -73,6 +79,23 @@ function Profile(props) {
           console.log(error.response.headers);
         }
       });
+  }
+
+  const handleUnitChange = (event) => {
+    setUnit(event.target.value);
+    if (event.target.value === "imperial") {
+      setEditableTargetWeight((parseFloat(targetWeight) * 2.20462).toFixed(2));
+      setWeight((parseFloat(weight) * 2.20462).toFixed(2));
+      setHeight((parseFloat(height) / 30.4).toFixed(2));
+      setWUnit("lbs");
+      setHUnit("ft");
+    } else {
+      setEditableTargetWeight((parseFloat(targetWeight) / 2.20462).toFixed(2));
+      setWeight((parseFloat(weight) / 2.20462).toFixed(2));
+      setHeight((parseFloat(height) * 30.4).toFixed(2));
+      setWUnit("kg");
+      setHUnit("cm");
+    }
   }
 
   const initialFirstName = "";
@@ -223,8 +246,20 @@ function Profile(props) {
                 />
               </Box>
               <Box mb={2}>
+                <ToggleButtonGroup
+                  color="primary"
+                  value={units}
+                  exclusive
+                  onChange={handleUnitChange}
+                  aria-label="Platform"
+                >
+                  <ToggleButton value="imperial">Imperial</ToggleButton>
+                  <ToggleButton value="metric">Metric</ToggleButton>
+                </ToggleButtonGroup>
+              </Box>
+              <Box mb={2}>
                 <TextField
-                  label="Weight (lbs)"
+                  label={"Weight ("+weightUnit+")"}
                   value={weight}
                   onChange={(e) => setWeight(e.target.value)}
                   fullWidth
@@ -232,7 +267,7 @@ function Profile(props) {
               </Box>
               <Box mb={2}>
                 <TextField
-                  label="Height (ft)"
+                  label={"Height ("+heightUnit+")"}
                   value={height}
                   onChange={(e) => setHeight(e.target.value)}
                   fullWidth
