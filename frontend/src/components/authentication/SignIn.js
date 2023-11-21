@@ -17,9 +17,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import useToken from "./useToken";
 import { useHistory } from "react-router-dom";
 import { updateState } from "../../burnoutReducer";
-import Icon from "@material-ui/core/Icon";
-import { GoogleLogin } from '@react-oauth/google';
-import { googleLogout, useGoogleLogin } from '@react-oauth/google';
+import { useGoogleLogin } from '@react-oauth/google';
 
 function SignIn(props) {
   const history = useHistory();

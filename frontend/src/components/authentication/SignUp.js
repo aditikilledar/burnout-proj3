@@ -13,6 +13,8 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const defaultTheme = createTheme();
 
@@ -36,39 +38,85 @@ export default function SignUp() {
       lastName: data.get('lastName')
     });
 
+  const userExistsNotify = () => {
+    toast.error('User already exists! Please sign in using your existing credentials.', {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
+  }
+
+  const userSuccessNotify = () => {
+    toast.success('Successfully registered and user created, sign in now.', {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
+  }
+
     axios({
       method: "POST",
-      url:"/register",
-      data:{
+      url: "/register",
+      data: {
         email: signUpForm.email,
         password: signUpForm.password,
         firstName: signUpForm.firstName,
-        lastName: signUpForm.lastName      }
-    })
-    .then((response) => {
-      console.log(response)
-      if (response.status === 200 & response.data.msg === "register successful") {
-        console.log("User created")
-        history.push ("/");
+        lastName: signUpForm.lastName
       }
-    }).catch((error) => {
-      if (error.response) {
-        console.log(error.response)
-        console.log(error.response.status)
-        console.log(error.response.headers)
-        }
     })
+      .then((response) => {
+        console.log(response)
+        if (response.status === 200 & response.data.msg === "register successful") {
+          console.log("User created")
+          history.push("/");
+          userSuccessNotify();
+        }
+        else if (response.data.msg === "User already exists") {
+          console.log("User already exists");
+          userExistsNotify();
+        }
+      }).catch((error) => {
+        if (error.response) {
+          console.log(error.response)
+          console.log(error.response.status)
+          console.log(error.response.headers)
+        }
+      })
 
   };
 
-  function handleChange(event) { 
-    const {value, name} = event.target
+  function handleChange(event) {
+    const { value, name } = event.target
     setSignUpForm(prevNote => ({
-        ...prevNote, [name]: value})
-    )}
+      ...prevNote, [name]: value
+    })
+    )
+  }
 
   return (
     <ThemeProvider theme={defaultTheme}>
+      <ToastContainer
+      position="top-center"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="colored"
+      />
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
