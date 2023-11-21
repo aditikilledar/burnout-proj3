@@ -102,6 +102,8 @@ function SignIn(props) {
 							url: "/google-login",
 							data: {
 							  email: profile.email,
+                first_name: profile.given_name,
+                last_name: profile.family_name
 							},
 						  })
 							.then((response) => {
@@ -125,7 +127,7 @@ function SignIn(props) {
                     .catch((err) => console.log(err));
             }
         },
-        [ user ]
+        [ user, profile ]
     );
 	
   return (
