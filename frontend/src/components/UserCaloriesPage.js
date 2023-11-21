@@ -117,7 +117,6 @@ function UserCaloriesPage(props) {
       }
         setTodayCaloriesConsumed(res[6]["caloriesConsumed"]);
         setTodayCaloriesBurned(res[6]["burntCalories"]);
-        setTodayGoal(1000);
            
         setWeekHistory(weekData);
       })
@@ -128,6 +127,25 @@ function UserCaloriesPage(props) {
           console.log(error.response.headers);
         }
       });
+
+      axios({
+        method: "GET",
+        url: "/profile",
+        headers: {
+          Authorization: "Bearer " + props.state.token,
+        },
+      })
+        .then((response) => {
+          const res = JSON.parse(response['data']);
+          setTodayGoal(res.target_calories)
+        })
+        .catch((error) => {
+          if (error.response) {
+            console.log(error.response);
+            console.log(error.response.status);
+            console.log(error.response.headers);
+          }
+        });
 
     // Make API call to backend to get events user registered for from DB.
     axios({
