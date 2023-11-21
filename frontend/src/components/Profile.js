@@ -55,6 +55,11 @@ function Profile(props) {
     setTargetCalories(editableTargetCalories);
     setActivityLevel(editableActivityLevel);
     console.log(targetWeight,currentTargetCalories, activityLevel)
+    if (units === "metric") {
+      postWeight = (parseFloat(editableWeight) * 2.20462).toFixed(2);
+    } else {
+      postWeight = editableWeight;
+    }
     axios({
       method: "POST",
       url: "/goalsUpdate",
@@ -62,7 +67,7 @@ function Profile(props) {
         Authorization: "Bearer " + props.state.token,
       },
       data: {
-        targetWeight: editableWeight,
+        targetWeight: postWeight,
         targetCalories: editableTargetCalories,
         activityLevel: editableActivityLevel,
       },
@@ -105,6 +110,8 @@ function Profile(props) {
   const initialHeight = "";
   const initialBMI = 0;
   const initialsex = "";
+  const postHeight = 0;
+  const postWeight = 0;
 
   const [firstName, setFirstName] = useState(initialFirstName);
   const [lastName, setLastName] = useState(initialLastName);
@@ -152,6 +159,13 @@ function Profile(props) {
 
     const handleProfileSubmit = (e) => {
       console.log('height=' + height + 'weight:'+ weight)
+      if(units === "metric") {
+        postWeight = (parseFloat(weight) * 2.20462).toFixed(2)
+        postHeight = (parseFloat(height) / 30.4).toFixed(2)
+      } else {
+        postWeight = weight
+        postHeight = height
+      }
       axios({
         method: "POST",
         url: "/profileUpdate",
@@ -162,8 +176,8 @@ function Profile(props) {
           firstName: firstName,
           lastName: lastName,
           age: age,
-          height: height,
-          weight: weight,
+          height: postHeight,
+          weight: postWeight,
           sex: sex,
           activityLevel: activityLevel
         },
