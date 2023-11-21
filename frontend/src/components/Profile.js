@@ -47,7 +47,7 @@ function Profile(props) {
   const [units, setUnit] = useState("imperial");
   const [weightUnit, setWUnit] = useState("lbs");
   const [heightUnit, setHUnit] = useState("ft");
-
+  const [prevSelectionUnit, setPrevUnit] = useState("imperial");
 
   const handleSaveInput = (e) => {
     console.log(editableWeight, editableTargetCalories, editableActivityLevel)
@@ -88,14 +88,16 @@ function Profile(props) {
 
   const handleUnitChange = (event) => {
     setUnit(event.target.value);
-    if (event.target.value === "imperial") {
-      setEditableTargetWeight((parseFloat(targetWeight) * 2.20462).toFixed(2));
+    if (event.target.value === "imperial" && event.target.value != prevSelectionUnit) {
+      setPrevUnit("imperial");
+      setEditableTargetWeight((parseFloat(editableWeight) * 2.20462).toFixed(2));
       setWeight((parseFloat(weight) * 2.20462).toFixed(2));
       setHeight((parseFloat(height) / 30.4).toFixed(2));
       setWUnit("lbs");
       setHUnit("ft");
-    } else {
-      setEditableTargetWeight((parseFloat(targetWeight) / 2.20462).toFixed(2));
+    } else if(event.target.value === "metric" && event.target.value != prevSelectionUnit){
+      setPrevUnit("metric");
+      setEditableTargetWeight((parseFloat(editableWeight) / 2.20462).toFixed(2));
       setWeight((parseFloat(weight) / 2.20462).toFixed(2));
       setHeight((parseFloat(height) * 30.4).toFixed(2));
       setWUnit("kg");
@@ -110,8 +112,8 @@ function Profile(props) {
   const initialHeight = "";
   const initialBMI = 0;
   const initialsex = "";
-  const postHeight = 0;
-  const postWeight = 0;
+  var postHeight = 0;
+  var postWeight = 0;
 
   const [firstName, setFirstName] = useState(initialFirstName);
   const [lastName, setLastName] = useState(initialLastName);
@@ -344,7 +346,7 @@ function Profile(props) {
                     </div>
                   </CardContent>
                   <TextField
-                    label="Target Weight"
+                    label={"Target weight ("+weightUnit+")"}
                     variant="outlined"
                     fullWidth
                     value={editableWeight}
