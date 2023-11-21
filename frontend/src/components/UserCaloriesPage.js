@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo} from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import {
   Button,
   Card,
@@ -66,9 +66,9 @@ function UserCaloriesPage(props) {
   const toggleTodayUpdate = () => {
     setReloadTodayData(!reloadTodayData);
   }
-  const randomExercise = getRandomInt(0,7)
-  const exerciseList = ["Bent tricep extension", "Front Raises", "Sumo bicep raises", 
-  "Kick backs", "Weighted punches", "Leg kicks", "Jump claps"]
+  const randomExercise = getRandomInt(0, 7)
+  const exerciseList = ["Bent tricep extension", "Front Raises", "Sumo bicep raises",
+    "Kick backs", "Weighted punches", "Leg kicks", "Jump claps"]
   useEffect(() => {
     // Make API call to backend to get food items and their calories from DB.
     axios({
@@ -106,19 +106,19 @@ function UserCaloriesPage(props) {
         setDietHistory(res.sort((a, b) => b.dayIndex - a.dayIndex));
         let weekData = [];
         for (let i = -3; i <= 3; i++) {
-        const date = dayjs().add(i, 'day').format('YYYY-MM-DD');
-        const dataForDay = res.find(d => dayjs(d.date).format('YYYY-MM-DD') === date);
-   
-        weekData.push({
-          date: date,
-          consumedCalories: dataForDay ? dataForDay.caloriesConsumed : 0,
-          burntCalories: dataForDay ? dataForDay.burntCalories : 0,
-        });
-      }
+          const date = dayjs().add(i, 'day').format('YYYY-MM-DD');
+          const dataForDay = res.find(d => dayjs(d.date).format('YYYY-MM-DD') === date);
+
+          weekData.push({
+            date: date,
+            consumedCalories: dataForDay ? dataForDay.caloriesConsumed : 0,
+            burntCalories: dataForDay ? dataForDay.burntCalories : 0,
+          });
+        }
         setTodayCaloriesConsumed(res[6]["caloriesConsumed"]);
         setTodayCaloriesBurned(res[6]["burntCalories"]);
         setTodayGoal(1000);
-           
+
         setWeekHistory(weekData);
       })
       .catch((error) => {
@@ -250,61 +250,61 @@ function UserCaloriesPage(props) {
             />
             <CardContent>
               <ResponsiveContainer width="100%" height={200}>
-              <PieChart width={375} height={160}>
-                <Pie
-                  data={[
-                    { name: "Calories Burned", value: todayCaloriesBurned },
-                    {
-                      name: "Calories to goal",
-                      value: 0>(todayGoal - todayCaloriesBurned)?0:(todayGoal - todayCaloriesBurned),
-                    },
-                  ]}
-                  dataKey="value"
-                  nameKey="name"
-                  cx="50%"
-                  cy="50%"
-                  outerRadius={80}
-                  innerRadius={60}
-                  fill="#8b0e0e"
-                >
-                  {COLORS.map((entry, index) => (
-                    <Cell
-                      key={`cell-${index}`}
-                      fill={COLORS[index % COLORS.length]}
-                    />
-                  ))}
-                </Pie>
-                <Pie
-                  data={[
-                    { name: "Calories Consumed", value: todayCaloriesConsumed },
-                  ]}
-                  dataKey="value"
-                  nameKey="name"
-                  cx="50%"
-                  cy="50%"
-                  innerRadius={30}
-                  outerRadius={50}
-                  fill="#19229e"
-                />
-                <Tooltip />
-  
-              </PieChart>
+                <PieChart width={375} height={160}>
+                  <Pie
+                    data={[
+                      { name: "Calories Burned", value: todayCaloriesBurned },
+                      {
+                        name: "Calories to goal",
+                        value: 0 > (todayGoal - todayCaloriesBurned) ? 0 : (todayGoal - todayCaloriesBurned),
+                      },
+                    ]}
+                    dataKey="value"
+                    nameKey="name"
+                    cx="50%"
+                    cy="50%"
+                    outerRadius={80}
+                    innerRadius={60}
+                    fill="#8b0e0e"
+                  >
+                    {COLORS.map((entry, index) => (
+                      <Cell
+                        key={`cell-${index}`}
+                        fill={COLORS[index % COLORS.length]}
+                      />
+                    ))}
+                  </Pie>
+                  <Pie
+                    data={[
+                      { name: "Calories Consumed", value: todayCaloriesConsumed },
+                    ]}
+                    dataKey="value"
+                    nameKey="name"
+                    cx="50%"
+                    cy="50%"
+                    innerRadius={30}
+                    outerRadius={50}
+                    fill="#19229e"
+                  />
+                  <Tooltip />
+
+                </PieChart>
               </ResponsiveContainer>
             </CardContent>
           </Card>
 
-          
+
           <Card sx={{ gridArea: "exercise" }} elevation={5}>
             <CardHeader
               title={"Featured Exercise"}
-              subheader={exerciseList[randomExercise-1]}
+              subheader={exerciseList[randomExercise - 1]}
               avatar={<FitnessCenterIcon />}
               sx={{ marginBottom: 3 }}
             />
 
             <CardContent align="center">
               <CardMedia
-                style={{ transform: "scale(1.4)" }}  
+                style={{ transform: "scale(1.4)" }}
                 width={375}
                 height={300}
                 component="img"
@@ -342,33 +342,33 @@ function UserCaloriesPage(props) {
                         required
                       >
                         <ListSubheader>
-                        <TextField
-                          size="small"
-                          // Autofocus on textfield
-                          autoFocus
-                          placeholder="Type to search..."
-                          fullWidth
-                          InputProps={{
-                            startAdornment: (
-                              <InputAdornment position="start">
-                                <SearchIcon />
-                              </InputAdornment>
-                            )
-                          }}
-                          onChange={(e) => setSearchText(e.target.value)}
-                          onKeyDown={(e) => {
-                            if (e.key !== "Escape") {
-                              // Prevents autoselecting item while typing (default Select behaviour)
-                              e.stopPropagation();
-                            }
-                          }}
-                        />
-                      </ListSubheader>
+                          <TextField
+                            size="small"
+                            // Autofocus on textfield
+                            autoFocus
+                            placeholder="Type to search..."
+                            fullWidth
+                            InputProps={{
+                              startAdornment: (
+                                <InputAdornment position="start">
+                                  <SearchIcon />
+                                </InputAdornment>
+                              )
+                            }}
+                            onChange={(e) => setSearchText(e.target.value)}
+                            onKeyDown={(e) => {
+                              if (e.key !== "Escape") {
+                                // Prevents autoselecting item while typing (default Select behaviour)
+                                e.stopPropagation();
+                              }
+                            }}
+                          />
+                        </ListSubheader>
                         {displayedOptions.map((option, i) => (
                           <MenuItem key={i} value={option}>
                             {option}
                           </MenuItem>
-                          )
+                        )
                         )}
                       </Select>
                     </FormControl>
@@ -393,7 +393,7 @@ function UserCaloriesPage(props) {
                       maxDate={dayjs()}
                       required
                     />
-                    <Button type="submit" variant="contained" size="large">
+                    <Button type="submit" variant="contained" size="large" style={{ backgroundColor: 'orange', color: 'white' }}>
                       Add
                     </Button>
                   </Box>
@@ -453,7 +453,7 @@ function UserCaloriesPage(props) {
                 <XAxis dataKey="date" />
                 <YAxis />
                 <Tooltip />
-              
+
                 <Line
                   type="monotone"
                   dataKey="consumedCalories"
@@ -494,7 +494,7 @@ function UserCaloriesPage(props) {
                     maxDate={dayjs()}
                     required
                   />
-                  <Button type="submit" variant="contained" size="large">
+                  <Button type="submit" variant="contained" size="large" style={{ backgroundColor: 'orange', color: 'white' }}>
                     Add
                   </Button>
                 </Box>
