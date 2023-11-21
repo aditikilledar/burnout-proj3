@@ -15,7 +15,7 @@ import axios from "axios";
 import useToken from './authentication/useToken';
 import { updateState } from "../burnoutReducer";
 
-const mainPages = { Home: "/", Events: "/events" , 'My Meals': "/meals", 'Contact Us': "/contactus" };
+const mainPages = { Home: "/", Events: "/events", 'My Meals': "/meals", 'Contact Us': "/contactus" };
 const userPages = { Profile: "/profile" };
 
 function Header(props) {
@@ -53,7 +53,7 @@ function Header(props) {
   }
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ backgroundColor: '#FFA100' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box>
