@@ -53,7 +53,7 @@ function Header(props) {
   }
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ backgroundColor: '#FFA100' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box>

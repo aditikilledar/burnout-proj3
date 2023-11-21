@@ -117,8 +117,6 @@ function UserCaloriesPage(props) {
         }
         setTodayCaloriesConsumed(res[6]["caloriesConsumed"]);
         setTodayCaloriesBurned(res[6]["burntCalories"]);
-        setTodayGoal(1000);
-
         setWeekHistory(weekData);
       })
       .catch((error) => {
@@ -128,6 +126,25 @@ function UserCaloriesPage(props) {
           console.log(error.response.headers);
         }
       });
+
+      axios({
+        method: "GET",
+        url: "/profile",
+        headers: {
+          Authorization: "Bearer " + props.state.token,
+        },
+      })
+        .then((response) => {
+          const res = JSON.parse(response['data']);
+          setTodayGoal(res.target_calories)
+        })
+        .catch((error) => {
+          if (error.response) {
+            console.log(error.response);
+            console.log(error.response.status);
+            console.log(error.response.headers);
+          }
+        });
 
     // Make API call to backend to get events user registered for from DB.
     axios({
@@ -250,45 +267,45 @@ function UserCaloriesPage(props) {
             />
             <CardContent>
               <ResponsiveContainer width="100%" height={200}>
-                <PieChart width={375} height={160}>
-                  <Pie
-                    data={[
-                      { name: "Calories Burned", value: todayCaloriesBurned },
-                      {
-                        name: "Calories to goal",
-                        value: 0 > (todayGoal - todayCaloriesBurned) ? 0 : (todayGoal - todayCaloriesBurned),
-                      },
-                    ]}
-                    dataKey="value"
-                    nameKey="name"
-                    cx="50%"
-                    cy="50%"
-                    outerRadius={80}
-                    innerRadius={60}
-                    fill="#8b0e0e"
-                  >
-                    {COLORS.map((entry, index) => (
-                      <Cell
-                        key={`cell-${index}`}
-                        fill={COLORS[index % COLORS.length]}
-                      />
-                    ))}
-                  </Pie>
-                  <Pie
-                    data={[
-                      { name: "Calories Consumed", value: todayCaloriesConsumed },
-                    ]}
-                    dataKey="value"
-                    nameKey="name"
-                    cx="50%"
-                    cy="50%"
-                    innerRadius={30}
-                    outerRadius={50}
-                    fill="#19229e"
-                  />
-                  <Tooltip />
-
-                </PieChart>
+              <PieChart width={375} height={160}>
+                <Pie
+                  data={[
+                    { name: "Calories Consumed", value: todayCaloriesConsumed },
+                    {
+                      name: "Calories to goal",
+                      value: 0>(todayGoal - todayCaloriesConsumed)?0:(todayGoal - todayCaloriesConsumed),
+                    },
+                  ]}
+                  dataKey="value"
+                  nameKey="name"
+                  cx="50%"
+                  cy="50%"
+                  outerRadius={80}
+                  innerRadius={60}
+                  fill="#8b0e0e"
+                >
+                  {COLORS.map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={COLORS[index % COLORS.length]}
+                    />
+                  ))}
+                </Pie>
+                <Pie
+                  data={[
+                    { name: "Calories Burned", value: todayCaloriesBurned },
+                  ]}
+                  dataKey="value"
+                  nameKey="name"
+                  cx="50%"
+                  cy="50%"
+                  innerRadius={30}
+                  outerRadius={50}
+                  fill="#19229e"
+                />
+                <Tooltip />
+  
+              </PieChart>
               </ResponsiveContainer>
             </CardContent>
           </Card>
