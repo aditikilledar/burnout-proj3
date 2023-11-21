@@ -1,20 +1,20 @@
 import React from 'react';
-import {useState, useEffect, useMemo} from "react"
+import { useState, useEffect, useMemo } from "react"
 import {
-    Card,
-    CardContent,
-    CardActionArea,
-    CardHeader,
-    List,
-    ListItem,
-    TextField,
-    Button,
-    FormControl,
-    InputLabel,
-    Select,
-    ListSubheader,
-    InputAdornment,
-    MenuItem,
+  Card,
+  CardContent,
+  CardActionArea,
+  CardHeader,
+  List,
+  ListItem,
+  TextField,
+  Button,
+  FormControl,
+  InputLabel,
+  Select,
+  ListSubheader,
+  InputAdornment,
+  MenuItem,
 } from '@mui/material';
 import axios from 'axios';
 import dayjs from 'dayjs';
@@ -31,137 +31,137 @@ const containsText = (text, searchText) =>
   text.toLowerCase().indexOf(searchText.toLowerCase()) > -1;
 export default function Meals(props) {
 
-    const [dietHistory, setDietHistory] = useState([])
+  const [dietHistory, setDietHistory] = useState([])
 
-    const [foodName, setFoodName] = useState("")
-    const [calories, setCalories] = useState("")
-    const [mealName, setMealName] = useState("")
-    const [ingredients, setIngredients] = useState([])
-    const [searchText, setSearchText] = useState("")
-    const [foodItems, setFoodItems] = useState({});
-    const [meals, setMeals] = useState([]);
+  const [foodName, setFoodName] = useState("")
+  const [calories, setCalories] = useState("")
+  const [mealName, setMealName] = useState("")
+  const [ingredients, setIngredients] = useState([])
+  const [searchText, setSearchText] = useState("")
+  const [foodItems, setFoodItems] = useState({});
+  const [meals, setMeals] = useState([]);
 
-    const displayedOptions = useMemo(
-        () => Object.keys(foodItems).filter((option) => containsText(option, searchText)),
-        [searchText]
-      );
+  const displayedOptions = useMemo(
+    () => Object.keys(foodItems).filter((option) => containsText(option, searchText)),
+    [searchText]
+  );
 
 
-    const handleCreateMeal = (event) => {
-        axios({
-            method: 'post',
-            url: "/createMeal",
-            headers: {
-                Authorization: "Bearer " + props.state.token
-            },
-            data:{
-                mealName : mealName,
-                ingredients : ingredients
-            }
-        })
-        .then((response) => {
-            const res = response.data;
-            console.log(res)
-          })
-          .catch((error) => {
-            if (error.response) {
-              console.log(error.response);
-              console.log(error.response.status);
-              console.log(error.response.headers);
-            }
-          });
-    }
+  const handleCreateMeal = (event) => {
+    axios({
+      method: 'post',
+      url: "/createMeal",
+      headers: {
+        Authorization: "Bearer " + props.state.token
+      },
+      data: {
+        mealName: mealName,
+        ingredients: ingredients
+      }
+    })
+      .then((response) => {
+        const res = response.data;
+        console.log(res)
+      })
+      .catch((error) => {
+        if (error.response) {
+          console.log(error.response);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        }
+      });
+  }
 
-    const handleCreateCustomFood = (event) => {
-        axios({
-            method: 'post',
-            url: "/createFood",
-            headers: {
-                Authorization: "Bearer " + props.state.token
-            },
-            data:{
-                foodName : foodName,
-                calories : calories
-            }
-        })
-        .then((response) => {
-            const res = response.data;
-            console.log(res)
-          })
-          .catch((error) => {
-            if (error.response) {
-              console.log(error.response);
-              console.log(error.response.status);
-              console.log(error.response.headers);
-            }
-          });
-    }
+  const handleCreateCustomFood = (event) => {
+    axios({
+      method: 'post',
+      url: "/createFood",
+      headers: {
+        Authorization: "Bearer " + props.state.token
+      },
+      data: {
+        foodName: foodName,
+        calories: calories
+      }
+    })
+      .then((response) => {
+        const res = response.data;
+        console.log(res)
+      })
+      .catch((error) => {
+        if (error.response) {
+          console.log(error.response);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        }
+      });
+  }
 
-    const handleIngredientSelection = (event) => {
-        const {
-          target: { value },
-        } = event;
-        setIngredients(
-          // On autofill we get a stringified value.
-          typeof value === 'string' ? value.split(',') : value,
-        );
-      };
+  const handleIngredientSelection = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setIngredients(
+      // On autofill we get a stringified value.
+      typeof value === 'string' ? value.split(',') : value,
+    );
+  };
 
-    useEffect(() => {
-        axios({
-            method: "GET",
-            url: "/foodCalorieMapping",
-            headers: {
-              Authorization: "Bearer " + props.state.token,
-            },
-          })
-            .then((response) => {
-              const res = response.data;
-              setFoodItems(res);
-            })
-            .catch((error) => {
-              if (error.response) {
-                console.log(error.response);
-                console.log(error.response.status);
-                console.log(error.response.headers);
-              }
-            });
-            
-            axios({
-              method: "GET",
-              url: "/myMeals",
-              headers: {
-                Authorization: "Bearer " + props.state.token,
-              },
-            })
-              .then((response) => {
-                const res = response.data;
-                setMeals(res);
-              })
-              .catch((error) => {
-                if (error.response) {
-                  console.log(error.response);
-                  console.log(error.response.status);
-                  console.log(error.response.headers);
-                }
-              });
-    }, []);
+  useEffect(() => {
+    axios({
+      method: "GET",
+      url: "/foodCalorieMapping",
+      headers: {
+        Authorization: "Bearer " + props.state.token,
+      },
+    })
+      .then((response) => {
+        const res = response.data;
+        setFoodItems(res);
+      })
+      .catch((error) => {
+        if (error.response) {
+          console.log(error.response);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        }
+      });
+
+    axios({
+      method: "GET",
+      url: "/myMeals",
+      headers: {
+        Authorization: "Bearer " + props.state.token,
+      },
+    })
+      .then((response) => {
+        const res = response.data;
+        setMeals(res);
+      })
+      .catch((error) => {
+        if (error.response) {
+          console.log(error.response);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        }
+      });
+  }, []);
   return (
     <div>
       <Container maxWidth="sm" style={{ textAlign: 'center', marginTop: '60px' }}>
         <Typography
-                            component="h1"
-                            variant="h2"
-                            align="center"
-                            color="text.primary"
-                            gutterBottom
-                        >
-                            Meals
-                        </Typography>
+          component="h1"
+          variant="h2"
+          align="center"
+          color="text.primary"
+          gutterBottom
+        >
+          My Meals
+        </Typography>
       </Container>
       <Container maxWidth>
         <Box
-        sx={{
+          sx={{
             display: "grid",
             gridTemplateColumns: "repeat(6, 1fr)",
             gap: 2,
@@ -186,16 +186,16 @@ export default function Meals(props) {
                 >
                   <Box sx={{ paddingBottom: "1rem" }}>
                     <FormControl fullWidth>
-                      
-                      <TextField 
+
+                      <TextField
                         label="Food Item Name"
                         id="foodName"
                         value={foodName}
                         onChange={(event) => {
-                            setFoodName(event.target.value);
-                        }} 
+                          setFoodName(event.target.value);
+                        }}
                         type="text"
-                        required                     
+                        required
                       />
                     </FormControl>
                   </Box>
@@ -212,7 +212,7 @@ export default function Meals(props) {
                       type="number"
                       required
                     />
-                    <Button type="submit" variant="contained" size="large">
+                    <Button type="submit" variant="contained" size="large" style={{ backgroundColor: 'orange', color: 'white' }}>
                       Create Food
                     </Button>
                   </Box>
@@ -236,16 +236,16 @@ export default function Meals(props) {
                 >
                   <Box sx={{ paddingBottom: "1rem" }}>
                     <FormControl fullWidth>
-                      
-                      <TextField 
+
+                      <TextField
                         label="Meal Name"
                         id="mealName"
                         value={mealName}
                         onChange={(event) => {
-                            setMealName(event.target.value);
-                        }} 
+                          setMealName(event.target.value);
+                        }}
                         type="text"
-                        required                     
+                        required
                       />
                     </FormControl>
                   </Box>
@@ -265,46 +265,46 @@ export default function Meals(props) {
                         required
                       >
                         <ListSubheader>
-                        <TextField
-                          size="small"
-                          // Autofocus on textfield
-                          autoFocus
-                          placeholder="Type to search..."
-                          fullWidth
-                          InputProps={{
-                            startAdornment: (
-                              <InputAdornment position="start">
-                                <SearchIcon />
-                              </InputAdornment>
-                            )
-                          }}
-                          onChange={(e) => setSearchText(e.target.value)}
-                          onKeyDown={(e) => {
-                            if (e.key !== "Escape") {
-                              // Prevents autoselecting item while typing (default Select behaviour)
-                              e.stopPropagation();
-                            }
-                          }}
-                        />
-                      </ListSubheader>
+                          <TextField
+                            size="small"
+                            // Autofocus on textfield
+                            autoFocus
+                            placeholder="Type to search..."
+                            fullWidth
+                            InputProps={{
+                              startAdornment: (
+                                <InputAdornment position="start">
+                                  <SearchIcon />
+                                </InputAdornment>
+                              )
+                            }}
+                            onChange={(e) => setSearchText(e.target.value)}
+                            onKeyDown={(e) => {
+                              if (e.key !== "Escape") {
+                                // Prevents autoselecting item while typing (default Select behaviour)
+                                e.stopPropagation();
+                              }
+                            }}
+                          />
+                        </ListSubheader>
                         {displayedOptions.map((option, i) => (
                           <MenuItem key={i} value={option}>
                             {option}
                           </MenuItem>
-                          )
+                        )
                         )}
                       </Select>
-                      </FormControl>
+                    </FormControl>
                   </Box>
-                    <Button type="submit" variant="contained" size="large">
-                      Create Meal
-                    </Button>
-                  
+                  <Button type="submit" variant="contained" size="large" style={{ backgroundColor: 'orange', color: 'white' }}>
+                    Create Meal
+                  </Button>
+
                 </Box>
               </form>
             </CardContent>
           </Card>
-            <Card sx={{ gridArea: "meal" }} elevation={5}>
+          <Card sx={{ gridArea: "meal" }} elevation={5}>
             <CardHeader
               title={"My Meals"}
               subheader={"Your custom created meals"}
@@ -324,7 +324,7 @@ export default function Meals(props) {
                 gridTemplateAreas: `"meal-0 meal-1 meal-2 meal-3 meal-4 meal-5"`,
               }}
             >
-              {meals.map((meal,index) => {
+              {meals.map((meal, index) => {
                 console.log(meal.ingredients)
                 return (
                   <Card sx={{ gridArea: `meal-${index}` }} elevation={5}>
@@ -337,7 +337,7 @@ export default function Meals(props) {
                           paddingBottom: "5px",
                         }}
                       >{meal.meal_name}</div>
-                      <div style={{ textAlign: "center"}}>
+                      <div style={{ textAlign: "center" }}>
                         Ingredients
                       </div>
                       <div>
@@ -351,18 +351,18 @@ export default function Meals(props) {
                                   justifyContent: "space-between",
                                 }}
                               >
-                                <div>{index+1}</div>
+                                <div>{index + 1}</div>
                                 <div>{item}</div>
                               </ListItem>
                             );
                           })}
                         </List>
-                        <div style={{ textAlign: "center"}}>
-                        Total Calories 
-                      </div>
-                      <div style={{ textAlign: "center",fontWeight: "bold",}}>
-                      {meal.total_calories} 
-                      </div>
+                        <div style={{ textAlign: "center" }}>
+                          Total Calories
+                        </div>
+                        <div style={{ textAlign: "center", fontWeight: "bold", }}>
+                          {meal.total_calories}
+                        </div>
                       </div>
                     </CardContent>
                   </Card>
@@ -373,7 +373,7 @@ export default function Meals(props) {
         </Box>
 
       </Container>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

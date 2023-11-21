@@ -77,14 +77,14 @@ const ContactUs = (props) => {
             type="submit"
             variant="contained"
             color="primary"
-            style={{ marginTop: '20px' }}
+            style={{ marginTop: '20px', backgroundColor: 'orange', color: 'white' }}
           >
             Submit
-          </Button>
+          </Button >
         </form>
       </Container>
       <Footer />
-    </div>
+    </div >
   );
 };
 
