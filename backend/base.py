@@ -78,9 +78,11 @@ def create_token():
 @api.route("/google-login", methods=["POST"])
 def google_login():
     email = request.json.get("email", None)
+    firstName = request.json.get("first_name", None)
+    lastName = request.json.get("last_name", None)
     user = mongo.user.find_one({"email": email})
     if (user is None):
-        mongo.user.insert_one({"email": email})
+        mongo.user.insert_one({"email": email, "first_name": firstName, "last_name": lastName})
     access_token = create_access_token(identity=email)
     return jsonify({"message": "Login successful", "access_token":access_token})
         
