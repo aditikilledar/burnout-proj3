@@ -13,13 +13,13 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const defaultTheme = createTheme();
 
 export default function SignUp() {
   const history = useHistory();
-  const signupMesage = 'Submit the form'
-  const [userExists, setUserExists] = useState(signupMesage)
   const [signUpForm, setSignUpForm] = useState({
     email: "",
     password: "",
@@ -38,6 +38,32 @@ export default function SignUp() {
       lastName: data.get('lastName')
     });
 
+  const userExistsNotify = () => {
+    toast.error('User already exists! Please sign in using your existing credentials.', {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
+  }
+
+  const userSuccessNotify = () => {
+    toast.success('Successfully registered and user created, sign in now.', {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
+  }
+
     axios({
       method: "POST",
       url: "/register",
@@ -53,11 +79,11 @@ export default function SignUp() {
         if (response.status === 200 & response.data.msg === "register successful") {
           console.log("User created")
           history.push("/");
-          setUserExists("Successfully registered and user created, sign in now.")
+          userSuccessNotify();
         }
         else if (response.data.msg === "User already exists") {
           console.log("User already exists");
-          setUserExists("User already exists! Please sign in using your existing credentials.")
+          userExistsNotify();
         }
       }).catch((error) => {
         if (error.response) {
@@ -79,6 +105,18 @@ export default function SignUp() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
+      <ToastContainer
+      position="top-center"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="colored"
+      />
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -152,9 +190,6 @@ export default function SignUp() {
             >
               Sign Up
             </Button>
-            <Typography variant="h6" style={{ marginTop: '20px' }}>
-              {userExists}
-            </Typography>
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <Link href="/" variant="body2">
