@@ -271,10 +271,10 @@ function UserCaloriesPage(props) {
               <PieChart width={375} height={160}>
                 <Pie
                   data={[
-                    { name: "Calories Burned", value: todayCaloriesBurned },
+                    { name: "Calories Consumed", value: todayCaloriesConsumed },
                     {
                       name: "Calories to goal",
-                      value: 0>(todayGoal - todayCaloriesBurned)?0:(todayGoal - todayCaloriesBurned),
+                      value: 0>(todayGoal - todayCaloriesConsumed)?0:(todayGoal - todayCaloriesConsumed),
                     },
                   ]}
                   dataKey="value"
@@ -294,7 +294,7 @@ function UserCaloriesPage(props) {
                 </Pie>
                 <Pie
                   data={[
-                    { name: "Calories Consumed", value: todayCaloriesConsumed },
+                    { name: "Calories Burned", value: todayCaloriesBurned },
                   ]}
                   dataKey="value"
                   nameKey="name"
