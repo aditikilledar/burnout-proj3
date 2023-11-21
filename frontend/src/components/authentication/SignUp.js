@@ -18,6 +18,8 @@ const defaultTheme = createTheme();
 
 export default function SignUp() {
   const history = useHistory();
+  const signupMesage = 'Submit the form'
+  const [userExists, setUserExists] = useState(signupMesage)
   const [signUpForm, setSignUpForm] = useState({
     email: "",
     password: "",
@@ -38,34 +40,42 @@ export default function SignUp() {
 
     axios({
       method: "POST",
-      url:"/register",
-      data:{
+      url: "/register",
+      data: {
         email: signUpForm.email,
         password: signUpForm.password,
         firstName: signUpForm.firstName,
-        lastName: signUpForm.lastName      }
-    })
-    .then((response) => {
-      console.log(response)
-      if (response.status === 200 & response.data.msg === "register successful") {
-        console.log("User created")
-        history.push ("/");
+        lastName: signUpForm.lastName
       }
-    }).catch((error) => {
-      if (error.response) {
-        console.log(error.response)
-        console.log(error.response.status)
-        console.log(error.response.headers)
-        }
     })
+      .then((response) => {
+        console.log(response)
+        if (response.status === 200 & response.data.msg === "register successful") {
+          console.log("User created")
+          history.push("/");
+          setUserExists("Successfully registered and user created, sign in now.")
+        }
+        else if (response.data.msg === "User already exists") {
+          console.log("User already exists");
+          setUserExists("User already exists! Please sign in using your existing credentials.")
+        }
+      }).catch((error) => {
+        if (error.response) {
+          console.log(error.response)
+          console.log(error.response.status)
+          console.log(error.response.headers)
+        }
+      })
 
   };
 
-  function handleChange(event) { 
-    const {value, name} = event.target
+  function handleChange(event) {
+    const { value, name } = event.target
     setSignUpForm(prevNote => ({
-        ...prevNote, [name]: value})
-    )}
+      ...prevNote, [name]: value
+    })
+    )
+  }
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -142,6 +152,9 @@ export default function SignUp() {
             >
               Sign Up
             </Button>
+            <Typography variant="h6" style={{ marginTop: '20px' }}>
+              {userExists}
+            </Typography>
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <Link href="/" variant="body2">
