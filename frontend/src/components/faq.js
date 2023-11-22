@@ -13,6 +13,22 @@ const FAQ = () => {
       question: 'What is BMI?',
       answer: 'Body Mass Index (BMI) is a calcualtion based on height and weight. It is an approximate measure of body fat.',
     },
+    {
+      question: 'What should I do if I encounter technical issues with the app?',
+      answer: 'If you experience technical difficulties, please contact our support team through the app or visit our support page on the website.',
+    },
+    {
+      question: 'What is the recommended workout duration for beginners?',
+      answer: 'For beginners, we recommend starting with 20-30 minute workouts and gradually increasing the duration as your fitness level improves.',
+    },
+    {
+      question: 'Is it okay to eat before a workout?',
+      answer: 'Eating a small, balanced meal or snack before a workout can provide energy. The app offers pre-workout nutrition tips and suggestions for suitable pre-exercise meals.',
+    },
+    {
+      question: 'How do I calculate my daily calorie needs?',
+      answer: 'The app provides a built-in calorie calculator based on your age, gender, weight, height, and activity level. It helps you determine your daily calorie requirements for weight maintenance or specific fitness goals.',
+    },
   ];
 
   return (
