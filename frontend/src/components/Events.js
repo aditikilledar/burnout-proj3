@@ -2,7 +2,6 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -48,12 +47,9 @@ const defaultTheme = createTheme();
 
 export default function Events(props) {
   const [events, setEvents] = useState([]);
-
   const [enrollmentStatus, setEnrollmentStatus] = useState({});
-
   // Create state for modal visibility
   const [eventModals, setEventModals] = useState({});
-
   // Function to open and close the modal
   const handleOpenModal = (eventTitle) => {
 
@@ -96,7 +92,6 @@ export default function Events(props) {
   };
 
   const [searchQuery, setSearchQuery] = useState("");
-
   const eventsFiltered = filterData(searchQuery, events);
 
   useEffect(() => {
@@ -182,7 +177,7 @@ export default function Events(props) {
           [eventTitle]: false,
         }));
       });
-        }})
+    }})
   };
 
     return (
@@ -215,7 +210,6 @@ export default function Events(props) {
                             spacing={2}
                             justifyContent="center"
                         >
-                            {/* <Button variant="contained">Create your own event</Button> */}
                             <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
                         </Stack>
                     </Container>
@@ -232,11 +226,9 @@ export default function Events(props) {
                                     <CardMedia
                                         component="div"
                                         sx={{
-                                            // 16:9
                                             pt: '56.25%',
                                         }}
                                         image={event.imageUrl}
-                                    //image="https://source.unsplash.com/random?wallpapers"
                                     />
                                     <CardContent sx={{ flexGrow: 1 }}>
                                         <Typography gutterBottom variant="h5" component="h2">

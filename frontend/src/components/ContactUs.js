@@ -10,13 +10,10 @@ const ContactUs = (props) => {
     const name = formData.get('yname');
     const subject = formData.get('subject');
     const message = formData.get('message');
-
     // Compose the email body
     const emailBody = `Message: ${message.value}, From: ${name}`;
-
     // Construct the mailto link
     const mailtoLink = `mailto:contactus_burnout@​yahoo.com?subject=${subject}&body=${encodeURIComponent(emailBody)}`;
-
     // Open the default email client
     window.location.href = mailtoLink;
   };
@@ -61,7 +58,6 @@ const ContactUs = (props) => {
             fullWidth
             margin="normal"
             name="subject"
-
           />
           <TextField
             label="Message"
@@ -71,7 +67,6 @@ const ContactUs = (props) => {
             fullWidth
             margin="normal"
             name="message"
-
           />
           <Button
             type="submit"

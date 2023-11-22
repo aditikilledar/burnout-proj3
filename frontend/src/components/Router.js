@@ -35,11 +35,6 @@ function Router() {
       dispatch(updateState(logInState));
     }
   }
-  // const { setupToken, token, removeToken  } = useToken();
-
-  // const userHasToken = checkUserToken(false);
-
-  // console.log(!!token)
 
   return (
     <Switch>
