@@ -2,6 +2,7 @@
 import React from 'react';
 import { Accordion, AccordionSummary, AccordionDetails, Typography } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Footer from './Footer';
 
 const FAQ = () => {
   const faqData = [
@@ -43,6 +44,7 @@ const FAQ = () => {
           </AccordionDetails>
         </Accordion>
       ))}
+      <Footer />
     </div>
   );
 };
