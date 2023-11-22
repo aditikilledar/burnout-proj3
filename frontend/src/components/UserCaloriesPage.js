@@ -40,7 +40,7 @@ import {
   XAxis,
   YAxis,
   CartesianGrid,
-  Legend, ResponsiveContainer
+  ResponsiveContainer
 } from "recharts";
 import axios from "axios";
 import Footer from "./Footer";
@@ -309,8 +309,6 @@ function UserCaloriesPage(props) {
               </ResponsiveContainer>
             </CardContent>
           </Card>
-
-
           <Card sx={{ gridArea: "exercise" }} elevation={5}>
             <CardHeader
               title={"Featured Exercise"}
@@ -318,7 +316,6 @@ function UserCaloriesPage(props) {
               avatar={<FitnessCenterIcon />}
               sx={{ marginBottom: 3 }}
             />
-
             <CardContent align="center">
               <CardMedia
                 style={{ transform: "scale(1.4)" }}
@@ -328,7 +325,6 @@ function UserCaloriesPage(props) {
                 image={"/assets/img/featured/" + randomExercise + ".gif"}
               />
             </CardContent>
-
           </Card>
           <Card sx={{ gridArea: "intake" }} elevation={5}>
             <CardHeader
@@ -470,7 +466,6 @@ function UserCaloriesPage(props) {
                 <XAxis dataKey="date" />
                 <YAxis />
                 <Tooltip />
-
                 <Line
                   type="monotone"
                   dataKey="consumedCalories"

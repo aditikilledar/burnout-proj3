@@ -59,7 +59,6 @@ function Header(props) {
           <Box>
             <WhatshotIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           </Box>
-
           <Box>
             <Typography
               variant="h6"
@@ -80,7 +79,6 @@ function Header(props) {
               BurnOut
             </Typography>
           </Box>
-
           <Box sx={{ flexGrow: 1, display: "flex" }}>
             {Object.keys(mainPages).map((page) => (
               <Button
@@ -98,7 +96,6 @@ function Header(props) {
               </Button>
             ))}
           </Box>
-
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
