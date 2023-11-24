@@ -197,7 +197,16 @@ Step 2:
  Step 5:
     Open the URL in your browser:  
       http://127.0.0.1:3000
-      
+
+## Common Installation Problems and Their Fixes
+
+### Proxy error:
+Go to the file called `package.json` and change the value for "proxy" to "http://127.0.0.1:5000/".
+
+### Sign In Error
+If you do not already have an account, please sign up on our website.
+
+If you have already signed up perviously, check if your MongoDB server is running. If not, please start and connect to the local server and try again.
 
 ## Third-Party Dependencies
   
