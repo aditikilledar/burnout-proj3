@@ -70,6 +70,7 @@
   - [Events](#events)
 - [Project Techstack:](#project-techstack)
 - <a href="https://github.com/aditikilledar/burnout-proj3/blob/main/README.md#getting-started"> Get Started: Installation </a>
+- <a href="https://github.com/aditikilledar/burnout-proj3/blob/add-problems-fixes-readme/README.md#common-installation-problems-and-their-fixes"> Common Errors and Fixes </a>
 - [Technical Overview:](#technical-overview)
 - [Third-Party Dependencies](#third-party-dependencies)
 - [What's new?](#whats-new)
