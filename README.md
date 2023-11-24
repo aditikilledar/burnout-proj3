@@ -201,7 +201,7 @@ Step 2:
 
 ## Common Installation Problems and Their Fixes
 
-### Proxy error:
+### Proxy error
 Go to the file called `package.json` and change the value for "proxy" to "http://127.0.0.1:5000/".
 
 ### Sign In Error
