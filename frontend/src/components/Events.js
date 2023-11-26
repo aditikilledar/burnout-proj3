@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
@@ -93,13 +94,18 @@ export default function Events(props) {
 
   const [searchQuery, setSearchQuery] = useState("");
   const eventsFiltered = filterData(searchQuery, events);
+  const location = useLocation();
 
   useEffect(() => {
     fetch("/events")
       .then((response) => response.json())
       .then((data) => setEvents(data))
       .catch((error) => console.error("Error fetching events:", error));
-  }, []);
+      const eventToOpen = location.state?.openModalForEvent;
+  if (eventToOpen) {
+    handleOpenModal(eventToOpen);
+  }
+  }, [location.state]);
 
   const handleEnrollUnenroll = (eventTitle) => {
     const userEmail = "user@example.com"; // Get user email here

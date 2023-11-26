@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useMemo } from "react";
+import { useHistory } from 'react-router-dom';
 import {
   Button,
   Card,
@@ -243,6 +244,16 @@ function UserCaloriesPage(props) {
   console.log(todayCaloriesBurned)
   console.log(todayCaloriesConsumed)
 
+  const history = useHistory();
+
+const redirectToEventWithModalOpen = (eventName) => {
+  history.push({
+    pathname: '/Events',
+    state: { openModalForEvent: eventName }
+  });
+};
+
+
   return (
     <>
       <Container maxWidth>
@@ -436,7 +447,11 @@ function UserCaloriesPage(props) {
                         justifyContent: "space-around",
                       }}
                     >
-                      <div>{eventObj.eventName}</div>
+                      <div onClick={() => redirectToEventWithModalOpen(eventObj.eventName)} style={{ cursor: 'pointer' }}>
+  {eventObj.eventName}
+</div>
+
+                     
                       <div>{eventObj.date}</div>
                     </ListItem>
                   );
