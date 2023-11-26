@@ -186,14 +186,13 @@ We fixed many bugs, but here are the most notable ones...
 :bulb: **Tip:** More enhancements/fixes can be found here : https://github.com/adi-kiran/burnout-healthgoalsapp/issues
    
    # Contributors
-   
-<center>
+ <center>
   <table>
     <tr>
-        <td align="center"><a href="https://github.com/sharonjoji99"><img src="https://avatars.githubusercontent.com/u/40449660?v=4" width="100px;" alt=""/><br /><sub><b>Nimal Sharon Joji</b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/adi-kiran"><img src="https://avatars.githubusercontent.com/u/36990588?v=4" width="100px;" alt=""/><br /><sub><b>Aditya Kiran</b></sub></a></td>
-    <td align="center"><a href="https://github.com/amritav"><img src="https://avatars.githubusercontent.com/u/19224584?v=4" width="100px;" alt=""/><br /><sub><b>Amrita Visalam</b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/Diksha-Maurya"><img src="https://avatars.githubusercontent.com/u/27075012?v=4" width="100px;" alt=""/><br /><sub><b>Diksha Maurya</b></sub></a><br /></td>
+        <td align="center"><a href="https://github.com/aiyer786"><img src="https://avatars.githubusercontent.com/u/60314222?s=400&u=0984f88aeb3a9c30f4ec8145176134e626843fd5&v=4" width="100px;" alt=""/><br /><sub><b>Aditya Iyer</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/aditikilledar"><img src="https://avatars.githubusercontent.com/u/73051765?v=4" width="100px;" alt=""/><br /><sub><b>Aditi Killedar</b></sub></a></td>
+    <td align="center"><a href="https://github.com/shashank-madan"><img src="https://avatars.githubusercontent.com/u/52149707?s=80&v=4" width="100px;" alt=""/><br /><sub><b>Shashank Madan</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/srina1h"><img src="https://avatars.githubusercontent.com/u/47570142?v=4" width="100px;" alt=""/><br /><sub><b>Srinath Srinivasan</b></sub></a><br /></td>
     </tr>
   </table>
 </center>
