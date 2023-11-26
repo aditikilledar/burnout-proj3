@@ -10,6 +10,7 @@ import Meals from "./Meals";
 import burnoutReducer, { updateState } from "../burnoutReducer";
 import PrivateRoute from "./PrivateRoute";
 import useToken from "./authentication/useToken";
+import FAQ from "./faq";
 
 const initialState = {
   loggedIn: false,
@@ -34,11 +35,6 @@ function Router() {
       dispatch(updateState(logInState));
     }
   }
-  // const { setupToken, token, removeToken  } = useToken();
-
-  // const userHasToken = checkUserToken(false);
-
-  // console.log(!!token)
 
   return (
     <Switch>
@@ -50,6 +46,9 @@ function Router() {
       </Route>
       <PrivateRoute state={state} dispatch={dispatch} path="/profile">
         <Profile state={state} dispatch={dispatch} />
+      </PrivateRoute>
+      <PrivateRoute state={state} dispatch={dispatch} path="/faq">
+        <FAQ state={state} dispatch={dispatch} />
       </PrivateRoute>
       <PrivateRoute state={state} dispatch={dispatch} path="/contactus">
         <ContactUs state={state} dispatch={dispatch} />

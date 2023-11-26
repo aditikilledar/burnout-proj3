@@ -3,7 +3,6 @@ import { useState, useEffect, useMemo } from "react"
 import {
   Card,
   CardContent,
-  CardActionArea,
   CardHeader,
   List,
   ListItem,
@@ -17,10 +16,8 @@ import {
   MenuItem,
 } from '@mui/material';
 import axios from 'axios';
-import dayjs from 'dayjs';
 import LunchDiningIcon from "@mui/icons-material/LunchDining";
 import LocalCafeIcon from "@mui/icons-material/LocalCafe";
-import TodayIcon from "@mui/icons-material/Today";
 import FastfoodIcon from "@mui/icons-material/Fastfood";
 import Box from '@mui/material/Box';
 import SearchIcon from "@mui/icons-material/Search";
@@ -30,9 +27,6 @@ import Footer from './Footer';
 const containsText = (text, searchText) =>
   text.toLowerCase().indexOf(searchText.toLowerCase()) > -1;
 export default function Meals(props) {
-
-  const [dietHistory, setDietHistory] = useState([])
-
   const [foodName, setFoodName] = useState("")
   const [calories, setCalories] = useState("")
   const [mealName, setMealName] = useState("")
@@ -45,7 +39,6 @@ export default function Meals(props) {
     () => Object.keys(foodItems).filter((option) => containsText(option, searchText)),
     [searchText]
   );
-
 
   const handleCreateMeal = (event) => {
     axios({
@@ -371,7 +364,6 @@ export default function Meals(props) {
             </CardContent>
           </Card>
         </Box>
-
       </Container>
       <Footer />
     </div>

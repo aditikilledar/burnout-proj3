@@ -114,7 +114,6 @@ function Profile(props) {
   const initialsex = "";
   var postHeight = 0;
   var postWeight = 0;
-
   const [firstName, setFirstName] = useState(initialFirstName);
   const [lastName, setLastName] = useState(initialLastName);
   const [age, setAge] = useState(initialAge);
@@ -220,7 +219,6 @@ function Profile(props) {
                 flexDirection: "column",
               }}
             >
-              {/* TODO : make profile pictures updatable */}
               <Box
                 sx={{
                   display: "flex",
@@ -291,21 +289,21 @@ function Profile(props) {
               </Box>
               <Box mb={2}>
               <FormControl fullWidth>
-                    <InputLabel id="demo-simple-select-label">Sex</InputLabel>
-                    <Select
-                      labelId="demo-simple-select-label"
-                      id="demo-simple-select"
-                      value={sex}
-                      label="Sex"
-                      onChange={(e) => setSex(e.target.value)}
-                    >
-                      {sexes.map((item) => (
-						<MenuItem key={item} value={item}>
-						{item}
-						</MenuItem>
-						))}
-                    </Select>
-                  </FormControl>
+                <InputLabel id="demo-simple-select-label">Sex</InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={sex}
+                  label="Sex"
+                  onChange={(e) => setSex(e.target.value)}
+                >
+                  {sexes.map((item) => (
+                    <MenuItem key={item} value={item}>
+                    {item}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
               </Box>
               <Button variant="contained" color="primary" onClick={handleProfileSubmit}>
                 Update  
