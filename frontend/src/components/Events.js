@@ -50,7 +50,6 @@ export default function Events(props) {
   const [events, setEvents] = useState([]);
   const [enrollmentStatus, setEnrollmentStatus] = useState({});
   // Create state for modal visibility
-  const location = useLocation();
   const [eventModals, setEventModals] = useState({});
   // Function to open and close the modal
   const handleOpenModal = (eventTitle) => {
@@ -95,13 +94,18 @@ export default function Events(props) {
 
   const [searchQuery, setSearchQuery] = useState("");
   const eventsFiltered = filterData(searchQuery, events);
+  const location = useLocation();
 
   useEffect(() => {
     fetch("/events")
       .then((response) => response.json())
       .then((data) => setEvents(data))
       .catch((error) => console.error("Error fetching events:", error));
-  }, [[location.state]]);
+      const eventToOpen = location.state?.openModalForEvent;
+  if (eventToOpen) {
+    handleOpenModal(eventToOpen);
+  }
+  }, [location.state]);
 
   const handleEnrollUnenroll = (eventTitle) => {
     const userEmail = "user@example.com"; // Get user email here
