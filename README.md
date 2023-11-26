@@ -29,11 +29,11 @@
 [![PEP8](https://img.shields.io/badge/code%20style-pep8-orange.svg)](https://www.python.org/dev/peps/pep-0008/)
 ![last commit](https://img.shields.io/github/last-commit/aditikilledar/burnout-proj3)
 [![](https://tokei.rs/b1/github/adi-kiran/burnout-healthgoalsapp?branch=main)](https://github.com/aditikilledar/burnout-proj3)
-![github workflow](https://github.com/adi-kiran/burnout-healthgoalsapp/actions/workflows/unit_test.yml/badge.svg)
-![github workflow](https://github.com/adi-kiran/burnout-healthgoalsapp/actions/workflows/style_checker.yml/badge.svg)
-![github workflow](https://github.com/adi-kiran/burnout-healthgoalsapp/actions/workflows/syntax_checker.yml/badge.svg)
-[![codecov](https://codecov.io/gh/adi-kiran/burnout-healthgoalsapp/graph/badge.svg?token=8DO6VMEZ7J)](https://codecov.io/gh/adi-kiran/burnout-healthgoalsapp)
-![GitHub closed issues](https://img.shields.io/github/issues-closed/adi-kiran/burnout-healthgoalsapp)
+![github workflow](https://github.com/aditikilledar/burnout-proj3/actions/workflows/unit_test.yml/badge.svg)
+![github workflow](https://github.com/aditikilledar/burnout-proj3/actions/workflows/style_checker.yml/badge.svg)
+![github workflow](https://github.com/aditikilledar/burnout-proj3/actions/workflows/syntax_checker.yml/badge.svg)
+[![codecov](https://codecov.io/gh/aditikilledar/burnout-proj3/graph/badge.svg?token=8DO6VMEZ7J)](https://codecov.io/gh/aditikilledar/burnout-proj3)
+![GitHub closed issues](https://img.shields.io/github/issues-closed/aditikilledar/burnout-proj3)
 <!--Badges-->
 <a href="https://github.com/adi-kiran/burnout-healthgoalsapp/fork" target="blank">
 <img src="https://img.shields.io/github/forks/adi-kiran/burnout-healthgoalsapp?style=flat-square" alt="burnout-healthgoalsapp forks"/>
