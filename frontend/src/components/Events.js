@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
@@ -52,6 +53,7 @@ export default function Events(props) {
   const [enrollmentStatus, setEnrollmentStatus] = useState({});
 
   // Create state for modal visibility
+  const location = useLocation();
   const [eventModals, setEventModals] = useState({});
 
   // Function to open and close the modal
@@ -104,7 +106,7 @@ export default function Events(props) {
       .then((response) => response.json())
       .then((data) => setEvents(data))
       .catch((error) => console.error("Error fetching events:", error));
-  }, []);
+  }, [[location.state]]);
 
   const handleEnrollUnenroll = (eventTitle) => {
     const userEmail = "user@example.com"; // Get user email here

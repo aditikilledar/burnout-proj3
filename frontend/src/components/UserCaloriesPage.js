@@ -1,4 +1,6 @@
 import React, { useEffect, useState, useMemo } from "react";
+import { useHistory } from "react-router-dom";
+
 import {
   Button,
   Card,
@@ -242,6 +244,30 @@ function UserCaloriesPage(props) {
   };
   console.log(todayCaloriesBurned)
   console.log(todayCaloriesConsumed)
+  const history = useHistory();
+  const redirectToEventWithModalOpen = (eventName) => {
+    history.push({
+      pathname: '/Events',
+      state: { openModalForEvent: eventName }
+    });
+  };
+  const handleUnenroll = (eventTitle) => {
+    axios({
+      method: "POST", // or use the correct method for your backend
+      url: `/unenrollEvent/${eventTitle}`,
+      headers: {
+        Authorization: "Bearer " + props.state.token,
+      },
+    })
+    .then((response) => {
+      setEvents(prevEvents => prevEvents.filter(event => event.title !== eventTitle));
+    })
+    .catch((error) => {
+      console.error('Error unenrolling from event:', error);
+    });
+  };
+
+
 
   return (
     <>
@@ -419,35 +445,52 @@ function UserCaloriesPage(props) {
             </CardContent>
           </Card>
           <Card sx={{ gridArea: "events" }} elevation={5}>
-            <CardHeader
-              title={"Upcoming Events"}
-              subheader={"These are the upcoming events you are enrolled in"}
-              avatar={
-                <>
-                  <SportsMartialArtsIcon />
-                  <DirectionsRunIcon />
-                </>
-              }
-            />
-            <CardContent>
-              <List>
-                {events.map((eventObj, ind) => {
-                  return (
-                    <ListItem
-                      key={`item-${ind}`}
-                      sx={{
-                        display: "flex",
-                        justifyContent: "space-around",
-                      }}
-                    >
-                      <div>{eventObj.eventName}</div>
-                      <div>{eventObj.date}</div>
-                    </ListItem>
-                  );
-                })}
-              </List>
-            </CardContent>
-          </Card>
+  <CardHeader
+    title={"Upcoming Events"}
+    subheader={"These are the upcoming events you are enrolled in"}
+    avatar={<><SportsMartialArtsIcon /><DirectionsRunIcon /></>}
+  />
+  <CardContent>
+    <List>
+      {events.map((eventObj, ind) => (
+       <ListItem
+       key={`item-${ind}`}
+       sx={{
+         display: "flex",
+         justifyContent: "space-between",
+         alignItems: "center"
+       }}
+     >
+       {/* Clickable event name */}
+       <div 
+         onClick={() => redirectToEventWithModalOpen(eventObj.eventName)}
+         style={{ cursor: 'pointer', marginRight: 'auto' }} // Ensure it's clickable and aligned to the left
+       >
+         {eventObj.eventName}
+       </div>
+     
+       {/* Event date */}
+       <div>{eventObj.date}</div>
+     
+       {/* Unenroll button */}
+       <Button
+         variant="outlined"
+         color="secondary"
+         onClick={() => handleUnenroll(eventObj.eventName)}
+         style={{ marginLeft: 16 }} // Add space between date and button
+       >
+         Unenroll
+       </Button>
+     </ListItem>
+     
+     
+     
+     
+      ))}
+    </List>
+  </CardContent>
+</Card>
+
           <Card sx={{ gridArea: "week" }} elevation={5}>
             <CardHeader
               title={"Weekly Stats"}
