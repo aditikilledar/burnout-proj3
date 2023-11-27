@@ -40,9 +40,9 @@
 <a href="https://github.com/aditikilledar/burnout-proj3/stargazers" target="blank">
 <img src="https://img.shields.io/github/stars/adi-kiran/burnout-healthgoalsapp?style=flat-square" alt="burnout-healthgoalsapp stars"/>
 </a>
-<a href="https://github.com/aditikilledar/burnout-proj3/issues" target="blank">
-<img src="https://img.shields.io/github/issues/aditikilledar/burnout-proj3?style=flat-square" alt="burnout-healthgoalsapp issues"/>
-</a>
+
+![GitHub issues](https://img.shields.io/github/issues/aditikilledar/burnout-proj3)
+
 <a href="https://github.com/aditikilledar/burnout-proj3/issues" target="blank">
 <img src="https://img.shields.io/github/issues-closed/aaditikilledar/burnout-proj3" alt="burnout-healthgoalsapp issues closed"/>
 </a>
