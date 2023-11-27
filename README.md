@@ -36,13 +36,10 @@
 ![github workflow](https://github.com/aditikilledar/burnout-proj3/actions/workflows/style_checker.yml/badge.svg)
 ![github workflow](https://github.com/aditikilledar/burnout-proj3/actions/workflows/syntax_checker.yml/badge.svg)
 [![codecov](https://codecov.io/gh/aditikilledar/burnout-proj3/graph/badge.svg?token=8DO6VMEZ7J)](https://codecov.io/gh/aditikilledar/burnout-proj3)
-<!-- ![GitHub closed issues](https://img.shields.io/github/issues-closed/aditikilledar/burnout-proj3) -->
 <a href="https://github.com/aditikilledar/burnout-proj3/fork" target="blank">
-<img src="https://img.shields.io/github/forks/aditikilledar/burnout-proj3?style=flat-square" alt="burnout-healthgoalsapp forks"/>
-</a>
+<img src="https://img.shields.io/github/forks/aditikilledar/burnout-proj3?style=flat-square" alt="burnout-healthgoalsapp forks"/></a>
 <a href="https://github.com/aditikilledar/burnout-proj3/stargazers" target="blank">
 <img src="https://img.shields.io/github/stars/aditikilledar/burnout-proj3?style=flat-square" alt="burnout-healthgoalsapp stars"/>
-
 <a href="https://github.com/aditikilledar/burnout-proj3/issues" target="blank"> <img src="https://img.shields.io/github/issues-closed/aditikilledar/burnout-proj3" alt="burnout-healthgoalsapp issues closed"/>
 </a>
 <a href="https://github.com/aditikilledar/burnout-proj3/graphs/contributors" alt="Contributors">
