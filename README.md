@@ -37,14 +37,15 @@
 <a href="https://github.com/aditikilledar/burnout-proj3/fork" target="blank">
 <img src="https://img.shields.io/github/forks/aditikilledar/burnout-proj3?style=flat-square" alt="burnout-healthgoalsapp forks"/>
 </a>
-<a href="https://github.com/aditikilledar/burnout-proj3/stargazers" target="blank">
-<img src="https://img.shields.io/github/stars/adi-kiran/burnout-healthgoalsapp?style=flat-square" alt="burnout-healthgoalsapp stars"/>
+
 </a>
 
-![GitHub issues](https://img.shields.io/github/issues/aditikilledar/burnout-proj3)
+![GitHub issues](https://img.shields.io/github/issues/aditikilledar/burnout-proj3/)
+<a href="https://github.com/aditikilledar/burnout-proj3/stargazers" target="blank">
+<img src="https://img.shields.io/github/stars/adi-kiran/burnout-healthgoalsapp?style=flat-square" alt="burnout-healthgoalsapp stars"/>
 
 <a href="https://github.com/aditikilledar/burnout-proj3/issues" target="blank">
-<img src="https://img.shields.io/github/issues-closed/aaditikilledar/burnout-proj3" alt="burnout-healthgoalsapp issues closed"/>
+<img src="https://img.shields.io/github/issues-closed/aditikilledar/burnout-proj3" alt="burnout-healthgoalsapp issues closed"/>
 </a>
 <a href="https://github.com/aditikilledar/burnout-proj3/graphs/contributors" alt="Contributors">
 <img src="https://img.shields.io/github/contributors/aditikilledar/burnout-proj3" /></a>
