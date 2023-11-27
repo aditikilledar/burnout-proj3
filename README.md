@@ -16,6 +16,12 @@
     <a href="https://github.com/adi-kiran/burnout-healthgoalsapp/issues/new?assignees=&labels=&projects=&template=bug_report.md&title=">Report Bug</a>
     ·
     <a href="https://github.com/adi-kiran/burnout-healthgoalsapp/issues/new?assignees=&labels=&projects=&template=feature_request.md&title=">Request Feature</a>
+    <br>
+    <a href="">View Video</a>
+    ·
+    <a href="">Scores</a>
+    ·
+    <a href="https://github.com/aditikilledar/burnout-proj3/blob/main/Developer_README.md">Developer Documentation</a>
   </p>
 </div>
 <br>
@@ -105,7 +111,6 @@ So, are you ready to take the leap towards a healthier, happier you? Dive into *
  
 In today's fast-paced world, maintaining health is a challenge. But with the right tools and community, this challenge becomes an enjoyable journey. And Burnout is here to make sure of that.
 
-![ezgif com-video-to-gif (1)](https://github.com/adi-kiran/burnout-healthgoalsapp/assets/19224584/c6802e8e-5ff7-4ac5-ba11-560b2e84cb50) 
 
 # Walkthrough
 
