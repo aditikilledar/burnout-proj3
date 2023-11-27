@@ -22,6 +22,9 @@
 <br>
 <br>
 
+<img src ="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b6c5e3c8-4f07-410a-a6d7-6d2fbbab554a/d7k6vct-5bf5581e-1a2a-49fd-909b-75efa23b71eb.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2I2YzVlM2M4LTRmMDctNDEwYS1hNmQ3LTZkMmZiYmFiNTU0YVwvZDdrNnZjdC01YmY1NTgxZS0xYTJhLTQ5ZmQtOTA5Yi03NWVmYTIzYjcxZWIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.cyzQz5gyjBGEbnPFiYenZqo4g3u7vT5Qyb9Vd2xwxL8" width='800'>
+
+
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 [![DOI](https://zenodo.org/badge/714758791.svg)](https://zenodo.org/doi/10.5281/zenodo.10208054)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
@@ -46,14 +49,11 @@
 <img src="https://img.shields.io/github/contributors/aditikilledar/burnout-proj3" /></a>
 <a href="https://github.com/aditikilledar/burnout-proj3/graphs/commit-activity" alt="commit activity">
 <img src="https://img.shields.io/github/commit-activity/w/aditikilledar/burnout-proj3" /></a> 
-
 <a href="https://github.com/adi-kiran/burnout-healthgoalsapp/discussions" alt="discussion">
 <img src="https://img.shields.io/github/discussions/aditikilledar/burnout-proj3" /></a> 
-
 <a href="https://img.shields.io/github/repo-size/aditikilledar/burnout-proj3" alt="repo size">
 <img src="https://img.shields.io/github/repo-size/aditikilledar/burnout-proj3" /></a>
 
-<img src ="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b6c5e3c8-4f07-410a-a6d7-6d2fbbab554a/d7k6vct-5bf5581e-1a2a-49fd-909b-75efa23b71eb.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2I2YzVlM2M4LTRmMDctNDEwYS1hNmQ3LTZkMmZiYmFiNTU0YVwvZDdrNnZjdC01YmY1NTgxZS0xYTJhLTQ5ZmQtOTA5Yi03NWVmYTIzYjcxZWIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.cyzQz5gyjBGEbnPFiYenZqo4g3u7vT5Qyb9Vd2xwxL8" width='800'>
 
 # Table of Contents  
 
