@@ -254,21 +254,6 @@ const redirectToEventWithModalOpen = (eventName) => {
   });
 };
 
-useEffect(() => {
-
-  axios.get('/api/enrolled-events', {
-    headers: {
-      Authorization: "Bearer " + props.state.token,
-    }
-  })
-  .then(response => {
-    setEnrolledEvents(response.data); 
-  })
-  .catch(error => {
-    console.error("Error fetching enrolled events:", error);
-  });
-}, []);
-
 const handleUnenroll = (eventName) => {
   
   console.log("Unenrolling from event:", eventName);
