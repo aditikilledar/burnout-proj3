@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { Link } from '@mui/material';
+import Button from '@mui/material/Button';
 
 function Copyright() {
     return (
