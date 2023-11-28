@@ -17,9 +17,9 @@
     ·
     <a href="https://github.com/aditikilledar/burnout-proj3/issues/new?assignees=&labels=&projects=&template=feature_request.md&title=">Request Feature</a>
     <br>
-    <a href="">View Video</a>
+    <a href="https://youtu.be/bYTZT8vcICI">View Video</a>
     ·
-    <a href="">Scores</a>
+    <a href="https://github.com/aditikilledar/burnout-proj3/blob/main/Project3Scores.md">Scores</a>
     ·
     <a href="https://github.com/aditikilledar/burnout-proj3/blob/main/Developer_README.md">Developer Documentation</a>
   </p>
@@ -59,12 +59,18 @@ https://github.com/aditikilledar/burnout-proj3/assets/52149707/5873f399-194b-4a9
 - [Why Choose Burnout?](#-why-choose-burnout)
 - [Walkthrough](#walkthrough)
 - [Application Screenshots:](#application-screenshots)
+  - [Sign In](#sign-in)
   - [Homepage](#homepage)
   - [Profile](#profile)
   - [Events](#events)
+  - [My Meals](#my-meals)
+  - [FAQs](#faqs)
+  - [Contact Us](#contact-us)
 - [Project Techstack:](#project-techstack)
 - <a href="https://github.com/aditikilledar/burnout-proj3/blob/main/README.md#getting-started"> Get Started: Installation </a>
 - [What's new?](#whats-new)
+- [Bug Fixes](#bug-fixes)
+- [Future Scope](#future-scope)
 - [Contributors](#contributors)
 - [Contribution](#contribution)
 - [License](#license)
@@ -113,19 +119,35 @@ Link to the implementation video of the BurnOut application: [Video](https://www
 
 # Application Screenshots
  
+ ## Sign-In
+ 
+<img width='600' src="https://github.com/aditikilledar/burnout-proj3/assets/60314222/acbc01b2-56ef-4d3e-9981-77b427f970ef">
+
  ## Homepage
  
-<img width='600' src="https://github.com/adi-kiran/burnout-healthgoalsapp/assets/27075012/17d18cd7-ec23-40f2-b2ab-9f924c5fb6bf">
+<img width='600' src="https://github.com/aditikilledar/burnout-proj3/assets/60314222/24195e37-8338-4126-b277-545eb735f95a">
 
  ## Profile
  
-<img width='600' src="https://github.com/adi-kiran/burnout-healthgoalsapp/assets/27075012/b782dda4-cdd9-4cc5-9896-40e85416b3eb">
+<img width='600' src="https://github.com/aditikilledar/burnout-proj3/assets/60314222/89da70a0-98f8-493a-b5ef-90012f9049e4">
 
  ## Events
 
-<img width='600' src="https://github.com/adi-kiran/burnout-healthgoalsapp/assets/27075012/a6d56638-9138-4448-a17a-cf28be3441ae">
+<img width='600' src="https://github.com/aditikilledar/burnout-proj3/assets/60314222/7f73bd04-dbc6-42bb-a39a-36c6650f02fa">
 
-### :memo: **Note:** Additional screenshots and a mini tutorials can be found here:[Tutorials.md](https://github.com/adi-kiran/burnout-healthgoalsapp/blob/main/Tutorials.md)
+ ## My-Meals
+
+<img width='600' src="https://github.com/aditikilledar/burnout-proj3/assets/60314222/825acdd9-db7f-40a4-bd8a-52d8fd60584f">
+
+ ## FAQs
+
+<img width='600' src="https://github.com/aditikilledar/burnout-proj3/assets/60314222/0eb4e4cb-534d-40cd-b3c0-221b9dbf0e88">
+
+ ## Contact-Us
+
+<img width='600' src="https://github.com/aditikilledar/burnout-proj3/assets/60314222/e8d99dae-118e-4549-9867-7729e328ca9d">
+
+### :memo: **Note:** Additional screenshots and a mini tutorials can be found here:[Tutorials.md](https://github.com/aditikilledar/burnout-proj3/blob/main/Tutorials.md)
 
 # Project TechStack
 
@@ -192,7 +214,7 @@ Here's what we added in this release.
 8. Google Sign-in is now an option!
 9. Better progress tracking on the landing page.
 
-## Bug Fixes
+# Bug Fixes
 We fixed many bugs, but here are the most notable ones...
 
 1. Sign up / Sign in issues, especially when an existing user tries to sign up again.
@@ -202,7 +224,16 @@ We fixed many bugs, but here are the most notable ones...
 5. Exercise of the day was static, which defeats the purpose. Fixed, it is now random.
 6. Linechart on the landing page was incorrect. Fixed.
 
-:bulb: **Tip:** More enhancements/fixes can be found here : https://github.com/adi-kiran/burnout-healthgoalsapp/issues
+# Future Scope
+The application can be extended with features like:
+
+1. Counting macros.
+2. Adding a chat bot/assistant.
+3. Linking with an activity tracker like fitbit.
+4. Provides standard diet plans.
+5. Dockerize the application.
+6. Taking the user's medical history into account.
+7. Finding fitness buddies. (Integrating social media)
    
    # Contributors
    
