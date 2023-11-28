@@ -2,7 +2,7 @@
 
 <div  align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="https://github.com/adi-kiran/burnout-healthgoalsapp/assets/40449660/60dbeb11-6b52-4856-99ff-978d901f7b66" alt="Logo" width="80" height="80">
+    <img src="https://github.com/aditikilledar/burnout-proj3/assets/52149707/77028411-c5e2-4c30-a200-992aa12be968" alt="Logo" width="80" height="80">
   </a>
   <h3 align="center">BURNOUT</h3>
   <p align="center">
@@ -51,8 +51,6 @@
 <img src="https://img.shields.io/github/discussions/aditikilledar/burnout-proj3" /></a> 
 <a href="https://img.shields.io/github/repo-size/aditikilledar/burnout-proj3" alt="repo size">
 <img src="https://img.shields.io/github/repo-size/aditikilledar/burnout-proj3" /></a>
-
-![Burnout logo](https://github.com/aditikilledar/burnout-proj3/assets/52149707/77028411-c5e2-4c30-a200-992aa12be968)
 
 # Developer Documentation
 
@@ -137,6 +135,12 @@ Step 2:
 | ------------- |:-------------:| -----:|
 | material-ui      | 4.12.4 | MIT License |
 | axios      | 1.5.1      |   MIT License |
+| chart.js | 1.1.1 | MIT License |
+| dayjs | 1.11.10 | MIT License |
+| react | 18.2.0 | MIT License |
+| recharts | 2.8.0 | MIT License |
+| web-vitals | 2.1.4 | Apache 2.0 License |
+| react-toastify | 9.1.3 | MIT License |
 
   Backend:
 

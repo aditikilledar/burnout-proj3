@@ -2,7 +2,7 @@
 
 <div  align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="https://github.com/adi-kiran/burnout-healthgoalsapp/assets/40449660/60dbeb11-6b52-4856-99ff-978d901f7b66" alt="Logo" width="80" height="80">
+    <img src="https://github.com/aditikilledar/burnout-proj3/assets/52149707/77028411-c5e2-4c30-a200-992aa12be968" alt="Logo" width="80" height="80">
   </a>
   <h3 align="center">BURNOUT</h3>
   <p align="center">
@@ -27,9 +27,6 @@
 <br>
 <br>
 <br>
-
-![Burnout logo](https://github.com/aditikilledar/burnout-proj3/assets/52149707/77028411-c5e2-4c30-a200-992aa12be968)
-
 
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 [![DOI](https://zenodo.org/badge/714758791.svg)](https://zenodo.org/doi/10.5281/zenodo.10208054)
@@ -67,8 +64,6 @@
   - [Events](#events)
 - [Project Techstack:](#project-techstack)
 - <a href="https://github.com/aditikilledar/burnout-proj3/blob/main/README.md#getting-started"> Get Started: Installation </a>
-- [Technical Overview:](#technical-overview)
-- [Third-Party Dependencies](#third-party-dependencies)
 - [What's new?](#whats-new)
 - [Contributors](#contributors)
 - [Contribution](#contribution)
@@ -138,18 +133,6 @@ Link to the implementation video of the BurnOut application: [Video](https://www
  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" alt="mongo" width="20" height="20"/> MongoDB </br>
  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="python" width="20" height="20"/> Python </br>
 
-# Technical Overview
-
-This application is a React-based web application that runs in the user's web browser. It provides the following key features:
-
-- **User Authentication**: Upon logging in, the application creates and stores tokens locally on the user's machine to maintain user sessions securely.
-
-- **Access Control**: Authenticated users have access to multiple pages and features within the application, ensuring a personalized and controlled user experience.
-
-- **Backend Server**: The application relies on a Flask server to serve various user requests. The server interacts with a MongoDB database to fetch and store data as needed, ensuring smooth functionality and data persistence.
-
-With these components working together, the application delivers a secure and feature-rich experience to its users.
-
  # Getting started
  
 Follow these steps to set up and run the application on your local machine.
@@ -194,30 +177,6 @@ Step 2:
     Open the URL in your browser:  
       http://127.0.0.1:3000
       
-
-## Third-Party Dependencies
-  
-  Frontend:
-
-  | Package Name        | Version           | License  |
-| ------------- |:-------------:| -----:|
-| material-ui      | 4.12.4 | MIT License |
-| axios      | 1.5.1      |   MIT License |
-
-  Backend:
-
-   | Package Name        | Version           | License  |
-| ------------- |:-------------:| -----:|
-| Flask      | 2.2.5 | BSD 3-Clause |
-| python_dotenv      | 0.21.1      |   BSD License (BSD-3-Clause) |
-| flask_jwt_extended      | 4.5.3      |   MIT License |
-| bcrypt      | 4.0.1      |   Apache License 2.0 |
-| flask_pymongo      | 2.3.0    |   BSD License (BSD) |
-| mongomock      | 4.1.2      |   BSD |
-| flasgger      | 0.9.7.1      |   MIT License |
-| coverage      | 7.2.7      |   Apache Software License (Apache-2.0) |
-
-  
 # What's new?
 
 This version enhanced and built on the previous version, making it 10x more interesting and easier to use!
