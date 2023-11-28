@@ -103,6 +103,6 @@ but nevertheless, here is a track record that everyone is contributing a lot)| [
 |15.5 | | Y|
 |15.6 | | Y|
 |15.7 | | Y|
-|16.1 | https://github.com/aditikilledar/dollar_bot_SE23/tree/main#future-work | Y|
+|16.1 | https://github.com/aditikilledar/burnout-proj3/blob/main#future-scope | Y|
 |16.2 | | N|
 |16.3 | | N|
