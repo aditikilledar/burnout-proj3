@@ -305,7 +305,7 @@ function Profile(props) {
                 </Select>
               </FormControl>
               </Box>
-              <Button variant="contained" color="primary" onClick={handleProfileSubmit}>
+              <Button variant="contained" color="primary" style={{ backgroundColor: 'orange' }}onClick={handleProfileSubmit}>
                 Update  
               </Button>
             </CardContent>
@@ -414,6 +414,7 @@ function Profile(props) {
               <Button
                 sx={{ gridArea: "saveButton" }}
                 variant="contained"
+                style={{ backgroundColor: 'orange' }}
                 color="primary"
                 onClick={handleSaveInput}
                 maxWidth
