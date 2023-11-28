@@ -88,14 +88,14 @@ function Profile(props) {
 
   const handleUnitChange = (event) => {
     setUnit(event.target.value);
-    if (event.target.value === "imperial" && event.target.value != prevSelectionUnit) {
+    if (event.target.value === "imperial" && event.target.value !== prevSelectionUnit) {
       setPrevUnit("imperial");
       setEditableTargetWeight((parseFloat(editableWeight) * 2.20462).toFixed(2));
       setWeight((parseFloat(weight) * 2.20462).toFixed(2));
       setHeight((parseFloat(height) / 30.4).toFixed(2));
       setWUnit("lbs");
       setHUnit("ft");
-    } else if(event.target.value === "metric" && event.target.value != prevSelectionUnit){
+    } else if(event.target.value === "metric" && event.target.value !== prevSelectionUnit){
       setPrevUnit("metric");
       setEditableTargetWeight((parseFloat(editableWeight) / 2.20462).toFixed(2));
       setWeight((parseFloat(weight) / 2.20462).toFixed(2));
