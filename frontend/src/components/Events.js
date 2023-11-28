@@ -105,6 +105,7 @@ export default function Events(props) {
   if (eventToOpen) {
     handleOpenModal(eventToOpen);
   }
+  // eslint-disable-next-line
   }, [location.state]);
 
   const handleEnrollUnenroll = (eventTitle) => {

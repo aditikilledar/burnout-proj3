@@ -177,7 +177,7 @@ function UserCaloriesPage(props) {
   };
   const displayedOptions = useMemo(
     () => Object.keys(foodItems).filter((option) => containsText(option, searchText)),
-    [searchText]
+    [foodItems, searchText]
   );
   const [intakeDate, setIntakeDate] = useState(dayjs());
   const handleAddCalorieIntake = (e) => {

@@ -125,7 +125,7 @@ function SignIn(props) {
                     .catch((err) => console.log(err));
             }
         },
-        [ user, profile ]
+        [user, profile, props, saveToken, history]
     );
 	
   return (
