@@ -70,6 +70,7 @@ https://github.com/aditikilledar/burnout-proj3/assets/52149707/5873f399-194b-4a9
 - <a href="https://github.com/aditikilledar/burnout-proj3/blob/main/README.md#getting-started"> Get Started: Installation </a>
 - [What's new?](#whats-new)
 - [Bug Fixes](#bug-fixes)
+- [Future Scope](#future-scope)
 - [Contributors](#contributors)
 - [Contribution](#contribution)
 - [License](#license)
@@ -223,6 +224,16 @@ We fixed many bugs, but here are the most notable ones...
 5. Exercise of the day was static, which defeats the purpose. Fixed, it is now random.
 6. Linechart on the landing page was incorrect. Fixed.
 
+# Future Scope
+The application can be extended with features like:
+
+1. Counting macros.
+2. Adding a chat bot/assistant.
+3. Linking with an activity tracker like fitbit.
+4. Provides standard diet plans.
+5. Dockerize the application.
+6. Taking the user's medical history into account.
+7. Finding fitness buddies. (Integrating social media)
    
    # Contributors
    
