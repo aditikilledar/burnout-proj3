@@ -2,7 +2,7 @@
 
 <div  align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="https://github.com/aditikilledar/burnout-proj3/assets/52149707/77028411-c5e2-4c30-a200-992aa12be968" alt="Logo" width="80" height="80">
+    <img src="https://github.com/aditikilledar/burnout-proj3/assets/52149707/77028411-c5e2-4c30-a200-992aa12be968" alt="Logo" width="120" height="120">
   </a>
   <h3 align="center">BURNOUT</h3>
   <p align="center">
@@ -24,8 +24,6 @@
     <a href="https://github.com/aditikilledar/burnout-proj3/blob/main/Developer_README.md">Developer Documentation</a>
   </p>
 </div>
-<br>
-<br>
 <br>
 
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
