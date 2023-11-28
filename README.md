@@ -17,7 +17,7 @@
     ·
     <a href="https://github.com/aditikilledar/burnout-proj3/issues/new?assignees=&labels=&projects=&template=feature_request.md&title=">Request Feature</a>
     <br>
-    <a href="">View Video</a>
+    <a href="https://youtu.be/bYTZT8vcICI">View Video</a>
     ·
     <a href="">Scores</a>
     ·
@@ -59,12 +59,17 @@ https://github.com/aditikilledar/burnout-proj3/assets/52149707/5873f399-194b-4a9
 - [Why Choose Burnout?](#-why-choose-burnout)
 - [Walkthrough](#walkthrough)
 - [Application Screenshots:](#application-screenshots)
+  - [Sign In](#sign-in)
   - [Homepage](#homepage)
   - [Profile](#profile)
   - [Events](#events)
+  - [My Meals](#my-meals)
+  - [FAQs](#faqs)
+  - [Contact Us](#contact-us)
 - [Project Techstack:](#project-techstack)
 - <a href="https://github.com/aditikilledar/burnout-proj3/blob/main/README.md#getting-started"> Get Started: Installation </a>
 - [What's new?](#whats-new)
+- [Bug Fixes](#bug-fixes)
 - [Contributors](#contributors)
 - [Contribution](#contribution)
 - [License](#license)
@@ -113,7 +118,7 @@ Link to the implementation video of the BurnOut application: [Video](https://www
 
 # Application Screenshots
  
- ## Sign In
+ ## Sign-In
  
 <img width='600' src="https://github.com/aditikilledar/burnout-proj3/assets/60314222/acbc01b2-56ef-4d3e-9981-77b427f970ef">
 
@@ -129,7 +134,7 @@ Link to the implementation video of the BurnOut application: [Video](https://www
 
 <img width='600' src="https://github.com/aditikilledar/burnout-proj3/assets/60314222/7f73bd04-dbc6-42bb-a39a-36c6650f02fa">
 
- ## My Meals
+ ## My-Meals
 
 <img width='600' src="https://github.com/aditikilledar/burnout-proj3/assets/60314222/825acdd9-db7f-40a4-bd8a-52d8fd60584f">
 
@@ -137,7 +142,7 @@ Link to the implementation video of the BurnOut application: [Video](https://www
 
 <img width='600' src="https://github.com/aditikilledar/burnout-proj3/assets/60314222/0eb4e4cb-534d-40cd-b3c0-221b9dbf0e88">
 
- ## Contact Us
+ ## Contact-Us
 
 <img width='600' src="https://github.com/aditikilledar/burnout-proj3/assets/60314222/e8d99dae-118e-4549-9867-7729e328ca9d">
 
@@ -208,7 +213,7 @@ Here's what we added in this release.
 8. Google Sign-in is now an option!
 9. Better progress tracking on the landing page.
 
-## Bug Fixes
+# Bug Fixes
 We fixed many bugs, but here are the most notable ones...
 
 1. Sign up / Sign in issues, especially when an existing user tries to sign up again.
@@ -218,7 +223,6 @@ We fixed many bugs, but here are the most notable ones...
 5. Exercise of the day was static, which defeats the purpose. Fixed, it is now random.
 6. Linechart on the landing page was incorrect. Fixed.
 
-:bulb: **Tip:** More enhancements/fixes can be found here : https://github.com/adi-kiran/burnout-healthgoalsapp/issues
    
    # Contributors
    
