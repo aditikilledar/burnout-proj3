@@ -31,7 +31,7 @@ const ContactUs = (props) => {
           Contact Us
         </Typography>
         <Typography variant="h5" align="justify" color="text.primary" paragraph>
-          Use the email below to contact the BurnOut development team. It's a group mailbox that is accessed by the core team. Feel free to reach out to us for any questions, feedback, or inquiries related to our application.
+          Use the email below to contact the BurnOut development team. Feel free to reach out to us for any questions, feedback, or inquiries.
           <br></br><br></br>
           Fill out the form below to send us an email.
         </Typography>
