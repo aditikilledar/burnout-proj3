@@ -8,7 +8,7 @@
   <p align="center">
     Your daily health companion 🏃‍♀️
     <br />
-    <a href="https://adi-kiran.github.io/burnout-healthgoalsapp-docs/"><strong>Explore the API docs »</strong></a>
+    <a href="https://aditikilledar.github.io/burnout-proj3/index.html"><strong>Explore the API docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/aditikilledar/burnout-proj3/blob/main/Tutorials.md">View Demo</a>
