@@ -6,7 +6,7 @@ November 2023
 ```bibtex
 @MISC{g52:Project3,
   title     = {Burnout: daily health companion},
-  author    = {Iyer, Aditya and Killedar Aditi and Madan, Shashank and Srinivasan, Srinath and
+  author    = {Iyer, Aditya and Killedar, Aditi and Madan, Shashank and Srinivasan, Srinath and
                Kiran, Adithya and Visalam, Amrita and Maurya, Diksha and Joji, Sharon and 
                Somashekar, Prakruthi and Kumar, Devand Hegde, Sunidhi and J, Atharva and 
                Patil, Atharva and Sinha, Rohan and Raman, Radhika and
