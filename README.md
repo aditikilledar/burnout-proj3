@@ -19,7 +19,7 @@
     <br>
     <a href="https://youtu.be/bYTZT8vcICI">View Video</a>
     ·
-    <a href="">Scores</a>
+    <a href="https://github.com/aditikilledar/burnout-proj3/blob/main/Project3Scores.md">Scores</a>
     ·
     <a href="https://github.com/aditikilledar/burnout-proj3/blob/main/Developer_README.md">Developer Documentation</a>
   </p>
