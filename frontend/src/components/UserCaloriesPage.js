@@ -64,6 +64,7 @@ function UserCaloriesPage(props) {
   const [dietHistory, setDietHistory] = useState([]);
   const [weekHistory, setWeekHistory] = useState([]);
   const [reloadTodayData, setReloadTodayData] = useState(false);
+  const [enrolledEvents, setEnrolledEvents] = useState([]);
   const toggleTodayUpdate = () => {
     setReloadTodayData(!reloadTodayData);
   }
@@ -253,6 +254,29 @@ const redirectToEventWithModalOpen = (eventName) => {
   });
 };
 
+const handleUnenroll = (eventName) => {
+  
+  console.log("Unenrolling from event:", eventName);
+  axios.post("/unenroll", {
+    
+    eventTitle: eventName
+  }, {
+    headers: {
+      Authorization: "Bearer " + props.state.token,
+    },
+  })
+  .then(response => {
+    window.location.reload(false)
+    console.log("Unenrollment successful:", response.data);
+    
+    console.log(response.data);
+   
+    setEnrolledEvents(currentEvents => currentEvents.filter(event => event.eventName !== eventName));
+  })
+  .catch(error => {
+    console.error("An error occurred while unenrolling: ", error);
+  });
+};
 
   return (
     <>
@@ -437,7 +461,7 @@ const redirectToEventWithModalOpen = (eventName) => {
               }
             />
             <CardContent>
-              <List>
+            <List>
                 {events.map((eventObj, ind) => {
                   return (
                     <ListItem
@@ -453,6 +477,13 @@ const redirectToEventWithModalOpen = (eventName) => {
 
                      
                       <div>{eventObj.date}</div>
+                      <Button
+        variant="contained"
+        style={{ backgroundColor: 'orange' }}
+        onClick={() => handleUnenroll(eventObj.eventName)}  // Replace `eventName` with the actual property name if different
+      >
+        Unenroll
+      </Button>
                     </ListItem>
                   );
                 })}
