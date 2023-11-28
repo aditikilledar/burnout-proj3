@@ -37,7 +37,7 @@ export default function Meals(props) {
 
   const displayedOptions = useMemo(
     () => Object.keys(foodItems).filter((option) => containsText(option, searchText)),
-    [searchText]
+    [foodItems, searchText]
   );
 
   const handleCreateMeal = (event) => {
@@ -138,7 +138,7 @@ export default function Meals(props) {
           console.log(error.response.headers);
         }
       });
-  }, []);
+  }, [props.state.token]);
   return (
     <div>
       <Container maxWidth="sm" style={{ textAlign: 'center', marginTop: '60px' }}>
