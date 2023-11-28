@@ -7,7 +7,7 @@ Total Score =  / 90
 but nevertheless, here is a track record that everyone is contributing a lot)| (Repo Traffic History)[https://github.com/aditikilledar/burnout-proj3/graphs/traffic] | 3 |
 |Number of commits|(Commit History)[https://github.com/aditikilledar/burnout-proj3/graphs/commit-activity]| 3 |
 |Number of commits: by different people|(Commit Contribution History)[https://github.com/aditikilledar/burnout-proj3/graphs/contributors] | 3 |
-|Issues reports: there are **many**| https://github.com/aditikilledar/dollar_bot_SE23/issues?q=is%3Aissue | 3 |
+|Issues reports: there are **many**| https://github.com/aditikilledar/burnout-proj3/issues?q=is%3Aissue+is%3Aclosed | 3 |
 |Issues are being closed| https://github.com/aditikilledar/dollar_bot_SE23/issues?q=is%3Aissue+is%3Aclosed | 3 |
 |DOI badge: exists|In (README.md)[https://github.com/aditikilledar/dollar_bot_SE23/blob/main/README.md]| 3 |
 |Docs: doco generated, format not ugly |Also in (README.md)[https://github.com/aditikilledar/dollar_bot_SE23/blob/main/README.md]| 3 |
