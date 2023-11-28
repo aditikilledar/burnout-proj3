@@ -64,7 +64,6 @@ function UserCaloriesPage(props) {
   const [dietHistory, setDietHistory] = useState([]);
   const [weekHistory, setWeekHistory] = useState([]);
   const [reloadTodayData, setReloadTodayData] = useState(false);
-  const [enrolledEvents, setEnrolledEvents] = useState([]);
   const toggleTodayUpdate = () => {
     setReloadTodayData(!reloadTodayData);
   }
@@ -268,10 +267,7 @@ const handleUnenroll = (eventName) => {
   .then(response => {
     window.location.reload(false)
     console.log("Unenrollment successful:", response.data);
-    
     console.log(response.data);
-   
-    setEnrolledEvents(currentEvents => currentEvents.filter(event => event.eventName !== eventName));
   })
   .catch(error => {
     console.error("An error occurred while unenrolling: ", error);
