@@ -305,7 +305,7 @@ function Profile(props) {
                 </Select>
               </FormControl>
               </Box>
-              <Button variant="contained" color="primary" onClick={handleProfileSubmit}>
+              <Button variant="contained" color="primary" style={{ backgroundColor: 'orange' }}onClick={handleProfileSubmit}>
                 Update  
               </Button>
             </CardContent>
@@ -333,7 +333,7 @@ function Profile(props) {
                   <CardContent>
                     <div style={weightCardStyles.weightContainer}>
                       <IconButton
-                        color="primary"
+                        style={{ color: 'orange' }}
                         aria-label="weighing scale icon"
                       >
                         <FitnessCenterIcon fontSize="large" />
@@ -358,7 +358,7 @@ function Profile(props) {
                   <CardContent>
                     <div style={weightCardStyles.weightContainer}>
                       <IconButton
-                        color="primary"
+                        style={{ color: 'orange' }}
                         aria-label="running icon"
                       >
                         <DirectionsRunIcon fontSize="large" />
@@ -392,7 +392,7 @@ function Profile(props) {
                   <CardContent>
                     <div style={weightCardStyles.weightContainer}>
                       <IconButton
-                        color="primary"
+                        style={{ color: 'orange' }}
                         aria-label="calories icon"
                       >
                         <WhatshotIcon fontSize="large" />
@@ -414,6 +414,7 @@ function Profile(props) {
               <Button
                 sx={{ gridArea: "saveButton" }}
                 variant="contained"
+                style={{ backgroundColor: 'orange' }}
                 color="primary"
                 onClick={handleSaveInput}
                 maxWidth
