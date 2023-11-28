@@ -10,7 +10,7 @@ but nevertheless, here is a track record that everyone is contributing a lot)| (
 |Issues reports: there are **many**| https://github.com/aditikilledar/burnout-proj3/issues?q=is%3Aissue+is%3Aclosed | 3 |
 |Issues are being closed| https://github.com/aditikilledar/burnout-proj3/issues?q=is%3Aissue+is%3Aclosed | 3 |
 |DOI badge: exists|In (README.md)[https://github.com/aditikilledar/burnout-proj3/blob/main/README.md]| 3 |
-|Docs: doco generated, format not ugly |Also in (README.md)[https://github.com/aditikilledar/dollar_bot_SE23/blob/main/README.md]| 3 |
+|Docs: doco generated, format not ugly |Also in (README.md)[https://github.com/aditikilledar/burnout-proj3/blob/main/README.md]| 3 |
 |Docs: what: point descriptions of each class/function (in isolation) | (Extensive documentation)[https://github.com/aditikilledar/dollar_bot_SE23/tree/main/docs] | 3 | 
 |Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z| (in the docu)[https://github.com/aditikilledar/dollar_bot_SE23/tree/main/docs] | 3 |
 |Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing| | 3
