@@ -179,5 +179,66 @@ class APITestCase(unittest.TestCase):
 
         self.assertEqual(response.status_code, 405) 
 
+    @patch('base.get_jwt_identity')
+    @patch('base.mongo')
+    def test_createFood_success(self, mock_mongo, mock_update_one):
+        app_client = api.test_client()
+
+        mock_update_one.return_value = Mock(upserted_id=123)
+
+        test_data = {
+            'foodName': 'test_food',
+            'calories': 'test_value'
+        }
+
+        response = app_client .post('/createFood', json=test_data)
+
+        self.assertEqual(response.status_code, 200)
+        
+        response_data = response.get_json()
+        self.assertEqual(response_data['status'], "Data saved successfully")
+
+    @patch('base.get_jwt_identity')
+    @patch('base.mongo')
+    def test_createMeal_unauthorized(self, mock_mongo, mock_get_jwt_identity):
+        app_client = api.test_client()
+
+        mock_get_jwt_identity.return_value = None
+
+        test_data = {
+            'mealName': 'test_meal',
+            'ingredients': ['test_ingredient_1', 'test_ingredient_2']
+        }
+
+        response = app_client .post('/createMeal', json=test_data)
+
+        self.assertEqual(response.status_code, 401)
+
+    @patch('base.get_jwt_identity')
+    @patch('base.mongo')
+    def test_unenroll_unauthorized(self, mock_mongo, mock_get_jwt_identity):
+        app_client = api.test_client()
+
+        mock_get_jwt_identity.return_value = None
+
+        test_data = {
+            'eventTitle': 'test_title'
+        }
+
+        response = app_client .post('/unenroll', json=test_data)
+
+        self.assertEqual(response.status_code, 401)
+
+    @patch('base.get_jwt_identity')
+    @patch('base.mongo')
+    def test_myMeals_unauthorized(self, mock_mongo, mock_get_jwt_identity):
+        app_client = api.test_client()
+
+        mock_get_jwt_identity.return_value = None
+
+        response = app_client .get('/myMeals')
+
+        self.assertEqual(response.status_code, 401)
+
 if __name__ == "__main__":
     unittest.main()

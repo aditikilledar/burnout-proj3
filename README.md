@@ -16,49 +16,47 @@
     <a href="https://github.com/adi-kiran/burnout-healthgoalsapp/issues/new?assignees=&labels=&projects=&template=bug_report.md&title=">Report Bug</a>
     ·
     <a href="https://github.com/adi-kiran/burnout-healthgoalsapp/issues/new?assignees=&labels=&projects=&template=feature_request.md&title=">Request Feature</a>
+    <br>
+    <a href="">View Video</a>
+    ·
+    <a href="">Scores</a>
+    ·
+    <a href="https://github.com/aditikilledar/burnout-proj3/blob/main/Developer_README.md">Developer Documentation</a>
   </p>
 </div>
 <br>
 <br>
 <br>
 
+<img src ="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b6c5e3c8-4f07-410a-a6d7-6d2fbbab554a/d7k6vct-5bf5581e-1a2a-49fd-909b-75efa23b71eb.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2I2YzVlM2M4LTRmMDctNDEwYS1hNmQ3LTZkMmZiYmFiNTU0YVwvZDdrNnZjdC01YmY1NTgxZS0xYTJhLTQ5ZmQtOTA5Yi03NWVmYTIzYjcxZWIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.cyzQz5gyjBGEbnPFiYenZqo4g3u7vT5Qyb9Vd2xwxL8" width='800'>
+
+
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
-[![DOI](https://zenodo.org/badge/698975832.svg)](https://zenodo.org/doi/10.5281/zenodo.10022867)
+[![DOI](https://zenodo.org/badge/714758791.svg)](https://zenodo.org/doi/10.5281/zenodo.10208054)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
-![Build Status](https://github.com/adi-kiran/burnout-healthgoalsapp/actions/workflows/build_repo.yml/badge.svg)
+![Build Status](https://github.com/aditikilledar/burnout-proj3/actions/workflows/build_repo.yml/badge.svg)
 [![PEP8](https://img.shields.io/badge/code%20style-pep8-orange.svg)](https://www.python.org/dev/peps/pep-0008/)
-![last commit](https://img.shields.io/github/last-commit/adi-kiran/burnout-healthgoalsapp)
-[![](https://tokei.rs/b1/github/adi-kiran/burnout-healthgoalsapp?branch=main)](https://github.com/adi-kiran/burnout-healthgoalsapp)
-![github workflow](https://github.com/adi-kiran/burnout-healthgoalsapp/actions/workflows/unit_test.yml/badge.svg)
-![github workflow](https://github.com/adi-kiran/burnout-healthgoalsapp/actions/workflows/style_checker.yml/badge.svg)
-![github workflow](https://github.com/adi-kiran/burnout-healthgoalsapp/actions/workflows/syntax_checker.yml/badge.svg)
-[![codecov](https://codecov.io/gh/adi-kiran/burnout-healthgoalsapp/graph/badge.svg?token=8DO6VMEZ7J)](https://codecov.io/gh/adi-kiran/burnout-healthgoalsapp)
-![GitHub closed issues](https://img.shields.io/github/issues-closed/adi-kiran/burnout-healthgoalsapp)
-<!--Badges-->
-<a href="https://github.com/adi-kiran/burnout-healthgoalsapp/fork" target="blank">
-<img src="https://img.shields.io/github/forks/adi-kiran/burnout-healthgoalsapp?style=flat-square" alt="burnout-healthgoalsapp forks"/>
+![last commit](https://img.shields.io/github/last-commit/aditikilledar/burnout-proj3)
+[![](https://tokei.rs/b1/github/adi-kiran/burnout-healthgoalsapp?branch=main)](https://github.com/aditikilledar/burnout-proj3)
+![github workflow](https://github.com/aditikilledar/burnout-proj3/actions/workflows/unit_test.yml/badge.svg)
+![github workflow](https://github.com/aditikilledar/burnout-proj3/actions/workflows/style_checker.yml/badge.svg)
+![github workflow](https://github.com/aditikilledar/burnout-proj3/actions/workflows/syntax_checker.yml/badge.svg)
+[![codecov](https://codecov.io/gh/aditikilledar/burnout-proj3/graph/badge.svg?token=8DO6VMEZ7J)](https://codecov.io/gh/aditikilledar/burnout-proj3)
+<a href="https://github.com/aditikilledar/burnout-proj3/fork" target="blank">
+<img src="https://img.shields.io/github/forks/aditikilledar/burnout-proj3?style=flat-square" alt="burnout-healthgoalsapp forks"/></a>
+<a href="https://github.com/aditikilledar/burnout-proj3/stargazers" target="blank">
+<img src="https://img.shields.io/github/stars/aditikilledar/burnout-proj3?style=flat-square" alt="burnout-healthgoalsapp stars"/>
+<a href="https://github.com/aditikilledar/burnout-proj3/issues" target="blank"> <img src="https://img.shields.io/github/issues-closed/aditikilledar/burnout-proj3" alt="burnout-healthgoalsapp issues closed"/>
 </a>
-<a href="https://github.com/adi-kiran/burnout-healthgoalsapp/stargazers" target="blank">
-<img src="https://img.shields.io/github/stars/adi-kiran/burnout-healthgoalsapp?style=flat-square" alt="burnout-healthgoalsapp stars"/>
-</a>
-<a href="https://github.com/adi-kiran/burnout-healthgoalsapp/issues" target="blank">
-<img src="https://img.shields.io/github/issues/adi-kiran/burnout-healthgoalsapp?style=flat-square" alt="burnout-healthgoalsapp issues"/>
-</a>
-<a href="https://github.com/adi-kiran/burnout-healthgoalsapp/issues" target="blank">
-<img src="https://img.shields.io/github/issues-closed/adi-kiran/burnout-healthgoalsapp" alt="burnout-healthgoalsapp issues closed"/>
-</a>
-<a href="https://github.com/adi-kiran/burnout-healthgoalsapp/graphs/contributors" alt="Contributors">
-<img src="https://img.shields.io/github/contributors/adi-kiran/burnout-healthgoalsapp" /></a>
-<a href="https://github.com/adi-kiran/burnout-healthgoalsapp/graphs/commit-activity" alt="commit activity">
-<img src="https://img.shields.io/github/commit-activity/w/adi-kiran/burnout-healthgoalsapp" /></a> 
-
+<a href="https://github.com/aditikilledar/burnout-proj3/graphs/contributors" alt="Contributors">
+<img src="https://img.shields.io/github/contributors/aditikilledar/burnout-proj3" /></a>
+<a href="https://github.com/aditikilledar/burnout-proj3/graphs/commit-activity" alt="commit activity">
+<img src="https://img.shields.io/github/commit-activity/w/aditikilledar/burnout-proj3" /></a> 
 <a href="https://github.com/adi-kiran/burnout-healthgoalsapp/discussions" alt="discussion">
-<img src="https://img.shields.io/github/discussions/adi-kiran/burnout-healthgoalsapp" /></a> 
+<img src="https://img.shields.io/github/discussions/aditikilledar/burnout-proj3" /></a> 
+<a href="https://img.shields.io/github/repo-size/aditikilledar/burnout-proj3" alt="repo size">
+<img src="https://img.shields.io/github/repo-size/aditikilledar/burnout-proj3" /></a>
 
-<a href="https://img.shields.io/github/repo-size/adi-kiran/burnout-healthgoalsapp" alt="repo size">
-<img src="https://img.shields.io/github/repo-size/adi-kiran/burnout-healthgoalsapp" /></a>
-
-<img src ="https://github.com/adi-kiran/burnout-healthgoalsapp/assets/27075012/39e731f7-2f06-4f8a-b9a3-5f86836e1ad9" width='800'>
 
 # Table of Contents  
 
@@ -113,7 +111,6 @@ So, are you ready to take the leap towards a healthier, happier you? Dive into *
  
 In today's fast-paced world, maintaining health is a challenge. But with the right tools and community, this challenge becomes an enjoyable journey. And Burnout is here to make sure of that.
 
-![ezgif com-video-to-gif (1)](https://github.com/adi-kiran/burnout-healthgoalsapp/assets/19224584/c6802e8e-5ff7-4ac5-ba11-560b2e84cb50) 
 
 # Walkthrough
 

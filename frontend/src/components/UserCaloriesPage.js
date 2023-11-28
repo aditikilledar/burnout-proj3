@@ -278,7 +278,6 @@ const handleUnenroll = (eventName) => {
   });
 };
 
-
   return (
     <>
       <Container maxWidth>
