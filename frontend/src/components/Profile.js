@@ -333,7 +333,7 @@ function Profile(props) {
                   <CardContent>
                     <div style={weightCardStyles.weightContainer}>
                       <IconButton
-                        color="primary"
+                        style={{ color: 'orange' }}
                         aria-label="weighing scale icon"
                       >
                         <FitnessCenterIcon fontSize="large" />
@@ -358,7 +358,7 @@ function Profile(props) {
                   <CardContent>
                     <div style={weightCardStyles.weightContainer}>
                       <IconButton
-                        color="primary"
+                        style={{ color: 'orange' }}
                         aria-label="running icon"
                       >
                         <DirectionsRunIcon fontSize="large" />
@@ -392,7 +392,7 @@ function Profile(props) {
                   <CardContent>
                     <div style={weightCardStyles.weightContainer}>
                       <IconButton
-                        color="primary"
+                        style={{ color: 'orange' }}
                         aria-label="calories icon"
                       >
                         <WhatshotIcon fontSize="large" />
