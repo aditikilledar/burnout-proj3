@@ -1,5 +1,4 @@
 <br />
-
 <div  align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
     <img src="https://github.com/aditikilledar/burnout-proj3/assets/52149707/77028411-c5e2-4c30-a200-992aa12be968" alt="Logo" width="120" height="120">
@@ -25,6 +24,34 @@
   </p>
 </div>
 <br>
+
+---
+
+We forked this repo from this [link](https://github.com/aditikilledar/burnout-proj3)
+
+### Team 96
+#### Members
+* Jinming Xing
+* Krisha Patel
+* Shreyas Devaraj
+
+### Existing Features
+- **Comprehensive Tracking**: Monitor everything from your diet to calories burned in one place.
+- **Diverse Fitness Events**: Stay engaged with regularly updated fitness events to avoid routine monotony.
+- **Personalized Insights**: Receive data-driven feedback to better understand your body and habits.
+- **Community Support**: Connect with a like-minded community to share tips and stay motivated.
+- **Data Security**: Ensure your data remains private and secure.
+
+### Features to Add
+- **Generative AI-Based Fitness Plan**: Create customized fitness plans using generative AI.
+- **Chatbot Personal Assistant**: Provide a personal assistant chatbot for user guidance.
+- **Food Image Analysis**: Analyze pictures of food items to assess their health impact.
+- **Calendar Integration**: Connect with calendar apps to receive gym session reminders.
+- **Dockerized Repository & Hosting**: Dockerize the project repository and host it publicly.
+- **Fitness Buddies**: Integrate social media for connecting with fitness buddies.
+- **Activity Tracker Integration**: Sync with activity trackers for seamless monitoring.
+
+---
 
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 [![DOI](https://zenodo.org/badge/714758791.svg)](https://zenodo.org/doi/10.5281/zenodo.10208054)
@@ -56,18 +83,22 @@ https://github.com/aditikilledar/burnout-proj3/assets/52149707/5873f399-194b-4a9
 
 # Table of Contents  
 
-- [Why Choose Burnout?](#-why-choose-burnout)
+- [Table of Contents](#table-of-contents)
+  - [**🔥 Burnout: Elevate Your Health \& Fitness Game! 🔥**](#-burnout-elevate-your-health--fitness-game-)
+- [**💡 Why Choose Burnout?**](#-why-choose-burnout)
 - [Walkthrough](#walkthrough)
-- [Application Screenshots:](#application-screenshots)
-  - [Sign In](#sign-in)
+- [Application Screenshots](#application-screenshots)
+  - [Sign-In](#sign-in)
   - [Homepage](#homepage)
   - [Profile](#profile)
   - [Events](#events)
-  - [My Meals](#my-meals)
+  - [My-Meals](#my-meals)
   - [FAQs](#faqs)
-  - [Contact Us](#contact-us)
-- [Project Techstack:](#project-techstack)
-- <a href="https://github.com/aditikilledar/burnout-proj3/blob/main/README.md#getting-started"> Get Started: Installation </a>
+  - [Contact-Us](#contact-us)
+    - [:memo: **Note:** Additional screenshots and a mini tutorials can be found here:Tutorials.md](#memo-note-additional-screenshots-and-a-mini-tutorials-can-be-found-heretutorialsmd)
+- [Project TechStack](#project-techstack)
+- [Getting started](#getting-started)
+    - [Prerequisites](#prerequisites)
 - [What's new?](#whats-new)
 - [Bug Fixes](#bug-fixes)
 - [Future Scope](#future-scope)
