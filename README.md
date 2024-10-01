@@ -51,6 +51,66 @@ We forked this repo from this [link](https://github.com/aditikilledar/burnout-pr
 - **Fitness Buddies**: Integrate social media for connecting with fitness buddies.
 - **Activity Tracker Integration**: Sync with activity trackers for seamless monitoring.
 
+### Test Suite
+Based on the provided code snippets, here's an overview of the test suite in the project:
+
+1. Frontend Tests:
+   - Tests rendering of each of the components, as present in [frontend/src/](frontend/src/) - for Home, Profile, Events, My-Meals, FAQs, Contact-Us etc
+
+2. Backend Tests (`test_api.py`):
+   The `APITestCase` class contains multiple test methods covering various API endpoints and scenarios:
+
+   a. Authentication and Authorization:
+   - `test_register_success`: Tests successful user registration.
+   - `test_unauthorized_get_user_registered_events`: Tests unauthorized access to user's registered events.
+   - `test_unauthorized_enrolled_true`: Tests unauthorized access to enrollment status.
+   - `test_my_profile_unauthorized`: Tests unauthorized access to user profile.
+   - `test_usersEvents_unauthorized`: Tests unauthorized access to user's events.
+   - `test_foodCalorieMapping_unauthorized`: Tests unauthorized access to food calorie mapping.
+
+   b. Event Management:
+   - `test_get_events`: Tests fetching events.
+
+   c. User Data Access:
+   - `test_weekHistory_unauthorized`: Tests unauthorized access to week history.
+   - `test_caloriesBurned_unauthorized`: Tests unauthorized access to calories burned data.
+   - `test_goalsUpdate_unauthorized`: Tests unauthorized access to goals update.
+   - `test_profileUpdate_unauthorized`: Tests unauthorized access to profile update.
+   - `test_caloriesConsumed_unauthorized`: Tests unauthorized access to calories consumed data.
+
+The test suite covers the following aspects:
+
+1. Component Rendering: Ensures that key frontend components render without crashing.
+
+2. API Endpoint Security: Extensively tests unauthorized access to various API endpoints, ensuring that protected routes are secure.
+
+3. User Authentication: Tests the user registration process.
+
+4. Data Retrieval: Tests fetching of events and other user-specific data.
+
+5. User Actions: Tests various user actions like updating profile, goals, and accessing personal data.
+
+6. Error Handling: Implicitly tests error responses for unauthorized access attempts.
+
+While this test suite provides good coverage for authentication, authorization, and basic functionality, there are areas that could be expanded:
+
+1. Positive test cases for authorized access to protected routes.
+2. More comprehensive frontend testing, including user interactions and state management.
+3. Testing of data manipulation endpoints (e.g., creating meals, enrolling in events).
+4. Edge cases and error handling for valid but problematic inputs.
+5. Integration tests that cover the interaction between frontend and backend.
+
+Overall, the current test suite focuses heavily on security and unauthorized access, which is crucial, but could be expanded to cover more functional aspects of the application.
+
+
+### Screenshot of the running application
+
+Home page
+<img width='600' src="resources/index.png">
+
+Profile page
+<img width='600' src="resources/profile.png">
+
 ---
 
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
