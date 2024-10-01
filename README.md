@@ -35,6 +35,8 @@ We forked this repo from this [link](https://github.com/aditikilledar/burnout-pr
 * Krisha Patel
 * Shreyas Devaraj
 
+https://github.com/aditikilledar/burnout-proj3/assets/52149707/5873f399-194b-4a9c-85a4-db05b5c2e438
+
 ### Existing Features
 - **Comprehensive Tracking**: Monitor everything from your diet to calories burned in one place.
 - **Diverse Fitness Events**: Stay engaged with regularly updated fitness events to avoid routine monotony.
@@ -105,10 +107,10 @@ Overall, the current test suite focuses heavily on security and unauthorized acc
 
 ### Screenshot of the running application
 
-Home page
+#### Home page
 <img width='600' src="resources/index.png">
 
-Profile page
+#### Profile page
 <img width='600' src="resources/profile.png">
 
 ---
@@ -137,9 +139,6 @@ Profile page
 <img src="https://img.shields.io/github/discussions/aditikilledar/burnout-proj3" /></a> 
 <a href="https://img.shields.io/github/repo-size/aditikilledar/burnout-proj3" alt="repo size">
 <img src="https://img.shields.io/github/repo-size/aditikilledar/burnout-proj3" /></a>
-
-https://github.com/aditikilledar/burnout-proj3/assets/52149707/5873f399-194b-4a9c-85a4-db05b5c2e438
-
 
 # Table of Contents  
 
