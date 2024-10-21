@@ -1110,3 +1110,35 @@ def calculate_tdee(height,weight,age,sex,activityLevel):
     personal_activity_levels = {'Minimal': 1.2,'Light': 1.375, 'Moderate': 1.55, 'Heavy':1.725, 'Athlete': 1.9}
     tdee = int((bmr * personal_activity_levels[activityLevel]))
     return tdee
+
+@api.route('/trackActivity', methods=["POST"])
+@jwt_required()
+def track_activity():
+    data = request.get_json()
+    current_user = get_jwt_identity()
+    
+    steps = data.get('steps', 0)
+    calories_burned = data.get('calories_burned', 0)
+    workout_intensity = data.get('workout_intensity', 'low')  # default to 'low' if not provided
+    activity_date = data.get('activity_date', datetime.now(timezone.utc).isoformat())
+
+    try:
+        # Insert or update activity data into MongoDB
+        mongo.user.update_one(
+            {'email': current_user, 'activity_date': activity_date},
+            {
+                "$set": {
+                    "steps": steps,
+                    "calories_burned": calories_burned,
+                    "workout_intensity": workout_intensity,
+                }
+            },
+            upsert=True
+        )
+        response = {"status": "Activity tracked successfully"}
+        statusCode = 200
+    except Exception as e:
+        response = {"status": "Error", "message": str(e)}
+        statusCode = 500
+        
+    return jsonify(response), statusCode
