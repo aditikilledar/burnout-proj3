@@ -90,7 +90,7 @@ cards = [
     },
     {
         "title": "Pilates",
-        "imageUrl": "/assets/img/pilates.jpg",
+        "imageUrl": "/assets/img/pilates.png",
         "description": "Pilates is a form of low-impact exercise that aims to strengthen muscles while improving postural alignment and flexibility.",
         "eventInfo": "Join our Pilates session to improve your core strength, flexibility, and overall body awareness. This class will focus on controlled movements and breathing techniques to enhance your physical and mental well-being. Main Practice: 1. The Hundred 2. Roll-Up 3. Leg Circles 4. Rolling Like a Ball 5. Single-Leg Stretch 6. Double-Leg Stretch 7. Spine Stretch Forward",
         "eventLocation": "Fitness Center",
@@ -99,7 +99,7 @@ cards = [
     },
     {
         "title": "Zumba",
-        "imageUrl": "/assets/img/zumba.jpg",
+        "imageUrl": "/assets/img/zumba.png",
         "description": "Zumba is a fitness program that combines Latin and international music with dance moves. Zumba routines incorporate interval training — alternating fast and slow rhythms — to help improve cardiovascular fitness.",
         "eventInfo": "Get ready to dance your way to fitness with our high-energy Zumba class! This session is designed to be fun and engaging, with easy-to-follow dance moves that will get your heart pumping. Main Practice: 1. Warm-Up 2. Salsa 3. Merengue 4. Cumbia 5. Reggaeton 6. Cool Down",
         "eventLocation": "Dance Studio",
@@ -108,7 +108,7 @@ cards = [
     },
     {
         "title": "HIIT",
-        "imageUrl": "/assets/img/hiit.jpg",
+        "imageUrl": "/assets/img/hiit.png",
         "description": "High-Intensity Interval Training (HIIT) is a form of interval training, a cardiovascular exercise strategy alternating short periods of intense anaerobic exercise with less intense recovery periods.",
         "eventInfo": "Join our HIIT class for a fast-paced, high-energy workout that will challenge your limits and boost your fitness. This session includes a variety of exercises designed to improve strength, endurance, and overall fitness. Main Practice: 1. Jumping Jacks 2. Burpees 3. High Knees 4. Mountain Climbers 5. Squat Jumps 6. Push-Ups 7. Plank",
         "eventLocation": "Gymnasium",
@@ -117,7 +117,7 @@ cards = [
     },
     {
         "title": "Cycling",
-        "imageUrl": "/assets/img/cycling.jpg",
+        "imageUrl": "/assets/img/cycling.png",
         "description": "Cycling is a low-impact aerobic exercise that offers a wealth of benefits. It also varies in intensity, making it suitable for all levels.",
         "eventInfo": "Join our indoor cycling class to improve your cardiovascular health and build lower body strength. This session includes a variety of cycling drills and techniques to keep you motivated and challenged. Main Practice: 1. Warm-Up 2. Hill Climb 3. Sprints 4. Intervals 5. Cool Down",
         "eventLocation": "Cycling Studio",
@@ -126,7 +126,7 @@ cards = [
     },
     {
         "title": "Meditation",
-        "imageUrl": "/assets/img/meditation.jpg",
+        "imageUrl": "/assets/img/meditation.png",
         "description": "Meditation is a practice where an individual uses a technique – such as mindfulness, or focusing the mind on a particular object, thought, or activity – to train attention and awareness, and achieve a mentally clear and emotionally calm and stable state.",
         "eventInfo": "Join our meditation session to reduce stress, improve concentration, and enhance your overall well-being. This class will guide you through various meditation techniques to help you find inner peace and relaxation. Main Practice: 1. Breathing Exercises 2. Guided Meditation 3. Mindfulness Practice 4. Body Scan 5. Loving-Kindness Meditation",
         "eventLocation": "Wellness Room",
